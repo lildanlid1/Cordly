@@ -2,6 +2,20 @@
 
 Cordly is a Morphe patch source for Discord Android, based on Venus Patches. It preserves Discord's original app name, icon, and `com.discord` package.
 
+## GitHub Actions billing lock
+
+If the import job says **"The job was not started because your account is locked due to a billing issue"**, GitHub Actions is blocked at the account level. The Ubuntu runner migration message is not the cause. Check [Billing & licensing](https://github.com/settings/billing) or [GitHub Support](https://support.github.com/).
+
+If you want to **import the source without GitHub Actions**, use a local Git terminal:
+
+```bash
+git clone https://github.com/lildanlid1/Cordly.git
+cd Cordly
+bash scripts/import-cordly-local.sh
+```
+
+This extracts the **already uploaded** `Cordly.zip`, validates required files, commits the expanded source, and pushes it to `main`. Your Git credentials must be configured locally. It does **not** compile or publish the Morphe `.mpp` release; building still needs a functioning runner or local Gradle build.
+
 ## Publishing Cordly v1.23.0
 
 The complete prepared ZIP (`Cordly.zip`) is already in the repository root. No additional ZIP upload is needed.
