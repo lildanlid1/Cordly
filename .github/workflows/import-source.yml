@@ -4,7 +4,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'Cordly.zip'
       - 'Cordly-GitHub-Morphe-Ready.zip'
+      - '.github/workflows/import-source.yml'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +25,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ARCHIVE=Cordly-GitHub-Morphe-Ready.zip
+          if test -s Cordly.zip; then
+            ARCHIVE=Cordly.zip
+          else
+            ARCHIVE=Cordly-GitHub-Morphe-Ready.zip
+          fi
           test -s "$ARCHIVE" || { echo "Upload $ARCHIVE to the repository root first."; exit 1; }
           WORKDIR="$(mktemp -d)"
           unzip -q "$ARCHIVE" -d "$WORKDIR"
