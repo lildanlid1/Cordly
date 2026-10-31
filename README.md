@@ -2,16 +2,13 @@
 
 Cordly is a Morphe patch source for Discord Android, based on Venus Patches. It preserves Discord's original app name, icon, and `com.discord` package.
 
-## Finish uploading Cordly v1.23.0
+## Publishing Cordly v1.23.0
 
-The repository has an automatic ZIP importer. To publish the prepared project:
+The complete prepared ZIP (`Cordly.zip`) is already in the repository root. No additional ZIP upload is needed.
 
-1. Download `Cordly-GitHub-Morphe-Ready.zip` from the ChatGPT conversation.
-2. Open **Add file → Upload files** in this repository and upload the **ZIP itself** at the repository root (do not extract it).
-3. Commit the upload to `main`.
-4. Open **Actions → Import Cordly source ZIP**. It verifies and extracts the `Cordly/` folder, commits the source, and removes the uploaded ZIP.
-5. Enable Actions workflow **Read and write** permissions in **Settings → Actions → General**, if needed.
-6. After successful import, run **Actions → Build and publish Cordly → Run workflow**. Verify the resulting `.mpp` release and source metadata.
+The [source-import workflow](https://github.com/lildanlid1/Cordly/actions/workflows/import-source.yml) is configured to recognize `Cordly.zip` and extract the `Cordly/` source tree. Its first automatic run failed before executing any steps. Check the [failed run](https://github.com/lildanlid1/Cordly/actions/runs/41165761077) for GitHub's runner/account error details and resolve the GitHub Actions issue before retrying.
+
+If the GitHub Actions runner cannot be used, download `Cordly.zip`, extract it locally, and upload the **contents inside** `Cordly/` to the repository root, preserving directories (including `.github/`). Then run **Actions → Build and publish Cordly** when Actions become available. The `.mpp` release and `patches-bundle.json` metadata must both be published for Morphe installation.
 
 [Add Cordly to Morphe](https://morphe.software/add-source?github=lildanlid1/Cordly)
 
@@ -26,4 +23,4 @@ The Morphe link requires a successful `.mpp` release and `patches-bundle.json`. 
 
 Licensing and upstream acknowledgments are included in the full prepared archive.
 
-**Status:** Automated import workflow committed. The complete project files and installable release still require the ZIP import and build.
+**Status:** Source ZIP uploaded. Extraction and `.mpp` release are pending because the import job failed before its first step.
