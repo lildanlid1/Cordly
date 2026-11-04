@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Cordly server layout importer — Node 22+, no npm dependencies.
+ * Conduit server layout importer — Node 22+, no npm dependencies.
  * Uses a BOT token only; never accepts account/self-bot tokens.
  * Preview is the default. --apply is required to make any Discord changes.
  * Only run on servers you administer. Messages/members/integrations are excluded.
@@ -11,7 +11,7 @@ const argv = process.argv.slice(2);
 const flags = new Set(argv.filter(v => v.startsWith('--')));
 const args = argv.filter(v => !v.startsWith('--'));
 if (args.length !== 2 || flags.has('--help')) {
-  console.log(`Usage: DISCORD_BOT_TOKEN=... node tools/cordly-server-import.mjs <blueprint.json> <target-server-id> [--apply] [--allow-existing] [--allow-admin] [--overwrite-everyone] [--copy-assets]\n
+  console.log(`Usage: DISCORD_BOT_TOKEN=... node tools/conduit-server-import.mjs <blueprint.json> <target-server-id> [--apply] [--allow-existing] [--allow-admin] [--overwrite-everyone] [--copy-assets]\n
 Default: prints a preview; does NOT change Discord.
 --apply: execute using an authorized bot already added to the target guild.
 --allow-existing: allow adding roles/channels to a nonempty server (duplicates possible).
@@ -25,9 +25,9 @@ const [file,targetId] = args;
 const snowflake = /^\d{17,20}$/;
 if (!snowflake.test(targetId)) throw Error('Target server ID must be a Discord snowflake');
 const blueprint = JSON.parse(await readFile(file,'utf8'));
-if (blueprint?.format !== 'cordly-server-blueprint' || blueprint?.version !== 1 ||
+if (!['conduit-server-blueprint','cordly-server-blueprint'].includes(blueprint?.format) || blueprint?.version !== 1 ||
     !blueprint.guild || !Array.isArray(blueprint.roles) || !Array.isArray(blueprint.channels))
-  throw Error('Not a Cordly v1 server blueprint');
+  throw Error('Not a Conduit v1 server blueprint');
 if (blueprint.sourceGuildId === targetId) throw Error('Source and target guild ID match. Refusing to import onto the source');
 if (!blueprint.roles.length || !blueprint.channels.length || blueprint.roles.length > 250 || blueprint.channels.length > 500)
   throw Error('Missing layout or unsupported role/channel count');
@@ -57,7 +57,7 @@ const sortedRoles = roles.filter(r=>!r.everyone && r.id!==blueprint.sourceGuildI
 const categories = channels.filter(c=>c.type===4).sort((a,b)=>a.position-b.position);
 const children = channels.filter(c=>c.type!==4).sort((a,b)=>a.position-b.position);
 const unsupportedMemberOverrides = channels.reduce((n,c)=>n+(c.permissionOverwrites||[]).filter(o=>o.type===1).length,0);
-console.log(`Cordly clone preview\nSource: ${blueprint.guild.name} (${blueprint.sourceGuildId})\nTarget: ${targetId}\nRoles to create: ${sortedRoles.length}\nCategories to create: ${categories.length}\nOther channels to create: ${children.length}\nMember-specific overwrites omitted: ${unsupportedMemberOverrides}\nPermissions: ${allowAdmin?'ADMINISTRATOR allowed':'ADMINISTRATOR removed from new roles'}\nAssets: ${flags.has('--copy-assets')?'requested where supported':'not copied'}\n@everyone permissions: ${flags.has('--overwrite-everyone')?'will be updated':'left unchanged'}\nOther exclusions: messages, users, role memberships, webhooks, invites, integrations, boosts, auto-mod, stickers, emojis, community setup.\n`);
+console.log(`Conduit clone preview\nSource: ${blueprint.guild.name} (${blueprint.sourceGuildId})\nTarget: ${targetId}\nRoles to create: ${sortedRoles.length}\nCategories to create: ${categories.length}\nOther channels to create: ${children.length}\nMember-specific overwrites omitted: ${unsupportedMemberOverrides}\nPermissions: ${allowAdmin?'ADMINISTRATOR allowed':'ADMINISTRATOR removed from new roles'}\nAssets: ${flags.has('--copy-assets')?'requested where supported':'not copied'}\n@everyone permissions: ${flags.has('--overwrite-everyone')?'will be updated':'left unchanged'}\nOther exclusions: messages, users, role memberships, webhooks, invites, integrations, boosts, auto-mod, stickers, emojis, community setup.\n`);
 if (!flags.has('--apply')) {
   console.log('Dry run complete; nothing changed. Add --apply after reviewing the blueprint.');
   process.exit(0);
@@ -162,7 +162,7 @@ for (const ch of children) {
   }
 }
 const g=blueprint.guild;
-const meta={name:String(g.name||'Cordly Clone').slice(0,100)};
+const meta={name:String(g.name||'Conduit Clone').slice(0,100)};
 if (g.description) meta.description=String(g.description).slice(0,120);
 if (g.preferredLocale) meta.preferred_locale=g.preferredLocale;
 if (Number.isInteger(g.verificationLevel)) meta.verification_level=g.verificationLevel;
