@@ -1,4 +1,4 @@
-/* Conduit media: offline regression checks with no external modules needed. */
+/* Velocity Patches Discord media: offline regression checks with no external modules needed. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const source = fs.readFileSync('patches/src/main/resources/venus/bootstrap.js', 'utf8');
@@ -73,5 +73,5 @@ assert.ok(api.serverSummary({name:'Example',id:'123456789012345678',created:1740
 
 assert.equal(fs.existsSync('patches/src/main/kotlin/app/venus/patches/BrandingPatches.kt'),false,
     'The actual Android app branding patch must be absent');
-assert.equal(source.includes('const revision = "1.25.0"'),true);
-console.log('Conduit media checks passed: ZIP, filters, sorting, emoji markup, server summaries/artwork, app identity.');
+assert.equal(source.includes('const revision = "1.26.0"'),true);
+console.log('Velocity Patches Discord media checks passed: ZIP, filters, sorting, emoji markup, server summaries/artwork, app identity.');
