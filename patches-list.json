@@ -411,8 +411,8 @@
       "options": []
     },
     {
-      "name": "Conduit button on profile bar",
-      "description": "A shortcut to Conduit settings, next to the notifications bell.",
+      "name": "Velocity Patches Discord button on profile bar",
+      "description": "A shortcut to Velocity Patches Discord settings, next to the notifications bell.",
       "default": true,
       "category": "Features",
       "dependencies": [
@@ -445,8 +445,8 @@
       "options": []
     },
     {
-      "name": "Conduit settings",
-      "description": "Adds Conduit to Discord's settings, where you turn each feature on or off, in your language. Needed by every feature.",
+      "name": "Velocity Patches Discord settings",
+      "description": "Adds Velocity Patches Discord to Discord's settings, where you turn each feature on or off, in your language. Needed by every feature.",
       "default": true,
       "category": "Features",
       "dependencies": [
@@ -932,7 +932,7 @@
     },
     {
       "name": "Edit without \"(edited)\"",
-      "description": "Edit a message without the \"(edited)\" tag. Only works while your message is the latest one in the chat: Conduit sends the new text as a new message and deletes the old one. Older messages are edited the normal way.",
+      "description": "Edit a message without the \"(edited)\" tag. Only works while your message is the latest one in the chat: Velocity Patches Discord sends the new text as a new message and deletes the old one. Older messages are edited the normal way.",
       "default": true,
       "category": "Features",
       "dependencies": [
@@ -1272,7 +1272,7 @@
     },
     {
       "name": "HypeSquad house",
-      "description": "Join or leave a HypeSquad house (Bravery, Brilliance or Balance) from Conduit settings. Discord limits how often you can change house.",
+      "description": "Join or leave a HypeSquad house (Bravery, Brilliance or Balance) from Velocity Patches Discord settings. Discord limits how often you can change house.",
       "default": true,
       "category": "Features",
       "dependencies": [
@@ -1852,7 +1852,7 @@
     },
     {
       "name": "Remove anything",
-      "description": "Tap a button you never use to remove it, right where it is: turn on removal mode, then tap the red X on the voice message, attach, gift, call, video, search, Quests, Shop or Nitro buttons, the Quests banner, attach menu items, message menu rows and quick reactions, profile menu items, Settings rows and more. Bring them back any time in Conduit.",
+      "description": "Tap a button you never use to remove it, right where it is: turn on removal mode, then tap the red X on the voice message, attach, gift, call, video, search, Quests, Shop or Nitro buttons, the Quests banner, attach menu items, message menu rows and quick reactions, profile menu items, Settings rows and more. Bring them back any time in Velocity Patches Discord.",
       "default": true,
       "category": "Features",
       "dependencies": [
