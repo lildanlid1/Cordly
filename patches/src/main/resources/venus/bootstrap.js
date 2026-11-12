@@ -1,10 +1,10 @@
-/* Conduit Patches: bundled, offline runtime. No remote code or full client mod required. */
+/* Velocity Patches Discord: bundled, offline runtime. No remote code or full client mod required. */
 (function (global) {
     "use strict";
     if (global.__venusPatches) return;
     const features = /*__FEATURES__*/;
     // Inspected Metro IDs for the SHA-256-pinned 351.11 bundle; never scan or eagerly require modules.
-    // Metro IDs Conduit wraps, as a dense table: decorateDefine checks it for all ~17.7k modules at startup, and an
+    // Metro IDs Velocity Patches Discord wraps, as a dense table: decorateDefine checks it for all ~17.7k modules at startup, and an
     // indexed read is ~3x cheaper than Set.has on Hermes. 120 is RN's initializer.
     // IDs past the end read as undefined, so a module added in a later bundle is simply left alone.
     const targetModules = new Uint8Array(32768);
@@ -78,7 +78,7 @@
     if (features.experiments) selectModules([584, 1392, 1403]);
     if (features.hideAnything) selectModules([14015, 15735, 15736, 9419, 10331, 16133, 16225, 12892, 12897, 12901, 12908, 12909, 13780, 14204, 15590, 17157, 15046, 8805, 9052, 10858, 12942, 14988, 14994, 14925, 14998, 11678, 11679, 14197, 10939, 7158, 14182, 14101, 17156, 17263, 13151, 12000, 10838, 17949, 16773, 17265, 17881, 17869, 11164, 9978, 13759, 12696, 10650, 13769, 8494, 9873]);
     if (features.voiceOptions) { targetModules[584] = 1; targetModules[11372] = 1; targetModules[6145] = 1; }
-    const revision = "1.25.0";
+    const revision = "1.26.0";
     // The Discord build these patches are pinned to (DiscordPatches.kt compatibleWith); shown on the About page.
     const DISCORD_VERSION = "351.11";
     // Module 120 owns setUpDefaltReactNativeEnvironment in this exact asset.
@@ -98,9 +98,9 @@
         userNotif:false, userNotifFriends:true, userNotifStatus:true, userNotifMessages:true, userNotifTyping:true, userNotifPush:false, userNotifLogStatus:true, userNotifLogMessages:true, userNotifLogTyping:false,
         accountSwitcher:false, accountSwitcherYouBar:true, accountSwitcherShare:false, accountSwitcherNotify:true, appIcons:false, nitroThemes:false, customThemes:false, customThemesBackground:true, materialYou:false, materialYouColor:"wallpaper", materialYouTint:"balanced",
         iconPacks:false, iconPacksTheme:true,
-        messageHighlight:false, messageHighlightThickness:2, messageHighlightBrightness:50, messageHighlightPingColor:"default", customRPC:false, customRPCApp:"", customRPCName:"", customRPCDetails:"", customRPCState:"", customRPCType:"0", customRPCTime:true, customRPCLarge:"", customRPCSmall:"", customRPCLargeText:"", customRPCSmallText:"", customRPCChannel:"", serverInfo:false, serverInfoFriends:true, serverEdit:false,
+        messageHighlight:false, messageHighlightThickness:2, messageHighlightBrightness:50, messageHighlightPingColor:"default", customRPC:false, customRPCApp:"", customRPCName:"", customRPCDetails:"", customRPCState:"", customRPCShowDetails:true, customRPCShowState:true, customRPCShowLarge:true, customRPCShowSmall:true, customRPCShowLargeText:true, customRPCShowSmallText:true, customRPCType:"0", customRPCTime:true, customRPCLarge:"", customRPCSmall:"", customRPCLargeText:"", customRPCSmallText:"", customRPCChannel:"", serverInfo:false, serverInfoFriends:true, serverEdit:false,
         fixEmbeds:false, fixEmbedsSites:"", fixEmbedsOptions:"", tenorGifs:false, tenorGifsSource:"both", hideBlocked:false, hideBlockedBlocked:true, hideBlockedIgnored:true, hideBlockedReplies:false, hideBlockedCloseDms:false, bulkDelete:false, bulkDeleteConfirm:true, bulkDeleteIncludeCached:true, experiments:false, noHandsfree:false, voiceOptions:false, voiceOptionsVolume:false, voiceOptionsVolumeLevel:50, voiceOptionsOutput:"default", voiceOptionsJoinSound:true, voiceOptionsLeaveSound:true, voiceOptionsSoundVolume:100, voiceOptionsExit:false, voiceOptionsExitSound:"", cleanChannels:false, cleanChannelsEmoji:true, cleanChannelsSymbols:true, cleanChannelsFonts:true, cleanChannelsSpaces:false, anonFiles:false, staffTag:false, staffTagOwner:true, staffTagAdmin:true, staffTagManager:true, staffTagMod:true, staffTagCrown:true, removedAlerts:false, removedAlertsFriends:true, removedAlertsServers:true, removedAlertsClosed:true, removedAlertsPush:false, fullImages:false, fullImagesChat:true, fullImagesViewer:true, fullImagesGifs:false, fullImagesAvatars:true, alwaysTrust:false, alwaysTrustLinks:true, alwaysTrustFiles:true, noConfirmPin:false, clickableMentions:false, expandBar:false, expandBarSending:true, expandBarChats:true, silentLeave:false, silentEdit:false, silentEditNotice:true, silentDelete:false, localEdit:false, localEditMark:true, guildLurk:false, guildLurkIds:"", quietReplies:false, viewRaw:false, viewRawMessages:true, viewRawChannels:true, viewRawServers:true, viewRawPeople:true, viewRawRoles:true, viewRawHideContact:true, viewRawWrap:true, timeoutDuration:false, dndBanners:false, voiceDownload:false, cloneExpressions:false, listenAlong:false, listenAlongOffset:0, backgroundMedia:false, backgroundMediaAudio:true, backgroundMediaVideo:true, backgroundMediaSkip:10, landscapeFull:false, quietRepliesGuilds:true, quietRepliesGroups:true, quietRepliesMentioned:false, compressUploads:false, compressUploadsPhotos:true, compressUploadsVideos:true, compressUploadsAudio:true, hideAnything:false, hideAnythingSpots:"", fakeDeafen:false, fakeDeafenMuteMic:true, language:"auto", hiddenFeatures:"",
-        hypeSquad:false, customIdle:false, customIdleMinutes:10, pauseInvites:false, fastDeleteChannels:false, fastDeleteChannelsConfirm:true, fastDeleteChannelsMenu:true, mutualGroupDMs:false, platformSpoof:false, platformSpoofDevice:"desktop" };
+        hypeSquad:false, customIdle:false, customIdleMinutes:10, pauseInvites:false, fastDeleteChannels:false, fastDeleteChannelsConfirm:true, fastDeleteChannelsMenu:true, mutualGroupDMs:false, platformSpoof:false, platformSpoofDevice:"desktop", safeMode:false, safeModeSnapshot:"" };
     // The settings every feature starts from, for Reset to defaults on the Backup page.
     let DEFAULT_SETTINGS = null;
     function defaultSettings() {
@@ -116,9 +116,9 @@
             userNotif: false, userNotifFriends: true, userNotifStatus: true, userNotifMessages: true, userNotifTyping: true, userNotifPush: false, userNotifLogStatus: true, userNotifLogMessages: true, userNotifLogTyping: false,
             accountSwitcher: false, accountSwitcherYouBar: true, accountSwitcherShare: false, accountSwitcherNotify: true, appIcons: false, nitroThemes: false, customThemes: false, customThemesBackground: true, materialYou: false, materialYouColor: "wallpaper", materialYouTint: "balanced",
             iconPacks: false, iconPacksTheme: true,
-            messageHighlight: false, messageHighlightThickness: 2, messageHighlightBrightness: 50, messageHighlightPingColor: "default", customRPC:false, customRPCApp:"", customRPCName:"", customRPCDetails:"", customRPCState:"", customRPCType:"0", customRPCTime:true, customRPCLarge:"", customRPCSmall:"", customRPCLargeText:"", customRPCSmallText:"", customRPCChannel:"", serverInfo: false, serverInfoFriends: true, serverEdit: false,
+            messageHighlight: false, messageHighlightThickness: 2, messageHighlightBrightness: 50, messageHighlightPingColor: "default", customRPC:false, customRPCApp:"", customRPCName:"", customRPCDetails:"", customRPCState:"", customRPCShowDetails:true, customRPCShowState:true, customRPCShowLarge:true, customRPCShowSmall:true, customRPCShowLargeText:true, customRPCShowSmallText:true, customRPCType:"0", customRPCTime:true, customRPCLarge:"", customRPCSmall:"", customRPCLargeText:"", customRPCSmallText:"", customRPCChannel:"", serverInfo: false, serverInfoFriends: true, serverEdit: false,
             fixEmbeds: false, fixEmbedsSites: "", fixEmbedsOptions: "", tenorGifs: false, tenorGifsSource: "both", hideBlocked: false, hideBlockedBlocked: true, hideBlockedIgnored: true, hideBlockedReplies: false, hideBlockedCloseDms: false, bulkDelete: false, bulkDeleteConfirm: true, bulkDeleteIncludeCached: true, experiments: false, noHandsfree: false, voiceOptions: false, voiceOptionsVolume: false, voiceOptionsVolumeLevel: 50, voiceOptionsOutput: "default", voiceOptionsJoinSound: true, voiceOptionsLeaveSound: true, voiceOptionsSoundVolume: 100, voiceOptionsExit: false, voiceOptionsExitSound: "", cleanChannels: false, cleanChannelsEmoji: true, cleanChannelsSymbols: true, cleanChannelsFonts: true, cleanChannelsSpaces: false, anonFiles: false, staffTag: false, staffTagOwner: true, staffTagAdmin: true, staffTagManager: true, staffTagMod: true, staffTagCrown: true, removedAlerts: false, removedAlertsFriends: true, removedAlertsServers: true, removedAlertsClosed: true, removedAlertsPush: false, fullImages: false, fullImagesChat: true, fullImagesViewer: true, fullImagesGifs: false, fullImagesAvatars: true, alwaysTrust: false, alwaysTrustLinks: true, alwaysTrustFiles: true, noConfirmPin: false, clickableMentions: false, expandBar: false, expandBarSending: true, expandBarChats: true, silentLeave: false, silentEdit: false, silentEditNotice: true, silentDelete: false, localEdit: false, localEditMark: true, guildLurk: false, guildLurkIds: "", quietReplies: false, viewRaw: false, viewRawMessages: true, viewRawChannels: true, viewRawServers: true, viewRawPeople: true, viewRawRoles: true, viewRawHideContact: true, viewRawWrap: true, timeoutDuration: false, dndBanners: false, voiceDownload: false, cloneExpressions: false, listenAlong: false, listenAlongOffset: 0, backgroundMedia: false, backgroundMediaAudio: true, backgroundMediaVideo: true, backgroundMediaSkip: 10, landscapeFull: false, quietRepliesGuilds: true, quietRepliesGroups: true, quietRepliesMentioned: false, compressUploads: false, compressUploadsPhotos: true, compressUploadsVideos: true, compressUploadsAudio: true, hideAnything: false, hideAnythingSpots: "", fakeDeafen: false, fakeDeafenMuteMic: true, language: "auto", hiddenFeatures: "",
-            hypeSquad: false, customIdle: false, customIdleMinutes: 10, pauseInvites: false, fastDeleteChannels: false, fastDeleteChannelsConfirm: true, fastDeleteChannelsMenu: true, mutualGroupDMs: false, platformSpoof: false, platformSpoofDevice: "desktop"
+            hypeSquad: false, customIdle: false, customIdleMinutes: 10, pauseInvites: false, fastDeleteChannels: false, fastDeleteChannelsConfirm: true, fastDeleteChannelsMenu: true, mutualGroupDMs: false, platformSpoof: false, platformSpoofDevice: "desktop", safeMode: false, safeModeSnapshot: ""
         }));
     }
     // Backup and restore (#68): when you last saved a backup, and whether a restore is being applied right now.
@@ -166,8 +166,8 @@
         "ga", "gl", "gu", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "jv", "ka", "kk", "km", "ko", "la", "lt", "lv", "mk", "ml", "mn",
         "mr", "ms", "my", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "sq", "sr", "sv", "sw", "ta", "te", "th", "tr", "uk", "ur",
         "uz", "vi", "zh-CN", "zh-TW"];
-    // Each language in its own words, like the Language page lists Conduit's languages (#82): you find yours whatever
-    // language Conduit is shown in. The name in Conduit's language goes under it.
+    // Each language in its own words, like the Language page lists Velocity Patches Discord's languages (#82): you find yours whatever
+    // language Velocity Patches Discord is shown in. The name in Velocity Patches Discord's language goes under it.
     const TRANSLATE_NATIVE = {
         af:"Afrikaans", ar:"\u0627\u0644\u0639\u0631\u0628\u064a\u0629", bg:"\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438",
         bn:"\u09ac\u09be\u0982\u09b2\u09be", ca:"Catal\u00e0", cs:"\u010ce\u0161tina", cy:"Cymraeg", da:"Dansk", de:"Deutsch",
@@ -220,7 +220,7 @@
         const trimmed = value.trim().toLowerCase();
         return owns(HIGHLIGHT_COLOR_MAP, trimmed) || /^#[0-9a-f]{6}$/.test(trimmed) ? trimmed : "default";
     }
-    // The language of Conduit settings. English is built in; every other one is a file in the patched APK
+    // The language of Velocity Patches Discord settings. English is built in; every other one is a file in the patched APK
     // (assets/venus/i18n), read once when it's first needed, so none of them slows down Discord's start.
     const UI_LANGUAGES = [["en","English","English"],["bg","\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438","Bulgarian"],["cs","\u010ce\u0161tina","Czech"],
         ["da","Dansk","Danish"],["de","Deutsch","German"],["el","\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac","Greek"],["es","Espa\u00f1ol","Spanish"],
@@ -238,7 +238,7 @@
     // A language file that couldn't be read: English is shown instead.
     const EMPTY_PACK = Object.freeze({});
     let localeStore = null, cachedLocale = undefined, cachedLocaleCode = "en";
-    // Discord's language as one of Conduit's: "pt-BR" and "pt-PT" both read Portuguese, "es-419" Spanish.
+    // Discord's language as one of Velocity Patches Discord's: "pt-BR" and "pt-PT" both read Portuguese, "es-419" Spanish.
     function languageFor(locale) {
         if (typeof locale !== "string") return "en";
         const parts = locale.replace("_", "-").split("-"), base = parts[0].toLowerCase(), region = (parts[1] || "").toUpperCase();
@@ -256,7 +256,7 @@
         cachedLocale = locale;
         return cachedLocaleCode = languageFor(locale);
     }
-    // Every Conduit text goes through here: the chosen language's wording, or the English one until it has loaded
+    // Every Velocity Patches Discord text goes through here: the chosen language's wording, or the English one until it has loaded
     // (or when it has no wording for it). {name} parts are filled in afterwards, so numbers are never translated.
     function tr(text, vars) {
         let out = text;
@@ -268,7 +268,7 @@
         }
         return vars ? out.replace(/\{(\w+)\}/g, (match, name) => vars[name] != null ? String(vars[name]) : match) : out;
     }
-    // Which plural form a whole number takes in each Conduit language (CLDR's rules). Discord's Hermes has no
+    // Which plural form a whole number takes in each Velocity Patches Discord language (CLDR's rules). Discord's Hermes has no
     // Intl.PluralRules, so these are built in: Russian needs "21 перевод" and "22 перевода", French "0 traduction".
     function pluralKind(code, n) {
         n = Math.abs(Math.floor(n));
@@ -310,7 +310,7 @@
         diagSendStrings();
         if (features.backgroundMedia) backgroundMediaLabels();
         notify("*");
-        // Only the "Translated from ..." line under a translation is in Conduit's language: redraw just those rows,
+        // Only the "Translated from ..." line under a translation is in Velocity Patches Discord's language: redraw just those rows,
         // not every message on screen, and nothing while the feature is off or that line isn't shown.
         if (features.translate && enabled("translate") && (settings.translateNote || settings.translateOriginal)) translateRelabel();
         // The timeout tag and the voice message Download button are drawn by Discord's native rows too.
@@ -485,14 +485,14 @@
             if (settings.language === value && status.storage !== "loading" && status.storage !== "waiting") return true;
             settings.language = value; dirty.add(key); save(); loadLanguage(uiLanguage()); languageChanged(); return true;
         }
-        // Which features the Features list hides. Like the language, it's about Conduit's own list, not a feature.
+        // Which features the Features list hides. Like the language, it's about Velocity Patches Discord's own list, not a feature.
         if (key === "hiddenFeatures") {
             const clean = hiddenFeaturesText(value);
             if (clean === undefined) return false;
             if (settings.hiddenFeatures === clean && status.storage !== "loading" && status.storage !== "waiting") return true;
             settings.hiddenFeatures = clean; dirty.add(key); save(); notify(key); return true;
         }
-        // Troubleshooting (About): Debug logging and the crash screen belong to Conduit itself, not to a feature.
+        // Troubleshooting (About): Debug logging and the crash screen belong to Velocity Patches Discord itself, not to a feature.
         if (key === "debugLog" || key === "crashScreen") {
             if (typeof value !== "boolean") return false;
             if (settings[key] === value && status.storage !== "loading" && status.storage !== "waiting") return true;
@@ -501,7 +501,47 @@
             else diagCall(value ? "screen:on" : "screen:off").catch(() => {});
             return true;
         }
+        if (key === "safeModeSnapshot") {
+            if (typeof value !== "string") return false;
+            const clean = value.split(",").filter((feature, index, all) => feature && feature !== "safeMode" &&
+                owns(FEATURE_ICONS, feature) && features[feature] && all.indexOf(feature) === index).join(",");
+            if (settings.safeModeSnapshot === clean && status.storage !== "loading" && status.storage !== "waiting") return true;
+            settings.safeModeSnapshot = clean; dirty.add(key); save(); notify(key); return true;
+        }
+        if (key === "safeMode") {
+            if (typeof value !== "boolean") return false;
+            if (settings.safeMode === value && status.storage !== "loading" && status.storage !== "waiting") return true;
+            if (backup.restoring) {
+                settings.safeMode = value; dirty.add(key); save(); notify(key); return true;
+            }
+            const fontWas = fontInUse, emojiWas = emojiInUse, previousRestoring = backup.restoring;
+            backup.restoring = true;
+            try {
+                if (value) {
+                    const restore = Object.keys(FEATURE_ICONS).filter(feature =>
+                        feature !== "safeMode" && features[feature] && settings[feature]);
+                    setSetting("safeModeSnapshot", restore.join(","));
+                    restore.forEach(feature => setSetting(feature, false));
+                    settings.safeMode = true;
+                    if (conduitRPC.active) rpcStop();
+                } else {
+                    const restore = (settings.safeModeSnapshot || "").split(",").filter(feature =>
+                        feature !== "safeMode" && owns(FEATURE_ICONS, feature) && features[feature]);
+                    settings.safeMode = false;
+                    setSetting("safeModeSnapshot", "");
+                    restore.forEach(feature => setSetting(feature, true));
+                }
+            } finally {
+                backup.restoring = previousRestoring;
+            }
+            dirty.add("safeMode"); save(); notify("*");
+            if (features.systemFont && settings.systemFont !== fontWas) later(() => askRestart("font"), 0);
+            else if (features.systemEmoji && settings.systemEmoji !== emojiWas) later(() => askRestart("emoji"), 0);
+            if (!value && features.platformSpoof && settings.platformSpoof && !previousRestoring) later(platformSpoofAsk, 0);
+            return true;
+        }
         if (!owns(settings, key) || !features[featureFor(key)]) return false;
+        if (settings.safeMode && value === true && owns(FEATURE_ICONS, key) && key !== "safeMode") setSetting("safeMode", false);
         // Remove anything: which buttons you removed, as a comma-separated list of spots.
         if (key === "hideAnythingSpots") {
             const clean = hideSpotsText(value);
@@ -885,7 +925,7 @@
         drainSizes();
         return entry.promise;
     }
-    // Every element Conduit draws goes through here with two to four arguments: those skip the arguments object and apply, and
+    // Every element Velocity Patches Discord draws goes through here with two to four arguments: those skip the arguments object and apply, and
     // keep the same argument count for createElement (Hermes HBC98: 15.6 -> 11.7 us per 100 el(type, props) calls, 1.33x;
     // 16.1 -> 12.7 us with one child, 1.23x; 16.4 -> 14.2 us with two, 1.10x).
     function el(type, props, a, b) {
@@ -1190,10 +1230,10 @@
         if (cached !== undefined) return cached;
         return featureTable[key] = /^customRPC[A-Z]/.test(key) ? "customRPC" : key === "reviewWarning" ? "reviewDB" : key === "emojis" || key === "stickers" || key === "hyperlinks" ? "freeNitro" : /^noDelete[A-Z]/.test(key) ? "noDelete" : /^pi[A-Z]/.test(key) ? "platformIndicators" : key === "pastelAll" || key === "pastelContent" ? "pastelize" : key === "readAllMode" ? "readAll" : /^compressUploads[A-Z]/.test(key) ? "compressUploads" : /^quests[A-Z]/.test(key) ? "quests" : /^badges[A-Z]/.test(key) ? "badges" : /^gesture[A-Z]/.test(key) ? "gestures" : /^translate[A-Z]/.test(key) ? "translate" : /^removedAlerts[A-Z]/.test(key) ? "removedAlerts" : /^userNotif[A-Z]/.test(key) ? "userNotif" : /^accountSwitcher[A-Z]/.test(key) ? "accountSwitcher" : /^hiddenChannels[A-Z]/.test(key) ? "hiddenChannels" : /^customThemes[A-Z]/.test(key) ? "customThemes" : /^materialYou[A-Z]/.test(key) ? "materialYou" : /^iconPacks[A-Z]/.test(key) ? "iconPacks" : /^messageHighlight[A-Z]/.test(key) ? "messageHighlight" : /^serverInfo[A-Z]/.test(key) ? "serverInfo" : /^fixEmbeds[A-Z]/.test(key) ? "fixEmbeds" : /^tenorGifs[A-Z]/.test(key) ? "tenorGifs" : /^hideBlocked[A-Z]/.test(key) ? "hideBlocked" : /^bulkDelete[A-Z]/.test(key) ? "bulkDelete" : /^expandBar[A-Z]/.test(key) ? "expandBar" : key === "systemFontSource" ? "systemFont" : key === "systemEmojiSource" ? "systemEmoji" : /^cleanChannels[A-Z]/.test(key) ? "cleanChannels" : /^voiceOptions[A-Z]/.test(key) ? "voiceOptions" : /^anonFiles[A-Z]/.test(key) ? "anonFiles" : /^staffTag[A-Z]/.test(key) ? "staffTag" : /^fullImages[A-Z]/.test(key) ? "fullImages" : /^alwaysTrust[A-Z]/.test(key) ? "alwaysTrust" : /^quietReplies[A-Z]/.test(key) ? "quietReplies" : /^viewRaw[A-Z]/.test(key) ? "viewRaw" : /^hideAnything[A-Z]/.test(key) ? "hideAnything" : /^guildLurk[A-Z]/.test(key) ? "guildLurk" : /^customIdle[A-Z]/.test(key) ? "customIdle" : /^fastDeleteChannels[A-Z]/.test(key) ? "fastDeleteChannels" : /^platformSpoof[A-Z]/.test(key) ? "platformSpoof" : /^silentEdit[A-Z]/.test(key) ? "silentEdit" : /^localEdit[A-Z]/.test(key) ? "localEdit" : /^listenAlong[A-Z]/.test(key) ? "listenAlong" : /^backgroundMedia[A-Z]/.test(key) ? "backgroundMedia" : /^fakeDeafen[A-Z]/.test(key) ? "fakeDeafen" : key;
     };
-    // Section titles are read whenever Discord draws the list, so they follow the language too. "Conduit" is a name.
+    // Section titles are read whenever Discord draws the list, so they follow the language too. "Velocity Patches Discord" is a name.
     function section(label, keys) {
         const entry = { settings: keys };
-        Object.defineProperty(entry, "label", { enumerable: true, configurable: true, get: () => label === "Conduit" ? label : tr(label) });
+        Object.defineProperty(entry, "label", { enumerable: true, configurable: true, get: () => label === "Velocity Patches Discord" ? label : tr(label) });
         return entry;
     }
     // Rows Discord draws from a hook (useTitle, useDescription) redraw when the language changes. Called outside
@@ -1224,7 +1264,7 @@
         youBarSettings:[7368, "SettingsIcon"], quests:[13929, "QuestsIcon"],
         badges:[9211, "TrophyIcon"], userNotif:[9045, "BellIcon"], accountSwitcher:[8489, "GroupIcon"], appIcons:[8506, "AppsIcon"],
         compressUploads:[11636, "FileUpIcon"], customThemes:[16412, "EyeDropperIcon"], iconPacks:[11449, "ImageSparkleIcon"], messageHighlight:[17627, "PaintbrushThinIcon"], customRPC:[5145,"CircleInformationIcon"], serverInfo:[5145, "CircleInformationIcon"], serverEdit:[10023, "PencilIcon"], fixEmbeds:[13836, "EmbedIcon"], tenorGifs:[10051, "GifIcon"], nitroThemes:[11733, "SparklesIcon"], materialYou:[16320, "PaintPaletteIcon"], hideBlocked:[11619, "ChatShieldIcon"], bulkDelete:[7144, "CircleCheckIcon"], experiments:[16650, "BeakerIcon"], cleanChannels:[12158, "MagicWandIcon"], noHandsfree:[13214, "HeadphonesIcon"], voiceOptions:[8501, "VoiceNormalIcon"], staffTag:[10563, "CrownIcon"], removedAlerts:[5135, "UserMinusIcon"], hideAnything:[10561, "XLargeIcon"], fullImages:[12328, "ImagesIcon"], alwaysTrust:[10733, "ShieldIcon"], noConfirmPin:[10641, "PinIcon"], clickableMentions:[8490, "AtIcon"], expandBar:[16089, "FullscreenEnterIcon"], quietReplies:[10654, "BellSlashIcon"], viewRaw:[12003, "FileIcon"], timeoutDuration:[5150, "ClockIcon"], dndBanners:[13603, "BellZIcon"], voiceDownload:[5143, "DownloadIcon"], cloneExpressions:[11657, "ImagePlusIcon"], listenAlong:[13214, "HeadphonesIcon"], backgroundMedia:[8674, "PlayIcon"], landscapeFull:[16089, "FullscreenEnterIcon"], silentLeave:[11384, "DoorExitIcon"], guildLurk:[6929, "EyeIcon"], silentEdit:[13745, "PencilSparkleIcon"], silentDelete:[5148, "TrashIcon"], localEdit:[10023, "PencilIcon"],
-        hypeSquad:[18747, "HomeIcon"], customIdle:[14205, "UserClockIcon"], pauseInvites:[8676, "PauseIcon"], fastDeleteChannels:[18679, "ChannelListIcon"], mutualGroupDMs:[8489, "GroupIcon"], platformSpoof:[5133, "UserPlatformIcon"]};
+        hypeSquad:[18747, "HomeIcon"], customIdle:[14205, "UserClockIcon"], pauseInvites:[8676, "PauseIcon"], fastDeleteChannels:[18679, "ChannelListIcon"], mutualGroupDMs:[8489, "GroupIcon"], platformSpoof:[5133, "UserPlatformIcon"], safeMode:[10733, "ShieldIcon"]};
     const venusIcons = new Map();
     function venusIcon(id, name, fallback) {
         const slot = id + ":" + name;
@@ -1255,7 +1295,7 @@
         };
     }
     // Features list search (#68): every row is found by its title, its description, its page's title, its group and the
-    // names of the options on its page, in the language Conduit is shown in and in English, ignoring case and accents.
+    // names of the options on its page, in the language Velocity Patches Discord is shown in and in English, ignoring case and accents.
     const FEATURE_KEYWORDS = {hideAnything:["Removal mode", "Message menu", "Quick reactions", "Voice message button", "Video call button", "Message requests", "Add Friends button", "New message button", "Quests banner", "Attach menu", "Polls", "Photos"], systemFont:["Import a font", "Font file"], systemEmoji:["Import an emoji font", "Emoji font"], noDelete:["Show edit history", "Keep after restarting", "Color", "Brightness", "Keep up to", "No limit", "Message log", "What to log", "Dismiss message", "Remove edit history"], translate:["Show the original language", "Show the original text", "Another language", "How you ask", "Top bar", "Message menu", "Don't translate"],
         freeNitro:["Emojis", "Stickers", "Short links"], pastelize:["Replace role colors", "Color message text"],
         platformIndicators:["In DMs", "In lists", "On profiles", "Hide the phone badge"], reviewDB:["Show the be-respectful note"],
@@ -1558,7 +1598,7 @@
     // Force system font applies from the next start: React Native measures text once but re-reads the
     // font on every draw, so switching mid-session would draw the new font in space sized for the old one.
     // Force system emojis is the same: Discord's native chat draws each emoji once and keeps it.
-    // Each one reopens Discord through its own native method, so no method carries two Conduit guards.
+    // Each one reopens Discord through its own native method, so no method carries two Velocity Patches Discord guards.
     function askRestart(kind) {
         const font = kind === "font";
         if (!features[font ? "systemFont" : "systemEmoji"] || !RN) return;
@@ -1576,7 +1616,7 @@
                 () => { status.storage = "save failed (session only)"; notify();
                     showProblem("Couldn't save the setting", tr("Discord didn't reopen, so nothing changed. Try again in a moment.")); });
         };
-        // Discord's own dialog, like every other Conduit question; Android's plain alert only if it isn't there.
+        // Discord's own dialog, like every other Velocity Patches Discord question; Android's plain alert only if it isn't there.
         const ui = reviewUI();
         if (ui.alerts && typeof ui.alerts.show === "function") try {
             ui.alerts.show({title, body, confirmText:tr("Reopen now"), cancelText:tr("Later"), onConfirm:reopen}); return;
@@ -1669,7 +1709,7 @@
         }
         // About: the version and how many features are on, whether settings are saved, and where to get help.
         next.VENUS_VERSION = { type: "static", parent: "VENUS_GENERAL", IconComponent: venusIcon(9365, "TagIcon", icon),
-            useTitle: () => "Conduit Patches " + revision, useDescription: function () { useSettings(); return featureSummary(); } };
+            useTitle: () => "Velocity Patches Discord " + revision, useDescription: function () { useSettings(); return featureSummary(); } };
         next.VENUS_STATUS = { type: "static", parent: "VENUS_GENERAL", IconComponent: venusIcon(5145, "CircleInformationIcon", icon),
             useTitle: () => { useLanguage(); return tr("Status"); }, useDescription: function () { useSettings(); return aboutText(); } };
         const links = [];
@@ -1680,8 +1720,8 @@
         }
         link("VENUS_LINK_CHANGES", "What's new", "Changes in each release.", REPO + "/blob/main/CHANGELOG.md", 11733, "SparklesIcon");
         link("VENUS_LINK_ISSUES", "Report a problem", "Opens a new issue on GitHub.", REPO + "/issues/new/choose", 12113, "BugIcon");
-        link("VENUS_LINK_SOURCE", "Source code", "Conduit Patches on GitHub. Free and open source (GPL-3.0).", REPO, 7972, "LinkExternalSmallIcon");
-        route("VENUS_GENERAL", "About", [section("Conduit Patches", ["VENUS_VERSION", "VENUS_STATUS"]), section("Links", links)], undefined,
+        link("VENUS_LINK_SOURCE", "Source code", "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).", REPO, 7972, "LinkExternalSmallIcon");
+        route("VENUS_GENERAL", "About", [section("Velocity Patches Discord", ["VENUS_VERSION", "VENUS_STATUS"]), section("Links", links)], undefined,
             venusIcon(5145, "CircleInformationIcon", icon));
         // The nodes above stay for Discord's settings search; the page itself is the designed About page.
         next.VENUS_GENERAL.screen.getComponent = () => AboutSettings;
@@ -1814,7 +1854,7 @@
         withOptions("appearance", "systemFont", "VENUS_SYSTEMFONT", "Use your phone's font", "Replaces Discord's font everywhere with your phone's or one you import. Android 9 or newer.", "Font", SystemFontSettings);
         withOptions("appearance", "systemEmoji", "VENUS_SYSTEMEMOJI", "Use your phone's emojis", "In chat, reactions and the emoji picker, or from an emoji font you import.", "Emojis", SystemEmojiSettings);
         withOptions("appearance", "hideAnything", "VENUS_HIDEANYTHING", "Remove anything", "Tap a button you never use to remove it, right where it is.", "Remove anything", HideAnythingSettings);
-        toggle("appearance", "youBarSettings", "Conduit button on profile bar", "A shortcut to Conduit next to the notifications bell.");
+        toggle("appearance", "youBarSettings", "Velocity Patches Discord button on profile bar", "A shortcut to Velocity Patches Discord next to the notifications bell.");
         toggle("appearance", "appIcons", "Unlock app icons", "Use any Discord app icon without Nitro.");
         toggle("appearance", "landscapeFull", "Full-screen chat in landscape", "Chat fills the screen sideways. Swipe from the left for servers and channels.");
         toggle("appearance", "nitroThemes", "Unlock Nitro themes", "Use Discord's gradient themes without Nitro, on this phone.");
@@ -1826,6 +1866,7 @@
         // Advanced
         withOptions("advanced", "customRPC", "VENUS_CUSTOMRPC", "Rich Presence", "Rich Presence", "Rich Presence", CustomRPCSettings);
         toggle("advanced", "experiments", "Unlock Discord experiments", "Adds Dev Tools to Settings, to try features Discord is still testing.");
+        toggle("advanced", "safeMode", "Safe Mode", "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.");
         withOptions("advanced", "voiceOptions", "VENUS_VOICEOPTIONS", "Voice channel options", "Choose the volume, audio output and sounds for voice channels.", "Voice channel options", VoiceOptionsSettings);
         toggle("advanced", "noHandsfree", "Keep Bluetooth audio clear in calls", "Headphones stay in music quality in calls. Your phone's mic picks up your voice.");
         withOptions("advanced", "fakeDeafen", "VENUS_FAKEDEAFEN", "Fake deafen", "Look deafened in a call while you can still hear. Choose whether your mic stays muted.", "Fake deafen", FakeDeafenSettings);
@@ -1856,17 +1897,17 @@
         // The nodes above stay for Discord's settings search; the page itself adds the Features search bar.
         const FeaturesPage = featuresPage(listed, keyOf);
         next[P].screen.getComponent = () => FeaturesPage;
-        // "5 of 26 on", right on the entry, so you see at a glance what Conduit is doing before opening it.
+        // "5 of 26 on", right on the entry, so you see at a glance what Velocity Patches Discord is doing before opening it.
         next[P].useDescription = function () {
             useSettings();
             const keys = Object.keys(FEATURE_ICONS).filter(key => features[key]);
             return tr("{on} of {total} turned on", {on:keys.filter(key => settings[key]).length, total:keys.length});
         };
-        // Language: the language Conduit settings are shown in, Discord's own by default.
+        // Language: the language Velocity Patches Discord settings are shown in, Discord's own by default.
         route("VENUS_LANGUAGE", "Language", [], undefined, venusIcon(9415, "LanguageIcon", icon));
         next.VENUS_LANGUAGE.screen.getComponent = () => LanguageSettings;
         next.VENUS_LANGUAGE.useDescription = function () { useLanguage(); return languageLabel(settings.language); };
-        // Backup and restore (#68): save every Conduit setting to a file or the clipboard and bring it back after patching again.
+        // Backup and restore (#68): save every Velocity Patches Discord setting to a file or the clipboard and bring it back after patching again.
         route("VENUS_BACKUP", "Backup and restore", [], undefined, venusIcon(11977, "ArrowsUpDownIcon", icon));
         next.VENUS_BACKUP.screen.getComponent = () => BackupSettings;
         next.VENUS_BACKUP.useDescription = function () { useSettings(); return backup.last ? backupAgo() : tr("Save your settings or bring them back."); };
@@ -1878,7 +1919,7 @@
     const FEATURE_GROUPS = [["messages", "Messages", 8471, "ChatIcon"], ["sending", "Sending", 5139, "SendMessageIcon"], ["people", "People", 4910, "FriendsIcon"],
         ["servers", "Servers", 9545, "ServerIcon"], ["appearance", "Appearance", 16320, "PaintPaletteIcon"], ["quests", "Quests", 13929, "QuestsIcon"],
         ["advanced", "Advanced", 16625, "WrenchIcon"]];
-    // Is Conduit working? One word and a colored dot, the way Discord shows a status.
+    // Is Velocity Patches Discord working? One word and a colored dot, the way Discord shows a status.
     function aboutHealth() {
         const storage = status.storage;
         if (storage === "ready" || storage === "saved") return status.archive === "save failed" || status.archive === "restore failed" || status.audioError ? "idle" : "online";
@@ -1892,8 +1933,8 @@
     // early: lines from Discord's start, kept in memory only until the settings are read, then kept or thrown away.
     const debugLog = {lines:[], early:[], dropped:0, dirty:false, timer:undefined, timerMs:0, installed:false, started:0,
         console:null, consoleHooks:null, fetch:null, fetchHook:null, xhr:null, xhrHooks:null, errors:null, errorHook:null, flux:false, appState:null, dimensions:null,
-        // How many lines of each level, every Discord module Conduit changes that has loaded (and any that failed), the Discord
-        // parts Conduit looked for and didn't find, the once-a-second actions counted instead of written, and the JS thread watch.
+        // How many lines of each level, every Discord module Velocity Patches Discord changes that has loaded (and any that failed), the Discord
+        // parts Velocity Patches Discord looked for and didn't find, the once-a-second actions counted instead of written, and the JS thread watch.
         counts:{E:0, W:0, I:0, D:0}, hooked:new Set(), hookFailed:new Map(), missing:new Set(), quiet:{count:0, since:0},
         health:null, healthTimer:undefined, state:"", stateAt:0, memory:null, summaryTimer:undefined};
     const diag = {last:null, busy:"", sentStrings:""};
@@ -2010,11 +2051,11 @@
         debugLog.timerMs = ms;
         debugLog.timer = later(() => { debugLog.timer = undefined; debugLogFlush(); }, ms, false);
     }
-    // The whole log as one file next to Conduit's settings, so a crash report (written natively) can include it.
+    // The whole log as one file next to Velocity Patches Discord's settings, so a crash report (written natively) can include it.
     function debugLogFlush() {
         if (!files || typeof files.writeFile !== "function" || !debugLog.dirty || status.storage === "waiting" || status.storage === "loading") return Promise.resolve();
         debugLog.dirty = false;
-        const head = "Conduit " + revision + " for Discord " + DISCORD_VERSION + ", recording since " + (debugLog.started ? new Date(debugLog.started).toString() : "-") +
+        const head = "Velocity Patches Discord " + revision + " for Discord " + DISCORD_VERSION + ", recording since " + (debugLog.started ? new Date(debugLog.started).toString() : "-") +
             (debugLog.dropped ? ", " + debugLog.dropped + " older lines left out" : "") +
             ", " + debugLog.counts.E + " errors and " + debugLog.counts.W + " warnings so far" + "\n" +
             "Levels: E error, W warning, I what happened, D detail. Times are this phone's clock.\n";
@@ -2028,7 +2069,7 @@
     }
     function dlogEnvironment() {
         const on = Object.keys(settings).filter(key => settings[key] === true);
-        dlog("I", "venus", "Conduit " + revision + " for Discord " + DISCORD_VERSION + ", settings " + status.storage + ", language " + uiLanguage() + " (" + settings.language + ")");
+        dlog("I", "venus", "Velocity Patches Discord " + revision + " for Discord " + DISCORD_VERSION + ", settings " + status.storage + ", language " + uiLanguage() + " (" + settings.language + ")");
         dlog("I", "venus", "patched in: " + Object.keys(features).filter(key => features[key]).join(", "));
         dlog("I", "venus", "turned on: " + (on.length ? on.join(", ") : "nothing"));
         try {
@@ -2081,10 +2122,10 @@
             const wanted = [];
             for (let i = 0; i < targetModules.length; i++) if (targetModules[i] === 1) wanted.push(i);
             const waiting = wanted.filter(id => !debugLog.hooked.has(id));
-            dlog("I", "hooks", debugLog.hooked.size + " of the " + wanted.length + " Discord modules Conduit changes have loaded" +
+            dlog("I", "hooks", debugLog.hooked.size + " of the " + wanted.length + " Discord modules Velocity Patches Discord changes have loaded" +
                 (waiting.length ? "; not loaded yet (normal for screens you haven't opened): " + waiting.join(",") : ""));
             if (debugLog.hookFailed.size) dlog("E", "hooks", "couldn't change " + Array.from(debugLog.hookFailed).map(entry => "module " + entry[0] + " (" + entry[1].slice(0, 300) + ")").join("; "));
-            if (debugLog.missing.size) dlog("I", "hooks", "Discord parts Conduit looked for and didn't find (some are fallbacks Conduit tries first, so not all are problems): " + Array.from(debugLog.missing).slice(0, 80).join(", "));
+            if (debugLog.missing.size) dlog("I", "hooks", "Discord parts Velocity Patches Discord looked for and didn't find (some are fallbacks Velocity Patches Discord tries first, so not all are problems): " + Array.from(debugLog.missing).slice(0, 80).join(", "));
             const c = debugLog.counts;
             dlog("I", "venus", "so far: " + c.E + " errors, " + c.W + " warnings, " + (c.I + c.D) + " other lines; " + dlogHeap() + "; settings " + status.storage +
                 "; app " + (debugLog.state || "?") + (debugLog.stateAt ? " for " + dlogDuration(Date.now() - debugLog.stateAt) : ""));
@@ -2137,7 +2178,7 @@
         if (restCount) text += " {" + rest + (restCount > 12 ? ",+" + (restCount - 12) : "") + "}";
         return text;
     }
-    // Everything Discord does that Conduit can see: console output, JavaScript errors, every request and how it ended,
+    // Everything Discord does that Velocity Patches Discord can see: console output, JavaScript errors, every request and how it ended,
     // every Flux action (types and ids, never their contents), the app going to the background, screen size changes.
     function debugLogStart() {
         if (!settings.debugLog || debugLog.installed) return;
@@ -2346,7 +2387,7 @@
         if (!files || typeof files.clearFolder !== "function") return Promise.reject(new Error("unavailable"));
         return Promise.resolve().then(() => files.clearFolder(DIAG_PREFIX + action, argument == null ? "" : String(argument)));
     }
-    // The crash screen is drawn natively before Conduit runs, so it gets its texts in Conduit's language ahead of time.
+    // The crash screen is drawn natively before Velocity Patches Discord runs, so it gets its texts in Velocity Patches Discord's language ahead of time.
     function diagSendStrings() {
         if (!files || status.storage === "waiting" || status.storage === "loading") return;
         const text = JSON.stringify({crashed:tr("Discord crashed"), anr:tr("Discord stopped responding"),
@@ -2372,7 +2413,7 @@
         diagCall("show").catch(() => showProblem("Couldn't open the crash screen", tr("Try again in a moment.")));
     }
     function diagBusy(kind) { diag.busy = kind; notify("diag"); }
-    // Export logs / Copy logs: Conduit's log, the last crash, the phone and Discord, and Discord's own log (logcat),
+    // Export logs / Copy logs: Velocity Patches Discord's log, the last crash, the phone and Discord, and Discord's own log (logcat),
     // put together natively (Diagnostics.troubleshootingReport). Works with Debug logging off too, just with less in it.
     function debugLogExport(toClipboard) {
         if (diag.busy) return;
@@ -2417,7 +2458,7 @@
         if (!Row && !Switch) return null;
         return el(Group, {key:"troubleshooting", title:tr("Troubleshooting")},
             Switch ? el(Switch, {key:"debugLog", label:tr("Debug logging"),
-                subLabel:tr("Records what Discord and Conduit do, so a problem can be tracked down. Discord runs a little slower while it's on."),
+                subLabel:tr("Records what Discord and Velocity Patches Discord do, so a problem can be tracked down. Discord runs a little slower while it's on."),
                 icon:rowIcon(6393, "ClipboardListIcon"), value:!!settings.debugLog, onValueChange:value => { animateLayout(); setSetting("debugLog", value); }}) : null,
             Switch ? el(Switch, {key:"crashScreen", label:tr("Crash screen"), subLabel:tr("After Discord crashes, shows what went wrong, with Copy, Share and Export."),
                 icon:rowIcon(6573, "CircleXIcon"), value:!!settings.crashScreen, onValueChange:value => setSetting("crashScreen", value)}) : null,
@@ -2463,7 +2504,7 @@
             el(RN.View, {key:"hero", style:s.hero},
                 el(RN.View, {style:{alignItems:"center", gap:6}, accessible:true},
                     popIn("logo", el(RN.View, {style:s.logo}, el(Sparkles, {size:"lg", color:"#ffffff"}))),
-                    text("Conduit Patches " + revision, "heading-lg/bold", "text-strong", {color:"#f2f3f5", fontSize:20, fontWeight:"700"}),
+                    text("Velocity Patches Discord " + revision, "heading-lg/bold", "text-strong", {color:"#f2f3f5", fontSize:20, fontWeight:"700"}),
                     text(tr("For Discord {version}", {version:DISCORD_VERSION}), "text-sm/medium", "text-muted", {color:"#949ba4", fontSize:14})),
                 el(RN.View, {style:{alignSelf:"stretch", gap:10, marginTop:14}},
                     text(keys.length ? tr("{on} of {total} turned on", {on, total:keys.length}) : tr("No features were patched in."), "text-md/semibold", "text-strong", {color:"#f2f3f5", fontSize:16, fontWeight:"600"}),
@@ -2479,7 +2520,7 @@
             el(Group, {key:"links", title:tr("Links")},
                 linkRow("changes", "What's new", "Changes in each release.", REPO + "/blob/main/CHANGELOG.md", 11733, "SparklesIcon"),
                 linkRow("issues", "Report a problem", "Opens a new issue on GitHub.", REPO + "/issues/new/choose", 12113, "BugIcon"),
-                linkRow("source", "Source code", "Conduit Patches on GitHub. Free and open source (GPL-3.0).", REPO, 7972, "LinkExternalSmallIcon")),
+                linkRow("source", "Source code", "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).", REPO, 7972, "LinkExternalSmallIcon")),
             troubleshootingGroup(ui),
             footnote("note", "Nothing is tracked, and everything works offline except the features that say they use a service.")];
         return settingsBody(ui, groups);
@@ -2496,13 +2537,13 @@
         if (!React || !RN) return null;
         const choices = [["auto", tr("Same as Discord"), tr("Follows Discord's Language setting.")]].concat(UI_LANGUAGES.map(([code, name, english]) => [code, name, english === name ? null : english]));
         const groups = [
-            radioGroup(ui, "language", "Show Conduit settings in", "language", true, choices, true),
-            footnote("note", i18n.loading.has(uiLanguage()) ? "Loading the language…" : "Only Conduit's own settings and messages change. Discord's language is set in Discord's Language settings.")];
+            radioGroup(ui, "language", "Show Velocity Patches Discord settings in", "language", true, choices, true),
+            footnote("note", i18n.loading.has(uiLanguage()) ? "Loading the language…" : "Only Velocity Patches Discord's own settings and messages change. Discord's language is set in Discord's Language settings.")];
         return settingsBody(ui, groups);
     }
-    // Backup and restore (#68): every Conduit setting in one small JSON file, so patching again or a new phone doesn't
+    // Backup and restore (#68): every Velocity Patches Discord setting in one small JSON file, so patching again or a new phone doesn't
     // mean setting everything up again. Never includes the ReviewDB sign-in, saved accounts or kept deleted messages.
-    const BACKUP_APP = "Conduit Patches", BACKUP_FORMAT = 1, BACKUP_MAX_BYTES = 1024 * 1024;
+    const BACKUP_APP = "Velocity Patches Discord", BACKUP_FORMAT = 1, BACKUP_MAX_BYTES = 1024 * 1024;
     function backupDate(ms) {
         const d = new Date(ms), pad = n => (n < 10 ? "0" : "") + n;
         return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
@@ -2542,16 +2583,16 @@
     }
     // A backup, or a plain venus-patches.json settings file, read back. Throws a message you can show when it isn't one.
     function backupParse(text) {
-        if (typeof text !== "string" || !text.trim()) throw new Error(tr("That isn't a Conduit backup."));
+        if (typeof text !== "string" || !text.trim()) throw new Error(tr("That isn't a Velocity Patches Discord backup."));
         if (text.length > BACKUP_MAX_BYTES) throw new Error(tr("That backup is too large."));
         let data;
-        try { data = JSON.parse(text.trim()); } catch (_) { throw new Error(tr("That isn't a Conduit backup.")); }
-        if (!data || typeof data !== "object" || Array.isArray(data)) throw new Error(tr("That isn't a Conduit backup."));
-        const wrapped = data.app === BACKUP_APP && data.settings && typeof data.settings === "object" && !Array.isArray(data.settings);
-        if (wrapped && typeof data.format === "number" && data.format > BACKUP_FORMAT) throw new Error(tr("This backup is from a newer Conduit. Update Conduit to restore it."));
+        try { data = JSON.parse(text.trim()); } catch (_) { throw new Error(tr("That isn't a Velocity Patches Discord backup.")); }
+        if (!data || typeof data !== "object" || Array.isArray(data)) throw new Error(tr("That isn't a Velocity Patches Discord backup."));
+        const wrapped = (data.app === BACKUP_APP || data.app === "Conduit Patches") && data.settings && typeof data.settings === "object" && !Array.isArray(data.settings);
+        if (wrapped && typeof data.format === "number" && data.format > BACKUP_FORMAT) throw new Error(tr("This backup is from a newer Velocity Patches Discord. Update Velocity Patches Discord to restore it."));
         const raw = migrateSettings(Object.assign({}, wrapped ? data.settings : data)), values = {}, defaults = defaultSettings();
         Object.keys(defaults).forEach(key => { const value = acceptedSetting(key, raw[key]); if (value !== undefined) values[key] = value; });
-        if (!Object.keys(values).length) throw new Error(tr("That isn't a Conduit backup."));
+        if (!Object.keys(values).length) throw new Error(tr("That isn't a Velocity Patches Discord backup."));
         const people = Array.isArray(wrapped ? data.people : data.userNotifIds) ? (wrapped ? data.people : data.userNotifIds)
             .filter(id => typeof id === "string" && /^\d{17,20}$/.test(id)).slice(0, USER_NOTIF_MAX_IDS) : null;
         let themes = null;
@@ -2590,7 +2631,7 @@
         }
         return {values, people, themes, iconPacks:packs, servers, localEdits:edited, version:wrapped && typeof data.version === "string" ? data.version.slice(0, 24) : "", created:Number.isFinite(created) ? created : 0};
     }
-    // Puts a backup in place: every setting it has, the rest back to how Conduit starts. Switches go through setSetting,
+    // Puts a backup in place: every setting it has, the rest back to how Velocity Patches Discord starts. Switches go through setSetting,
     // so everything they start or stop (Quests, themes, kept messages) happens as if you'd flipped them yourself.
     function backupApply(parsed, reset) {
         const fontWas = fontInUse, emojiWas = emojiInUse, fontSourceWas = fontSourceInUse, emojiSourceWas = emojiSourceInUse, defaults = defaultSettings();
@@ -2598,7 +2639,7 @@
         try {
             animateLayout();
             Object.keys(defaults).forEach(key => {
-                if (key !== "language" && key !== "hiddenFeatures" && !features[featureFor(key)]) return;
+                if (key !== "language" && key !== "hiddenFeatures" && key !== "safeModeSnapshot" && !features[featureFor(key)]) return;
                 setSetting(key, owns(parsed.values, key) ? parsed.values[key] : defaults[key]);
             });
             // Reset turns Complete badges off on every account, not only the signed-in one.
@@ -2640,9 +2681,9 @@
         try { parsed = backupParse(text); }
         catch (error) { showProblem("Couldn't restore", String(error && error.message || error)); return; }
         const on = Object.keys(FEATURE_ICONS).filter(key => features[key] && parsed.values[key] === true).length;
-        const from = parsed.created ? (parsed.version ? tr("Made with Conduit {version} on {date}.", {version:parsed.version, date:backupDate(parsed.created)}) :
+        const from = parsed.created ? (parsed.version ? tr("Made with Velocity Patches Discord {version} on {date}.", {version:parsed.version, date:backupDate(parsed.created)}) :
             tr("Made on {date}.", {date:backupDate(parsed.created)})) + " " : "";
-        confirmAction("Restore this backup?", from + pl(on, "{n} feature will be on.", "{n} features will be on.") + " " + tr("Your current Conduit settings will be replaced."),
+        confirmAction("Restore this backup?", from + pl(on, "{n} feature will be on.", "{n} features will be on.") + " " + tr("Your current Velocity Patches Discord settings will be replaced."),
             "Restore", () => backupApply(parsed));
     }
     // A short alert that something didn't work, with the reason.
@@ -2715,12 +2756,12 @@
         const clip = reviewUI().clipboard || RN && RN.Clipboard;
         if (!clip || typeof clip.getString !== "function") return;
         Promise.resolve().then(() => clip.getString()).then(text => {
-            if (typeof text !== "string" || !text.trim()) showProblem("Couldn't restore", tr("Your clipboard is empty. Copy a Conduit backup first."));
+            if (typeof text !== "string" || !text.trim()) showProblem("Couldn't restore", tr("Your clipboard is empty. Copy a Velocity Patches Discord backup first."));
             else backupConfirm(text);
-        }).catch(() => showProblem("Couldn't restore", tr("Your clipboard is empty. Copy a Conduit backup first.")));
+        }).catch(() => showProblem("Couldn't restore", tr("Your clipboard is empty. Copy a Velocity Patches Discord backup first.")));
     }
     function backupReset() {
-        confirmAction("Reset to defaults?", "Every feature turns off and every option goes back to how Conduit starts. Your themes, people and server edits stay.", "Reset",
+        confirmAction("Reset to defaults?", "Every feature turns off and every option goes back to how Velocity Patches Discord starts. Your themes, people and server edits stay.", "Reset",
             () => backupApply({values:Object.assign({}, defaultSettings(), {language:settings.language, hiddenFeatures:settings.hiddenFeatures}), people:null, themes:null}, true));
     }
     const BACKUP_DARK = {chip:{flexDirection:"row", alignItems:"center", gap:6, paddingHorizontal:10, paddingVertical:6, borderRadius:14, backgroundColor:"#4e50584d"}};
@@ -2752,20 +2793,20 @@
                 canFile ? backupRow("file", busy === "save" ? "Saving…" : "Save to a file", "Choose where to keep it, like Downloads or Drive.", 5143, "DownloadIcon", backupToFile) : null,
                 backupRow("copy", "Copy to clipboard", "Paste it into a note or a message to yourself.", 5141, "CopyIcon", backupToClipboard)),
             el(Group, {key:"restore", title:tr("Restore")},
-                canFile ? backupRow("open", busy === "restore" ? "Opening…" : "Restore from a file", "Pick a Conduit backup you saved before.", 9705, "UploadIcon", backupFromFile) : null,
+                canFile ? backupRow("open", busy === "restore" ? "Opening…" : "Restore from a file", "Pick a Velocity Patches Discord backup you saved before.", 9705, "UploadIcon", backupFromFile) : null,
                 backupRow("paste", "Paste from clipboard", "Restore a backup you copied.", 6393, "ClipboardListIcon", backupFromClipboard)),
             backupIsDefault() ? null : el(Group, {key:"manage", title:tr("Manage")},
                 actionRow(ui, "reset", "Reset to defaults", "Turns every feature off and puts every option back.", backupReset, !!busy, true)),
-            footnote("note", "Restoring replaces your Conduit settings. Your ReviewDB sign-in, saved accounts and kept deleted messages are never included.")];
+            footnote("note", "Restoring replaces your Velocity Patches Discord settings. Your ReviewDB sign-in, saved accounts and kept deleted messages are never included.")];
         return settingsBody(ui, groups);
     }
     function settingsSections(orig, self, args) {
         const config = args[0];
         if (!status.menu || !config || !Array.isArray(config.sections)) return orig.apply(self, args);
         const index = config.sections.findIndex(s => s && Array.isArray(s.settings) && s.settings.includes("ACCOUNT"));
-        if (index < 0 || config.sections.some(s => s && s.label === "Conduit")) return orig.apply(self, args);
+        if (index < 0 || config.sections.some(s => s && s.label === "Velocity Patches Discord")) return orig.apply(self, args);
         const sections = config.sections.slice();
-        sections.splice(index + 1, 0, section("Conduit", ["VENUS_PLUGINS", "VENUS_LANGUAGE", "VENUS_BACKUP", "VENUS_GENERAL"]));
+        sections.splice(index + 1, 0, section("Velocity Patches Discord", ["VENUS_PLUGINS", "VENUS_LANGUAGE", "VENUS_BACKUP", "VENUS_GENERAL"]));
         const next = Array.from(args); next[0] = Object.assign({}, config, { sections });
         return orig.apply(self, next);
     }
@@ -3224,7 +3265,7 @@
     }
     // Every locked row asks for its name on every render (label, directory, details), and the answer was rebuilt
     // each time: two store lookups, three name checks and a placeholder translation. It only changes with the
-    // remembered names (hiddenNamesVersion, which an account switch also bumps), Conduit's language and the server's
+    // remembered names (hiddenNamesVersion, which an account switch also bumps), Velocity Patches Discord's language and the server's
     // channel tables (getGuildChannelsVersion), so one answer per record is kept until one of those moves.
     // Hermes HBC98: 336 -> 211 us median per render of 60 locked rows (1.58x).
     let hiddenNameMemo = new WeakMap();
@@ -3417,7 +3458,7 @@
         sent[0] = Object.assign({}, state, fakeDeaf.muted ? {selfMute:true, selfDeaf:true} : {selfDeaf:true});
         return orig.apply(self, sent);
     }
-    // The row's own icon: a 72x72 PNG shipped inside Conduit, drawn through Discord's icon image so it takes the theme's icon color.
+    // The row's own icon: a 72x72 PNG shipped inside Velocity Patches Discord, drawn through Discord's icon image so it takes the theme's icon color.
     const FAKE_DEAF_ICON = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAICklEQVR4Xu2caYgcRRTH/293w8RrZvGLwRuV6AdFibd+EMUoisYDNCqZRDQxEfGIB+hsNL05JqI5iCgGL5LMEtwIxgM1HrhKiFdA8ESDijeLX9xZFbK4O0/epmbp6anqru6ubojsD/ZDprurq/793qvqV69Dl926GJOY6ZgUJ5xJgSLoijrBNbVq73SATwZwIjOfRESHAzgCQDeAqep+ewAMAfiFmX8lop8B7ATos3Jl6W5XfXrlibVT6vXhmwGcJfdjxqNze7zf/O1T1jFIdeJ8AJcCuATA9JQDHATwJoAtpVJxYNZtd/+bpD3p19BQvZ+IrvJdP8iM0/wiZSbQ5pXeYUS4D8BsANOSDMICEatf9+TDMIjTZH254t3V/IdzF1MuVFHCNF0mK0T4O4mwsFb1+pnH7pzbs7yeQhxBXH0CZwJtXvlgiaizF+CFvliSF/Ig5hF1/gRgqemmEZbT5CPnAtWq3jUAHsvQlWz5Mo04zLytu7v0rDOBVAB+Wp6e7QgUuwB8AOAbAD8w4ytg7G85Ji6y1xq7DgH4aADHqFnm7IgAv6xc8V7Q9cPGcpQ4s4NBP3GQVkF4G4DTLcXZDuBlZrwanEptUW58PYCbAvcVcbSulUYcIZFAKhC/b+FSsp7pB6jqcv0iqD5cIBZYrnhvubacJrEFqlU9sZhXLMTZxIyepNaSlrSW0yTWLKbEeRtAKWQAstK93fRU88BGHADbu7vbY04Qa4E2r1x6GICXIsTZVCoVFyRd3brARhxTQNZhJdCmFUsOIiJxq0NDBmEMlHlhI46t5cRysY6OrkcAzNANlJlHiegG0xSbFzbixLGcJpHpjlrVk5fMRSHizN8XxIlrOVYCiWsBkIWgFiK6v1zxNpmO54Gt5ZRKxVlJYmOoBSnXMsWdreWKtyYPEUzYimMzW5kwBum+Vd6xjQbPJyLdtbsLheKcfV0c9Q55IvPYWlMWwCgQM+4lItPxxdfekyxR5QIXllOrer0AHpL+EHUeBeBGXd+0LibWw8zzDYPZUK54r7sYaBJsxIkKyH5xFLPl3dJaIGaIa7VZj0zpzLxC11Ae2IgjU3lYQK5VvYualuNjKhFusRJo65q1UyTroDuZiJ6Z29PbktTOC1txLAKypE903CL3CB5oc7GRkeGZuhXz3gUhVucliB+H4kjEedcwhmn1+vjmQgu6GHS5wXp2zHnA+z5vgWzEiYo5flTaRRJ2OmRRHCmQ5Fh05L4gtBEnKuYYeM7wu+zAmAVSb+xt+1YqOL9julsW2IpjEXPakKymoc/TgrNZi4sR0YUG9/o8z+BsI04ctwqiknjaHVoinOM/PxiDTjAoq01pZoGNOAndKsiHhv6fGyaQaQqU3YfMsRUniVtpaNn/asLMR4YJdJxBha8NvzvDRpw0bqXhB0M4kWKKCYIupt1DZ+bfnSlhQFNI0IIjt/JBPxq6IpUmRoEO0F3EPDas+90lc3t6rw5pzyrBHgdm/sdwfsvefIsFMbNWoP32O1j2tzKnXPHacivuLWcv3d3FP2wGFJlylTVQnqkNv0hJcsi2DA39ub/h3JaKlOA6qM3s5K1epV5zQ4nk3K1a6TzQMKAWbwmmNESgtk1Bos4igL8MDWZCueJJNVpmENEBAOval3K/CYICScVWWw6aiH6tVT1dY1KsJKJ+C+BjAC+WK57pRTAX+lZ5ZzKPv3SeAeCUQO2jD604QksBVlCg70z7XwbE2uRPRJVUwf21qidL+GqhUNySV+zyFWMuZk5XAylFo/6xBoO0dvEUE3nZ3TgyMvyR2svPFLGYen14J4AnHRSIird8ESbQDoejmcHMH9SqXtziKmtqVW8RM96LUaNkQ0uVWmAWG48lzlB57Y21qnePs0YVIo6yGqeFoszjlW8TtAikMobOCrV9rHZpSWo/S1zKNbuD9Uy6haIpZ5uW9bKdlLYR1YZxOzwlbwSv1wlkyralpcSMrWrXJBFyrbQRUaOUhrb9vjaB1KZgVm/vM0ZGhpclHYG6VluG44BBXVWc6V1ss4MbamHme5NM/3KNXJtVvwA8pWtbKxAzPy4vqVl0Rs1sfXHe79S5fSG1AmnZwxxDIEnQyy5q2ruGMF2V1lihzk37lVAY/aZqXJOLSXZ/dVZWpFikqtdCCatwc8QeqeM2tWUUSNZERJT1VvO6sFlNHVvnSAgTj4QVuRsFEhqNUVE2qxlNmK5qAbSoY1m61qAUT4U9gFCB5i1ZITmgBRk/QW0tgCLsmAvmRX1fFiqQoNZFG1z0xsDxIW2HHUuLfFkYuSEaKZBQKBTvAPBp2h4ZCPusQVv15YBdpVJRPheNxEogSXwx86yM45GO8W/IHCMf7l5lWxJsJZCgiheuDKYkHSBZTBNhx5IwCNB5pjWPDmuBBJVvlgq00A9nYxJWEBp2LC7S51lxv1uLJVBTJCKc6sjd6o3G6IumkapjLh6GLFVmJtlQiC2QIItIZpZdg7SBe7laSmhRx5bHNZUAn0pfk4gjJBKoGZMKhaL8lw5JlwADNp8yqHMGEoq0QfqYpvjL6nsxE2pb59Za1ZMkm2T5wr4n8zPQaIxeYTtoObejo+tltbVkg7jUAhcF74ktyI90pNEYleq0h8NecNWxhwuF4sVhrhVEzpVrAEg+yBiTmu1LX1yII8T+qDcKKQQlouvUzmazIEum60+Y+fk05i5Ibqijo0uq4ps7p7JWEtFec9F+EOcC/d9w4mL/ZyYFimBSoEmB0jFpQRH8B5kI7yv7UOJwAAAAAElFTkSuQmCC";
     function FakeDeafIcon(props) {
         const Base = inspectedExport(4912, "BaseIconImage");
@@ -4089,7 +4130,7 @@
         const entry = dropDeleted(key);
         if (!entry) return;
         invalidateDeleted(); persistDeleted();
-        // Discord's own dispatch, bound before Conduit hooked it, so the removal isn't kept again.
+        // Discord's own dispatch, bound before Velocity Patches Discord hooked it, so the removal isn't kept again.
         if (dispatcher) try { dispatcher({type:"MESSAGE_DELETE", channelId:entry.channelId, id:entry.id}); } catch (_) {}
         notify("noDelete");
         reviewToast(reviewUI(), "Deleted message dismissed", venusIcon(6927, "EyeSlashIcon"));
@@ -4459,7 +4500,7 @@
         try { real = guildChannels && guild ? guildChannels.getDefaultChannel(guild) : null; } catch (_) { real = null; }
         return real && real.id && !hiddenChannel(real) ? real.id : null;
     }
-    // "A, B and C" in Conduit's language. Japanese and Chinese join with "、" and no spaces (「8 日、7 時間と7 分」),
+    // "A, B and C" in Velocity Patches Discord's language. Japanese and Chinese join with "、" and no spaces (「8 日、7 時間と7 分」),
     // Thai with plain spaces, as it has no commas.
     function joinAnd(parts) {
         if (parts.length < 2) return parts[0] || "";
@@ -4506,7 +4547,7 @@
         const relative = preciseAgo(ms);
         if (relative === null) return {relative:fallback, absolute:null};
         let absolute = null;
-        // The date and time to the minute, in the language Conduit is shown in: seconds are noise here.
+        // The date and time to the minute, in the language Velocity Patches Discord is shown in: seconds are noise here.
         try { absolute = new Date(ms).toLocaleString(uiLanguage(), {year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"2-digit"}); } catch (_) {}
         if (!absolute) try { absolute = new Date(ms).toLocaleString(); } catch (_) {}
         return {relative, absolute};
@@ -4970,7 +5011,7 @@
         } catch (_) { return null; }
     }
     // Tactile feedback through Discord's own haptics (HapticUtils 5156 / HapticFeedbackTypes 5157). Switches already buzz on their
-    // own (Discord's FormSwitch does it); this covers the controls that don't: tap gestures (IMPACT_LIGHT), Conduit's segmented
+    // own (Discord's FormSwitch does it); this covers the controls that don't: tap gestures (IMPACT_LIGHT), Velocity Patches Discord's segmented
     // control (IMPACT_MEDIUM, like Discord's own), radio rows and color swatches (SELECTION).
     const haptics = {trigger:null, types:null};
     function haptic(kind) {
@@ -6435,7 +6476,7 @@
     //   off, longer weekends, afternoon and evening play in the phone's time zone, breaks between games, at most 2
     //   games at once and never the same game twice at once;
     // - each grant continues where the last one stopped, newest days first, so a day is never filled twice or stacked;
-    // - today, and days Conduit already played on in the background, are left alone;
+    // - today, and days Velocity Patches Discord already played on in the background, are left alone;
     // - the badge's total never goes past what those days could hold, or the 5,0 hour top tier.
     const BADGE_GAME_TIME_START = new Date(2025, 11, 8).getTime(), BADGE_GRANT_PENDING_MS = 72 * 3600 * 1000, BADGE_DAY_MS = 86400000;
     function badgeDayKey(ms) { const d = new Date(ms); return String(d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()); }
@@ -6525,7 +6566,7 @@
         save();
     }
     function badgeGrantRecord() { badgeAdoptLegacyGrant(); return badges.user && badges.grants[badges.user] || {at:0, hours:0, recent:[], days:{}}; }
-    // A day Conduit played on in the background already has real-time play, so nothing is added to it later.
+    // A day Velocity Patches Discord played on in the background already has real-time play, so nothing is added to it later.
     function badgeMarkLiveDay(forUser) {
         const user = forUser || badges.user;
         if (!user) return;
@@ -6551,7 +6592,7 @@
         return badges.roomCache;
     }
     // A session from a past day can be sent only once it's over (with an hour to spare), and only if it doesn't run on
-    // into a day Conduit played live: late sessions of yesterday can reach past midnight.
+    // into a day Velocity Patches Discord played live: late sessions of yesterday can reach past midnight.
     function badgeSessionFits(record, day, x) {
         const end = x.start + x.ms;
         if (end > Date.now() - 3600000) return false;
@@ -6561,7 +6602,7 @@
     function badgeGrantRecent() { const since = Date.now() - BADGE_GRANT_PENDING_MS; return badgeGrantRecord().recent.filter(r => r[0] > since); }
     // Hours the badge will show once Discord catches up: what it shows now, or what it showed when hours were last added
     // plus those hours, whichever is more, so hours that already show aren't counted twice. Test builds didn't save that
-    // reading; their grants count from zero, which is where the badge stood before Conduit had this feature.
+    // reading; their grants count from zero, which is where the badge stood before Velocity Patches Discord had this feature.
     // null while Discord hasn't loaded the badge.
     function badgeGrantHave() {
         const info = badgeInfo("GAME_TIME");
@@ -6806,7 +6847,7 @@
         if (step === 0) return el(RN.View, {style:danger.box},
             title(tr("Your account could be suspended or banned")),
             body(tr("Adding hours tells Discord you played games you never played. That breaks Discord's Terms of Service. People have reported accounts suspended for tools that do this, and hours added this way can't be taken back.")),
-            body(tr("Nobody outside Discord knows how likely that is. It could happen right away, weeks later or never. Leaving this off and letting Conduit play games in the background is much safer.")),
+            body(tr("Nobody outside Discord knows how likely that is. It could happen right away, weeks later or never. Leaving this off and letting Velocity Patches Discord play games in the background is much safer.")),
             check(0, tr("I understand this breaks Discord's rules.")),
             check(1, tr("I understand my account could be suspended or banned.")),
             check(2, tr("I understand added hours can't be removed.")),
@@ -7679,7 +7720,7 @@
     function fontFileRemove(kind) {
         const k = FONT_FILE_KINDS[kind], owner = kind === "font" ? "systemFont" : "systemEmoji";
         confirmAction(kind === "font" ? "Remove the font?" : "Remove the emoji font?",
-            kind === "font" ? "Conduit goes back to your phone's font." : "Conduit goes back to your phone's emojis.", "Remove", () => {
+            kind === "font" ? "Velocity Patches Discord goes back to your phone's font." : "Velocity Patches Discord goes back to your phone's emojis.", "Remove", () => {
             fontFileCall(kind, "remove").then(() => {
                 fontFiles[kind] = null; animateLayout(); notify(owner);
                 if (settings[k.source] === "file") setSetting(k.source, "phone");
@@ -7758,7 +7799,7 @@
     }
     // The message as everyone sees it: just the emoji or sticker, the way chat shows a link to one.
     // While on, it plays: you tap the emoji button in the message bar, pick a Nitro emoji from another server (unlocked
-    // by Conduit, so there's no lock icon on it), it's sent and everyone sees it; then the same with a sticker.
+    // by Velocity Patches Discord, so there's no lock icon on it), it's sent and everyone sees it; then the same with a sticker.
     function NitroPicker(props) {
         const k = props.k, s = props.s, Down = venusIcon(10859, "ChevronSmallDownIcon"),
             Search = venusIcon(7017, "MagnifyingGlassIcon"), Nitro = venusIcon(9327, "NitroWheelIcon"),
@@ -7815,9 +7856,9 @@
             kinds.forEach((kind, i) => {
                 steps.push([i ? 600 : 900, () => update({pulse:{who:"smile", id:kind}}), tr(kind === "emoji" ? "You open the emoji picker" : i ? "Then you open the sticker picker" : "You open the sticker picker")],
                     [400, () => { animateLayout(); update({picker:kind}); }],
-                    [1400, () => update({pulse:{who:"pick", id:"p" + kind}}), tr(kind === "emoji" ? "You pick a Nitro emoji from another server. Conduit unlocks it so there's no lock" :
-                        "You pick a Nitro sticker. Conduit unlocks it too")],
-                    [500, () => { animateLayout(); send(kind); }, tr(kind === "emoji" ? "Conduit sends it as {link}, and everyone sees the emoji" : "It's sent as {link} too, and everyone sees the sticker", {link})],
+                    [1400, () => update({pulse:{who:"pick", id:"p" + kind}}), tr(kind === "emoji" ? "You pick a Nitro emoji from another server. Velocity Patches Discord unlocks it so there's no lock" :
+                        "You pick a Nitro sticker. Velocity Patches Discord unlocks it too")],
+                    [500, () => { animateLayout(); send(kind); }, tr(kind === "emoji" ? "Velocity Patches Discord sends it as {link}, and everyone sees the emoji" : "It's sent as {link} too, and everyone sees the sticker", {link})],
                     [1200, () => {}]);
             });
             return steps;
@@ -7857,7 +7898,7 @@
         return settingsBody(ui,groups);
     }
     // Fix link previews: a sent link and the preview everyone sees, for the site picked in the row of marks above it.
-    // While on, it plays: you paste a link to a post, tap Send, Conduit changes the address and the post's preview opens
+    // While on, it plays: you paste a link to a post, tap Send, Velocity Patches Discord changes the address and the post's preview opens
     // under it. Off: the finished message, so the page always shows the result.
     const FIX_SAMPLES = {x:"/wumpus/status/1846602926837096812", instagram:"/reel/C5nYWo0P5yK/", tiktok:"/@wumpus/video/7137423965982592302",
         reddit:"/r/discordapp/comments/1g5x4b0/", bluesky:"/profile/wumpus.bsky.social/post/3l6oveex3ii2l", threads:"/@wumpus/post/DGkNlhDyGm9",
@@ -7899,7 +7940,7 @@
             [700, () => update({text:original.slice(0, 22)})], [250, () => update({text:original})],
             [1300, () => update({pulse:{who:"send", id:siteId}}), tr("You tap Send")],
             [350, () => { animateLayout(); update({text:"", sent:true}); },
-                live ? tr("Conduit sends it through {service}", {service:service.name}) : tr("{site} is off, so the link is sent as written", {site:site.name})],
+                live ? tr("Velocity Patches Discord sends it through {service}", {service:service.name}) : tr("{site} is off, so the link is sent as written", {site:site.name})],
             live ? [900, () => { animateLayout(); update({embed:true}); }, tr("Everyone sees the post, with its picture or video")] : null,
             [1600, () => {}]], [siteId, service.id, !!live]);
         const view = watching ? state : {text:"", sent:true, embed:!!live};
@@ -8062,7 +8103,7 @@
             service.lang && lang !== "off" ? footnote("translateNote", service.lang === "pixiv" ? "pixiv shows titles and tags in English, Chinese or Korean." :
                 "The translation shows with the original under it, for everyone in the chat.") : null,
             el(Group, {key:"privacy", title:tr("Privacy")},
-                toggle("clean", tr("Remove tracking from links"), tr("Drops share IDs like ?igsh= and ?si= from the links Conduit fixes."), rowIcon(10733, "ShieldIcon"), options.clean,
+                toggle("clean", tr("Remove tracking from links"), tr("Drops share IDs like ?igsh= and ?si= from the links Velocity Patches Discord fixes."), rowIcon(10733, "ShieldIcon"), options.clean,
                     value => fixSetOption(site.id, "clean", value))),
             changed ? el(Group, {key:"manage"}, actionRow(ui, "reset", "Reset to defaults", null, () => {
                 animateLayout(); fixResetOptions(site.id); fixSetChoice(site.id, site.services[0].id); }, !on, true)) : null]);
@@ -8238,7 +8279,7 @@
             .catch(error => { listenAlongStop(listenAlongProblem(error)); })
             .then(() => { if (listenAlongActive()) listenAlong.busy = false; });
     }
-    // The feature's own icon in Conduit's settings list, drawn through Discord's icon image so it takes the theme's icon color.
+    // The feature's own icon in Velocity Patches Discord's settings list, drawn through Discord's icon image so it takes the theme's icon color.
     function ListenAlongRowIcon(props) {
         const Base = inspectedExport(4912, "BaseIconImage");
         if (!Base) return null;
@@ -9039,7 +9080,7 @@
     // open({key, content, IconComponent}) queued a toast with no options, and ToastContainer (14287) then crashed Discord
     // reading its position.
     function showToast(ui,key,text,icon) {
-        // Only Conduit's own messages are written out. User activity notifications and Removed alerts show other people's names and
+        // Only Velocity Patches Discord's own messages are written out. User activity notifications and Removed alerts show other people's names and
         // what they wrote, so those only say that one was shown.
         if (settings.debugLog) try {
             const kind=String(key).split(":")[0];
@@ -9160,8 +9201,8 @@
                 hint:settings.noDeleteLimit ? "When it's full, the oldest is removed first." : null}),
             hasKept || look ? el(Group,{key:"clear",title:tr("Manage")},
                 look ? actionRow(ui,"look","Reset the look","Red at 50% brightness, as Discord draws a highlight.",() => { setSetting("noDeleteColor","default"); setSetting("noDeleteBrightness",50); setHexOpen(false); },!on) : null,
-                hasKept ? actionRow(ui,"clear","Clear kept messages","Removes every deleted message and edit history Conduit kept, from chat and from this phone. The message log stays.",
-                    () => confirmAction("Clear kept messages?","Every deleted message and edit history Conduit kept is removed. This can't be undone.","Clear",forgetKept),false,true) : null) : null,
+                hasKept ? actionRow(ui,"clear","Clear kept messages","Removes every deleted message and edit history Velocity Patches Discord kept, from chat and from this phone. The message log stays.",
+                    () => confirmAction("Clear kept messages?","Every deleted message and edit history Velocity Patches Discord kept is removed. This can't be undone.","Clear",forgetKept),false,true) : null) : null,
             footnote("note","Tap Dismiss message under a deleted message, or Remove edit history above an edited one, to clear it without restarting.")];
         return settingsBody(ui,groups);
         function toggle(key,label,subLabel,icon) { return switchRow(Switch,key,label,subLabel,icon); }
@@ -9363,7 +9404,7 @@
             filters:[["all", tr("All"), null], ["s", tr("Status"), ["s"]], ["m", tr("Messages"), ["m"]], ["t", tr("Typing"), ["t"]]]});
     }
     // Clear kept messages: every kept deletion leaves chat and the saved file, and so does edit history.
-    // Removals go through Discord's own dispatch, bound before Conduit hooked it, so they aren't kept again.
+    // Removals go through Discord's own dispatch, bound before Velocity Patches Discord hooked it, so they aren't kept again.
     function forgetKept() {
         const events=Array.from(deleted.values());
         deleted.clear(); deletedByChannel.clear(); edits.clear(); invalidateDeleted();
@@ -9653,7 +9694,7 @@
         if (typeof value.size === "number") return value.size;
         return typeof value === "object" ? Object.keys(value).length : 0;
     }
-    // 1284 -> "1,284" in the language Conduit is shown in, when Hermes has Intl; plain digits otherwise.
+    // 1284 -> "1,284" in the language Velocity Patches Discord is shown in, when Hermes has Intl; plain digits otherwise.
     function serverNumber(n) {
         if (typeof n !== "number" || !isFinite(n)) return "\u2014";
         try { const text = n.toLocaleString(uiLanguage()); if (typeof text === "string" && /\d/.test(text)) return text; } catch (_) {}
@@ -10180,7 +10221,7 @@
     function serverImageActions(url, name) {
         const ui = reviewUI();
         if (!ui.simpleSheet) return;
-        ui.simpleSheet({key:"ConduitMediaActions", header:{title:name}, options:[{
+        ui.simpleSheet({key:"Velocity Patches DiscordMediaActions", header:{title:name}, options:[{
             label:tr("Save"), onPress:() => serverDownloadImage(url, name)
         }]});
     }
@@ -10207,7 +10248,7 @@
     function openServerImage(url, name, downloadUrl) {
         const ui = reviewUI();
         if (!serverMediaUrl(url) || !ui.showSheet || !RN.Image) return;
-        const key = "ConduitMediaPreview:" + name;
+        const key = "Velocity Patches DiscordMediaPreview:" + name;
         const header = ui.Header ? el(ui.Header, {title:name,
             trailing:ui.Close ? el(ui.Close, {onPress:() => hideReviewSheet(ui, key)}) : undefined}) : undefined;
         ui.showSheet({key, stackingBehavior:"stack", content:el(ui.ActionSheet || RN.View, {header},
@@ -10334,7 +10375,7 @@
         const ui = reviewUI();
         if (!enabled("serverInfo") || !React || !RN || typeof ui.showSheet !== "function" || !ui.ActionSheet) return;
         const kind = type === "stickers" ? "stickers" : "emojis";
-        const key = "ConduitServerMedia:" + kind + ":" + guildId;
+        const key = "Velocity Patches DiscordServerMedia:" + kind + ":" + guildId;
         try { ui.showSheet({key, content:el(ServerMediaBrowser, {guildId, sheetKey:key, type:kind}), stackingBehavior:"stack"}); }
         catch (e) { showProblem("Couldn't open media browser", String(e && e.message || e)); }
     }
@@ -10923,7 +10964,7 @@
         try { if (typeof premiumOriginal.canUseClientThemes === "function") return !!capability("canUseClientThemes", record); } catch (_) {}
         return record.premiumType === 2;
     }
-    // Conduit keeps this account's look: a gradient unlocked without Nitro, or the look shared to every account.
+    // Velocity Patches Discord keeps this account's look: a gradient unlocked without Nitro, or the look shared to every account.
     function nitroThemeKeeps(user) { return !!user && (nitroThemeSharing() || enabled("nitroThemes") && !nitroThemeHasNitro(user)); }
     // Discord drops a gradient from accounts without Nitro, so for those it's left out of what is sent.
     function nitroThemeStrips(user) { return !!user && enabled("nitroThemes") && !nitroThemeHasNitro(user); }
@@ -11073,7 +11114,7 @@
     }
     // Remove anything: buttons you never use, removed right where they are. Each removable button is a "spot". Removal mode
     // (hideEdit.on, never saved) marks every spot on screen with a dashed outline and a red X; a tap on the X asks first, then the
-    // spot is added to hideAnythingSpots and disappears at once. Conduit -> Remove anything lists them to bring back.
+    // spot is added to hideAnythingSpots and disappears at once. Velocity Patches Discord -> Remove anything lists them to bring back.
     // Spots are matched by Discord's own components and icons, never by translated text.
     const HIDE_SPOTS = [
         ["chat.voice", "chat", 11492, "MicrophoneIcon"], ["chat.attach", "chat", 10327, "AttachmentIcon"], ["chat.apps", "chat", 8506, "AppsIcon"],
@@ -11158,13 +11199,13 @@
         "message.reminder":"Create Reminder", "message.apps":"Apps", "message.mention":"Mention", "message.copyLink":"Copy Message Link", "message.copyId":"Copy Message ID",
         "message.save":"Save Image", "message.copyMedia":"Copy Media Link", "message.publish":"Publish", "message.removeEmbeds":"Remove Embeds",
         "message.removeReactions":"Remove All Reactions", "message.report":"Report to Discord", "message.delete":"Delete Message"};
-    // Rows Conduit adds to that menu, by the key it gives them.
+    // Rows Velocity Patches Discord adds to that menu, by the key it gives them.
     const MESSAGE_VENUS_ROWS = {"venus-translate":"message.translate", "venus-local-edit":"message.localEdit", "venus-bulk-delete":"message.select", "venus-view-raw":"message.viewRaw"};
     // A message in Discord's language (intl 1126), or "" when it isn't there.
     function discordText(hash) {
         try { const m = global.__r(1128), msg = m && m.t && m.t[hash]; return msg != null && m.intl ? String(m.intl.string(msg) || "") : ""; } catch (_) { return ""; }
     }
-    // Rows on Discord's Settings screen and Conduit's lists (settings.KEY) and switches on Conduit option pages (row.key) are spots too.
+    // Rows on Discord's Settings screen and Velocity Patches Discord's lists (settings.KEY) and switches on Velocity Patches Discord option pages (row.key) are spots too.
     // Features and Remove anything themselves can't be removed, so there is always a way back.
     // Most setting keys are CONSTANT_CASE, but some of Discord's are plain names ("Stack", "Tag Group", "Form Primitives" under
     // Design Systems), so any key without a comma (the list's separator) counts.
@@ -11233,7 +11274,7 @@
         return key;
     }
     function hidePlaceTitle(place) {
-        return place === "message" ? tr("Message menu") : place === "menu" ? tr("Profile menu") : place === "settings" ? tr("Settings") : place === "options" ? tr("Conduit options") : place === "chat" ? tr("Message bar") : place === "attach" ? tr("Attach menu") : place === "dm" ? tr("Direct messages") : place === "messages" ? tr("Messages tab") :
+        return place === "message" ? tr("Message menu") : place === "menu" ? tr("Profile menu") : place === "settings" ? tr("Settings") : place === "options" ? tr("Velocity Patches Discord options") : place === "chat" ? tr("Message bar") : place === "attach" ? tr("Attach menu") : place === "dm" ? tr("Direct messages") : place === "messages" ? tr("Messages tab") :
             place === "profile" ? tr("Other people's profiles") : place === "server" ? tr("Channel list") : place === "guild" ? tr("Server menu") : place === "details" ? tr("Channel details") : tr("Your profile");
     }
     function hideSpotsText(raw) {
@@ -11272,7 +11313,7 @@
     function askRemoveSpot(key) {
         haptic("IMPACT_LIGHT");
         const name = hideSpotTitle(key), title = tr("Remove this button?");
-        const body = tr("{name} disappears right away. You can bring it back any time in Conduit, under Remove anything.", {name});
+        const body = tr("{name} disappears right away. You can bring it back any time in Velocity Patches Discord, under Remove anything.", {name});
         const confirm = () => { setSpotHidden(key, true); haptic("IMPACT_MEDIUM"); };
         const alerts = inspectedExport(5400, "default");
         if (alerts && typeof alerts.show === "function") {
@@ -11461,7 +11502,7 @@
         // Nothing left in this person's menu: the ⋯ button goes too. Someone whose menu still has items keeps theirs.
         return empty ? null : tree;
     }
-    // Switches on Conduit's option pages (switchRow): gone once removed, marked in removal mode.
+    // Switches on Velocity Patches Discord's option pages (switchRow): gone once removed, marked in removal mode.
     function HideRow(props) {
         useSettings("hideAnything");
         if (spotHidden(props.spot)) return null;
@@ -11528,7 +11569,7 @@
         return operation;
     }
     // A message's hold menu (LongPressMessageActionSheet 9978): each row is an ActionSheetRow with Discord's own label, matched
-    // by message key in any language, and the rows Conduit adds by their keys. A group whose rows are all gone goes too. The
+    // by message key in any language, and the rows Velocity Patches Discord adds by their keys. A group whose rows are all gone goes too. The
     // quick reactions above them are their own component (EmojiRow 13759).
     let messageLabels = null;
     function messageMenuLabels() {
@@ -11842,7 +11883,7 @@
     function rolesCard(orig, self, args) { return isRolesProps(args[0]) ? rolesWhole(orig, self, args) : orig.apply(self, args); }
     rolesCard.call1 = (orig, self, props) => isRolesProps(props) ? rolesWhole.call1(orig, self, props) : orig.call(self, props);
     rolesCard.call2 = (orig, self, props, ref) => isRolesProps(props) ? rolesWhole.call2(orig, self, props, ref) : orig.call(self, props, ref);
-    // The note (UserProfileNote 14101). With User and server reviews on, Conduit draws Reviews right after it: only the note goes.
+    // The note (UserProfileNote 14101). With User and server reviews on, Velocity Patches Discord draws Reviews right after it: only the note goes.
     function noteSpot(orig, self, args) {
         useSettings("hideAnything");
         const rendered = orig.apply(self, args);
@@ -12289,7 +12330,7 @@
         }
         return exports;
     }
-    // Starting removal mode from Conduit closes Settings, so you land back in Discord with every button marked.
+    // Starting removal mode from Velocity Patches Discord closes Settings, so you land back in Discord with every button marked.
     function startRemoving() {
         haptic("SELECTION");
         setHideEdit(true);
@@ -12698,7 +12739,7 @@
             try { if (fg && typeof fg.removeServiceHandler === "function") fg.removeServiceHandler(BACKGROUND_SERVICE_KEY); } catch (_) {}
             return;
         }
-        const title = tr("Conduit Patches");
+        const title = tr("Velocity Patches Discord");
         const content = questBusy && quest.running ? tr("Now: {name}.", {name:quest.running.name}) :
             questBusy ? tr("Quest Completer") :
             badgeBusy && badges.current ? tr("Playing {name}", {name:badges.current.game.name}) :
@@ -13381,12 +13422,12 @@
             youBarParts = {Button, Icon, style:{width:size, height:size}};
         }
         const nameplate = !!(props && props.hasNameplate);
-        return el(youBarParts.Button, {hasNameplate:nameplate, hasBadge:false, accessibilityLabel:tr("Conduit settings"), onPress:openSettings,
+        return el(youBarParts.Button, {hasNameplate:nameplate, hasBadge:false, accessibilityLabel:tr("Velocity Patches Discord settings"), onPress:openSettings,
             icon:el(youBarParts.Icon, {size:"custom", style:youBarParts.style, color:nameplate ? "white" : undefined})});
     }
-    // Opens Conduit settings, not Discord's. openUserSettings (6801) opens the settings navigator on the screen it's
+    // Opens Velocity Patches Discord settings, not Discord's. openUserSettings (6801) opens the settings navigator on the screen it's
     // given, and every settings route node, VENUS_PLUGINS too, is one of that navigator's screens (15736
-    // getSettingScreens), so Back goes to Discord's settings like when you open Conduit from there.
+    // getSettingScreens), so Back goes to Discord's settings like when you open Velocity Patches Discord from there.
     function openSettings(target) {
         // Ensure SettingsRendererConfig (15602) and SettingListRenderer (15733) are initialized before
         // opening SettingsNavigator so VENUS_PLUGINS is registered even on first tap after app restart
@@ -13472,7 +13513,7 @@
         // MultiAccountStore is a PersistedStore: initializeIfNeeded() reads the saved list once and then never again.
         // Calling it (or initialize + asyncPersist) before Discord loaded its storage and signed in, as happens on a
         // cold start, read an empty list and saved it over every account (#63). Only Discord initializes the store;
-        // Conduit adds the signed-in account afterwards, and only when it is missing.
+        // Velocity Patches Discord adds the signed-in account afterwards, and only when it is missing.
         // A PersistedStore saves itself on every change (its constructor adds a change listener that calls
         // asyncPersist), whether or not it has read its saved state yet. Before that, getState() is the empty list
         // the module starts with, so even a bare emitChange() on a cold start saved [] over every account (#69).
@@ -13574,7 +13615,7 @@
     }
     // Switching sends the account's saved token to Discord's gateway. When it has stopped working since it was last
     // checked (changed password, signed out elsewhere, an old export), the gateway closes with 4004 and
-    // AuthenticationStore (502) signs you out of everything, not just that account (#137). Every switch (Conduit
+    // AuthenticationStore (502) signs you out of everything, not just that account (#137). Every switch (Velocity Patches Discord
     // settings, Discord's own account sheet, a notification from another account) goes through
     // MultiAccountActionCreators.switchAccount (13078), so the token is checked there first, the way
     // validateMultiAccountTokens does: GET /users/@me with it, and the same account has to answer. A token Discord
@@ -13985,7 +14026,7 @@
         let data = null;
         try { data = typeof text === "string" && text.length <= BACKUP_MAX_BYTES ? JSON.parse(text) : null; } catch (_) { data = null; }
         if (!data || data.kind !== ACCOUNTS_KIND || typeof data.format !== "number" || data.format > ACCOUNTS_FORMAT || !Array.isArray(data.accounts))
-            return {error:tr("That isn't a Conduit accounts export.")};
+            return {error:tr("That isn't a Velocity Patches Discord accounts export.")};
         const store = accountsReady(), tokens = accountTokens();
         if (!store || !tokens || typeof store.initialize !== "function") return {error:tr("Try again in a moment.")};
         const state = store.getState() || {}, saved = Array.isArray(state.users) ? state.users.slice() : [];
@@ -14124,7 +14165,7 @@
                 switchRow(Switch, "accountSwitcherYouBar", "Button on the profile bar", "Shows a Switch accounts button next to the notifications bell on the bottom bar.", rowIcon(10598, "UserCircleIcon"))),
             el(Group, {key:"shared", title:tr("Every account")},
                 switchRow(Switch, "accountSwitcherNotify", "Notifications from every account", "Get notifications for all your saved accounts, not just the one you're using. Each one shows which account it's for.", rowIcon(9045, "BellIcon")),
-                switchRow(Switch, "accountSwitcherShare", "Same theme on every account", "Your theme and Nitro theme follow you when you switch. Conduit settings are always shared.", rowIcon(16320, "PaintPaletteIcon"))),
+                switchRow(Switch, "accountSwitcherShare", "Same theme on every account", "Your theme and Nitro theme follow you when you switch. Velocity Patches Discord settings are always shared.", rowIcon(16320, "PaintPaletteIcon"))),
             footnote("note", "Tap your avatar on the You tab, or hold the You tab, to switch from anywhere. Hold an account above to remove it.")];
         return settingsBody(ui, groups);
     }
@@ -14463,7 +14504,7 @@
 
     // Fix link previews: links to posts on sites whose previews Discord can't build (X, Instagram, TikTok, Tumblr...) are
     // sent through an embed service that can: x.com/... becomes fixupx.com/..., and the post shows with its text, picture
-    // or video. Only the address changes: Conduit fetches nothing, and nothing happens until you send.
+    // or video. Only the address changes: Velocity Patches Discord fetches nothing, and nothing happens until you send.
     // Each site: [id, name, brand color, icon (module, export) or letters, hosts, post path (or one per host), services, options].
     // A service is [id, name, {from host: to host}, extra], or [id, name, "template"] for one that takes the whole link:
     // {url} is the link, encoded; {host} and {path} are its parts. A "*.tumblr.com" host matches any blog's own address and
@@ -14548,7 +14589,7 @@
                 [["embedez", "EmbedEZ", {"newgrounds.com":"newgroundsez.com"}]], {group:"art"}]];
     }
     // Share and tracking parameters each site adds when you copy a link: who shared it, from which app, and when. They're
-    // removed from links Conduit fixes, so neither the embed service nor anyone who taps the link sees them. utm_*, si and fbclid go everywhere.
+    // removed from links Velocity Patches Discord fixes, so neither the embed service nor anyone who taps the link sees them. utm_*, si and fbclid go everywhere.
     function fixTrackingTable() {
         return {x:/^(?:s|t|a|ref_src|ref_url)$/, instagram:/^(?:igsh|igshid|img_index)$/,
             tiktok:/^(?:_r|_t|_d|is_from_webapp|sender_device|sender_web_id|web_id|share_app_id|share_link_id|u_code|preview_pb|timestamp|checksum|tt_from|enter_from|source|social_share_type|share_item_id|user_id|sec_user_id)$/,
@@ -15024,7 +15065,7 @@
     }
     // Bring back Tenor GIFs (#83): Discord's GIF picker asks Discord's API for /gifs/search, /gifs/trending and the rest
     // (GIFPickerActionCreators 10035 through HTTP.get, 1297), and since Tenor's API closed to Discord those answers come from
-    // Klipy. Conduit answers the same requests from Tenor's public v1 API, in the exact shape the picker's store (9731) reads,
+    // Klipy. Velocity Patches Discord answers the same requests from Tenor's public v1 API, in the exact shape the picker's store (9731) reads,
     // so Tenor GIFs show in Discord's own picker: no new tab or button. "Tenor and Discord's GIFs" puts Tenor first and
     // mixes in Discord's own; "Only Tenor" uses Tenor for everything. If Tenor doesn't answer, Discord's own GIFs show.
     // GIFs are sent as tenor.com links, which Discord still turns into a playing GIF for everyone.
@@ -15047,7 +15088,7 @@
         for (const name in params) if (params[name] != null && params[name] !== "") url += "&" + name + "=" + encodeURIComponent(params[name]);
         const now = Date.now(), hit = tenor.cache.get(url);
         if (hit && hit.until > now) return hit.promise;
-        if (typeof global.fetch !== "function") return Promise.reject(new Error("Conduit: no fetch"));
+        if (typeof global.fetch !== "function") return Promise.reject(new Error("Velocity Patches Discord: no fetch"));
         const Abort = global.AbortController, controller = typeof Abort === "function" ? new Abort() : null;
         const timer = controller ? later(() => controller.abort(), 6000, false) : undefined;
         const done = () => { if (timer !== undefined && global.clearTimeout) global.clearTimeout(timer); };
@@ -15463,7 +15504,7 @@
         const base = String(code || "").split("-")[0].toLowerCase();
         return ({iw:"he", jw:"jv", nb:"no", nn:"no", tl:"fil"})[base] || base;
     }
-    // Language names in the language Conduit is shown in.
+    // Language names in the language Velocity Patches Discord is shown in.
     const languageNames = new Map();
     // The language Translate messages writes in, by name: Discord's, the phone's or the one you picked (#79).
     function translateTargetName() {
@@ -15995,7 +16036,7 @@
                 [700, () => update({menu:true})],
                 [1800, () => update({pulse:{who:"translate", id:"tap"}}), tr("And tap Translate")],
                 [600, () => update({menu:false, held:false, busy:true})]);
-            else steps.push([1400, () => update({busy:true}), tr("Conduit sees it's not in {language} and translates it on its own", {language:target})]);
+            else steps.push([1400, () => update({busy:true}), tr("Velocity Patches Discord sees it's not in {language} and translates it on its own", {language:target})]);
             steps.push([1600, () => update({busy:false, done:true}), tr("Now it reads in {language}", {language:target})]);
             if (settings.translateNote || settings.translateOriginal) steps.push([300, () => {},
                 tr(settings.translateOriginal ? "The note under it says what it was in, with the original quoted below" : "The small note under it says what language it was in")]);
@@ -16158,10 +16199,10 @@
         try { if (typeof open === "function") { open({screen:status.menu ? "VENUS_TRANSLATE" : undefined}); return; } } catch (_) {}
         openSettings();
     }
-    // A language in its own words (TRANSLATE_NATIVE); the list shows Conduit's name for it under it when that's different.
+    // A language in its own words (TRANSLATE_NATIVE); the list shows Velocity Patches Discord's name for it under it when that's different.
     function translateNativeName(code) { return TRANSLATE_NATIVE[code] || translateLanguageName(code); }
     // Another language (#79): one row that says which language, and opens the list only when you want to change it.
-    // Each language is listed in its own words with Conduit's name for it under it (#82), with Discord's search field.
+    // Each language is listed in its own words with Velocity Patches Discord's name for it under it (#82), with Discord's search field.
     // Picking one closes the list again, so the rest of the page is never pushed far down.
     function TranslateLanguagePicker(props) {
         useSettings(props.feature || "translate");
@@ -18112,7 +18153,7 @@
     // Icon packs (#61): replaces Discord's icons across the app with community icon packs (Themes+ / Rosiecord / MD3 /
     // Solar / Deco / Material Two Tone / Iconsax) or any custom icon pack URL, and applies per-icon tint overrides from
     // the active theme's plus.icons table. Instead of building path strings and scanning manifest arrays on every
-    // <Image> render, Conduit compiles a dense O(1) lookup table indexed by numeric assetId once when the active pack or
+    // <Image> render, Velocity Patches Discord compiles a dense O(1) lookup table indexed by numeric assetId once when the active pack or
     // theme changes, so BaseIconImage (4912), RN.Image (328) and resolveAssetSource (81) do a single array read.
     const ICONPACKS_FILE = "venus-iconpacks.json", ICONPACKS_MAX_CUSTOM = 20, ICONPACKS_MAX_BYTES = 1024 * 1024, ICONPACKS_TIMEOUT_MS = 10000;
     const ICONPACKS_LIST_URL = "https://raw.githubusercontent.com/nexpid/ThemesPlus/main/iconpacks/list.json";
@@ -19144,9 +19185,9 @@
         conduitRPC.busy = true; conduitRPC.error = ""; const generation = ++conduitRPC.generation;
         const active = () => generation === conduitRPC.generation && currentId() === owner && enabled("customRPC");
         try {
-            const assets = {}, urls = [settings.customRPCLarge.trim(), settings.customRPCSmall.trim()];
+            const assets = {}, urls = [settings.customRPCLarge.trim(), settings.customRPCSmall.trim()], showImages = [settings.customRPCShowLarge, settings.customRPCShowSmall];
             for (let i=0; i<urls.length; i++) {
-                if (!urls[i]) continue;
+                if (!showImages[i] || !urls[i]) continue;
                 if (!rpcUrl(urls[i])) throw new Error(tr("Use a public HTTPS image URL."));
                 // Resolve external URLs to Discord's media proxy; local device URIs never leave as activity assets.
                 let assetUrl = urls[i];
@@ -19160,12 +19201,12 @@
                 if (!path || typeof path !== "string") throw new Error(tr("The image could not be loaded."));
                 assets[i ? "small_image" : "large_image"] = "mp:" + path.replace(/^mp:/, "");
                 const hover = settings[i ? "customRPCSmallText" : "customRPCLargeText"].trim();
-                if (hover) assets[i ? "small_text" : "large_text"] = hover;
+                if (hover && settings[i ? "customRPCShowSmallText" : "customRPCShowLargeText"]) assets[i ? "small_text" : "large_text"] = hover;
             }
             if (!active()) return;
             const activity = {name, application_id:app, type:Number(settings.customRPCType), flags:0};
-            if (settings.customRPCDetails.trim()) activity.details = settings.customRPCDetails.trim();
-            if (settings.customRPCState.trim()) activity.state = settings.customRPCState.trim();
+            if (settings.customRPCShowDetails && settings.customRPCDetails.trim()) activity.details = settings.customRPCDetails.trim();
+            if (settings.customRPCShowState && settings.customRPCState.trim()) activity.state = settings.customRPCState.trim();
             if (Object.keys(assets).length) activity.assets = assets;
             if (settings.customRPCTime) activity.timestamps = {start:Date.now()};
             if (!rpcDispatch(activity)) throw new Error(tr("Discord's connection is not ready."));
@@ -19220,11 +19261,11 @@
         React.useEffect(()=>{if(!conduitRPC.active || !global.setInterval)return undefined;const timer=global.setInterval(()=>setNow(Date.now()),1000);return()=>global.clearInterval(timer);},[conduitRPC.active]);
         const elapsed=conduitRPC.active && conduitRPC.active.timestamps ? Math.max(0,Math.floor((now-conduitRPC.active.timestamps.start)/1000)) : null;
         const preview=el(RN.View,{style:{padding:16,borderRadius:16,backgroundColor:"#232428",gap:8}},
-            rpcUrl(settings.customRPCLarge) ? el(RN.Image,{source:{uri:settings.customRPCLarge},style:{width:96,height:96,borderRadius:12},resizeMode:"cover"}) : null,
-            rpcUrl(settings.customRPCSmall) ? el(RN.Image,{source:{uri:settings.customRPCSmall},style:{width:32,height:32,borderRadius:16},resizeMode:"cover"}) : null,
+            settings.customRPCShowLarge && rpcUrl(settings.customRPCLarge) ? el(RN.Image,{source:{uri:settings.customRPCLarge},style:{width:96,height:96,borderRadius:12},resizeMode:"cover"}) : null,
+            settings.customRPCShowSmall && rpcUrl(settings.customRPCSmall) ? el(RN.Image,{source:{uri:settings.customRPCSmall},style:{width:32,height:32,borderRadius:16},resizeMode:"cover"}) : null,
             el(RN.Text,{style:{color:"#ffffff",fontSize:18,fontWeight:"700"}},settings.customRPCName || "Rich Presence"),
-            settings.customRPCDetails ? el(RN.Text,{style:{color:"#dbdee1"}},settings.customRPCDetails) : null,
-            settings.customRPCState ? el(RN.Text,{style:{color:"#b5bac1"}},settings.customRPCState) : null,
+            settings.customRPCShowDetails && settings.customRPCDetails ? el(RN.Text,{style:{color:"#dbdee1"}},settings.customRPCDetails) : null,
+            settings.customRPCShowState && settings.customRPCState ? el(RN.Text,{style:{color:"#b5bac1"}},settings.customRPCState) : null,
             elapsed !== null ? el(RN.Text,{style:{color:"#b5bac1"}},Math.floor(elapsed/3600)+":"+String(Math.floor(elapsed/60)%60).padStart(2,"0")+":"+String(elapsed%60).padStart(2,"0")) : null);
         const field=(key,label,max=128)=>el(RN.View,{key,style:{gap:6}},
             serverText(label,"text-sm/semibold","text-strong"),
@@ -19237,6 +19278,13 @@
             el(Group,{key:"draft",title:tr("Activity")},field("customRPCApp",tr("Application ID"),20),field("customRPCName",tr("Name")),field("customRPCDetails",tr("Details")),field("customRPCState",tr("State"))),
             radioGroup(ui,"type","Activity type","customRPCType",true,[["0","Playing"],["2","Listening"],["3","Watching"],["5","Competing"]]),
             el(Group,{key:"timer"},switchRow(ui.TableSwitchRow,"customRPCTime","Show elapsed time","")),
+            el(Group,{key:"visibility",title:tr("Visibility")},
+                switchRow(ui.TableSwitchRow,"customRPCShowDetails","Show details","Include the activity details line."),
+                switchRow(ui.TableSwitchRow,"customRPCShowState","Show state","Include the activity state line."),
+                switchRow(ui.TableSwitchRow,"customRPCShowLarge","Show large image","Include the large activity image."),
+                switchRow(ui.TableSwitchRow,"customRPCShowSmall","Show small image","Include the small activity image."),
+                switchRow(ui.TableSwitchRow,"customRPCShowLargeText","Show large image label","Show the large image's hover text."),
+                switchRow(ui.TableSwitchRow,"customRPCShowSmallText","Show small image label","Show the small image's hover text.")),
             el(Group,{key:"images",title:tr("Images")},field("customRPCLarge",tr("Large image URL"),2048),field("customRPCLargeText",tr("Large image text")),field("customRPCSmall",tr("Small image URL"),2048),field("customRPCSmallText",tr("Small image text"))),
             el(Group,{key:"uploads",title:tr("Upload images")},field("customRPCChannel",tr("Upload channel ID"),20),
                 footnote("upload-note","Uploading posts the image in this channel. Anyone who can read it can see the image."),
@@ -19411,7 +19459,7 @@
         return orig.call(self, Object.assign({}, params, {messages:wrapped, forceRender:force || params.forceRender}));
     };
     // Close their DM (based on RemoveBlockedUsers): when you block someone, RelationshipStore gets RELATIONSHIP_ADD (or _UPDATE
-    // for a friend) with type 2. Conduit then closes your DM with them through Discord's own closePrivateChannel (7290), the
+    // for a friend) with type 2. Velocity Patches Discord then closes your DM with them through Discord's own closePrivateChannel (7290), the
     // same as Close DM in its menu: the chat leaves the Messages list and nothing is deleted. Open on that chat, you're
     // taken back to Friends first.
     function hideBlockedInit(d) {
@@ -19629,7 +19677,7 @@
         return settingsBody(ui, groups);
     }
     // Removed connection alerts (#108, based on RemovedConnectionAlerts by iyu46): a banner when a friend removes you or a
-    // server drops you. Discord says nothing when it happens, so Conduit keeps the list of friends and servers it saw, tells a
+    // server drops you. Discord says nothing when it happens, so Velocity Patches Discord keeps the list of friends and servers it saw, tells a
     // real removal (RELATIONSHIP_REMOVE, GUILD_DELETE) from one you did yourself (the action creators mark the id for 30 s),
     // and on every new connection looks for anything that went missing while Discord was closed or offline.
     const REMOVED_EVENTS = ["CONNECTION_OPEN", "RELATIONSHIP_ADD", "RELATIONSHIP_UPDATE", "RELATIONSHIP_REMOVE", "GUILD_CREATE", "GUILD_UPDATE", "GUILD_DELETE", "LOGOUT"];
@@ -19946,13 +19994,13 @@
                     Row ? el(Row, {key:"none", label:tr("No removals yet"), disabled:true}) : null),
             removed.history.length ? el(Group, {key:"manage", title:tr("Manage")},
                 actionRow(ui, "clear", "Clear recent alerts", "Empties the list above.", () => { removed.history.length = 0; save(); notify("removedAlerts"); }, false, true)) : null,
-            footnote("note", "Conduit compares your friends and servers with what it saw last time. Anything you remove or leave on this phone never alerts you, and servers you're only previewing don't count.")];
+            footnote("note", "Velocity Patches Discord compares your friends and servers with what it saw last time. Anything you remove or leave on this phone never alerts you, and servers you're only previewing don't count.")];
         return settingsBody(ui, groups);
     }
     // Load full-quality images (#108, based on Uncompressed Discord Images by Knewest). The BetterDiscord plugin swaps each
     // thumbnail for the uploaded file by editing the page; Android has no page to edit. Here the app builds every picture's address
     // in ImageUtils.getMobileOptimizedSrc (1498): for an upload it takes the proxy address and adds Discord's resize parameters
-    // (width, height, format=webp). For pictures people uploaded, Conduit answers with the address of the original file instead.
+    // (width, height, format=webp). For pictures people uploaded, Velocity Patches Discord answers with the address of the original file instead.
     // The chat row and the full-screen viewer share that function; calls made while MediaSourceUtil (8666) builds the viewer's
     // pictures are counted, so each place has its own switch. Pictures too big for a phone to hold keep Discord's copy.
     const FULL_IMAGE_URL = /^(https:\/\/(?:cdn\.discordapp\.com|media\.discordapp\.net))(\/attachments\/[^?#\s]+)(?:\?([^#\s]*))?$/;
@@ -19991,7 +20039,7 @@
         return exports;
     }
     // High-res profile pictures (based on HighResProfileImages by Kawtious): AvatarUtils (1417) asks the CDN for an avatar or
-    // banner only as big as it's drawn (size=64, 128...), which blurs in profiles and full screen. Conduit asks for at least 512
+    // banner only as big as it's drawn (size=64, 128...), which blurs in profiles and full screen. Velocity Patches Discord asks for at least 512
     // (avatars) or 1024 (banners) instead: still powers of two the CDN accepts, and small enough for long member lists.
     const FULL_AVATAR_CALLS = ["getUserAvatarURL", "getGuildMemberAvatarURL", "getGuildMemberAvatarURLSimple", "getUserAvatarSource",
         "getGuildMemberAvatarSource", "getUserBannerURL", "getGuildMemberBannerURL"];
@@ -20148,10 +20196,10 @@
     //    too big goes to the native extension (extensions/compress, reached through FileModule.removeFile with a private prefix).
     //    Photos keep every pixel while quality 88 or better fits, then shrink a little at a time; sound is re-saved as AAC at the best
     //    bitrate that fits.
-    //  - Video: Discord's own transcoder does the work and Conduit only picks its numbers (VideoUploadUtils 8046): the bitrate that
+    //  - Video: Discord's own transcoder does the work and Velocity Patches Discord only picks its numbers (VideoUploadUtils 8046): the bitrate that
     //    fills the limit for this length, and, only when that is too few bits per pixel for a clean picture, a smaller size. Both
     //    come from the source video, not from Discord's quality tier: calculateOptimalBitrate is min(max(floor, source), tier) and
-    //    the free tiers stop at 0.8-2.25 Mbps and 360-720p, so taking the smaller of Discord's and Conduit's numbers sent a long
+    //    the free tiers stop at 0.8-2.25 Mbps and 360-720p, so taking the smaller of Discord's and Velocity Patches Discord's numbers sent a long
     //    video at ~3 MB when 20 MB was allowed. A result over the limit is made again lower; one far under it, again higher.
     const COMPRESS_PREFIX = "venus-compress-v1:", COMPRESS_FILL = {image:0.95, audio:0.96, video:0.94};
     const COMPRESS_KEYS = {image:"compressUploadsPhotos", video:"compressUploadsVideos", audio:"compressUploadsAudio"};
@@ -20312,7 +20360,7 @@
             });
         });
     }
-    // Video: made by Discord's transcoder with Conduit's numbers (compressBitrate). Encoders miss their bitrate, so the result is
+    // Video: made by Discord's transcoder with Velocity Patches Discord's numbers (compressBitrate). Encoders miss their bitrate, so the result is
     // checked: over the limit, it is made again lower; under 60% of the aim (with room left in the source), again higher, and
     // that second try is only kept when it still fits. At most two encodes.
     function compressRestore(upload, from) { Object.keys(from).forEach(key => { try { upload[key] = from[key]; } catch (_) {} }); }
@@ -20410,7 +20458,7 @@
         const start = {phase:0, bytes:COMPRESS_PREVIEW.big};
         const [state, setState] = React.useState(start);
         const story = useStory(active, () => {
-            const steps = [[0, () => setState(start), tr("You attach a video over the size limit")], [900, () => {}, tr("Conduit makes it smaller to fit")]];
+            const steps = [[0, () => setState(start), tr("You attach a video over the size limit")], [900, () => {}, tr("Velocity Patches Discord makes it smaller to fit")]];
             for (let i = 1; i <= 6; i++) {
                 const bytes = COMPRESS_PREVIEW.big - (COMPRESS_PREVIEW.big - COMPRESS_PREVIEW.fit) * i / 6;
                 steps.push([170, () => setState({phase:1, bytes})]);
@@ -20448,7 +20496,7 @@
     }
     // Show timeout duration (#125, after ShowTimeoutDuration): Discord marks a timed-out person with a small clock that
     // says nothing about how long. Their member record (GuildMemberStore 2128) keeps communicationDisabledUntil, so their
-    // messages get the same native tag Discord draws for BOT and Conduit draws for staff: "Timed out · 2h 14m", with the
+    // messages get the same native tag Discord draws for BOT and Velocity Patches Discord draws for staff: "Timed out · 2h 14m", with the
     // exact end time for screen readers. Rows aren't drawn again on their own, so while a tag shows, the open chat is
     // redrawn once a minute: the tag counts down, and goes away when the timeout ends.
     const timeoutTag = {members:null, shown:new Map(), timer:undefined, due:0};
@@ -20552,7 +20600,7 @@
     dndBannerSound.call1 = (orig, self, message) => enabled("dndBanners") && dndIsOn() ? undefined : orig.call(self, message);
     // Full-screen chat in landscape (#125): Discord puts chat beside the server and channel lists whenever the window is
     // 600dp wide or more (useChatLayout 5075, from useWindowSizeClassifier), so turning a phone sideways squeezes the chat
-    // into what's left. On a phone held sideways (its shorter side under 600dp) Conduit reports the phone layout instead:
+    // into what's left. On a phone held sideways (its shorter side under 600dp) Velocity Patches Discord reports the phone layout instead:
     // the chat takes the whole width, and the lists slide in from the left edge, like the member list from the right.
     // Tablets keep Discord's side-by-side layout.
     const LANDSCAPE_PHONE_LAYOUT = Object.freeze({isChatBesideChannelList:false, isChatLockedOpen:false});
@@ -20585,7 +20633,7 @@
     // Download voice messages (#125, after VoiceDownload): a voice message gets a Download button of its own, right under its
     // waveform: the native call-to-action button Discord's message view already draws (Message.ctaButton, the one under
     // age-verification DMs), so it looks and feels like the rest of the chat and needs no hold menu. Its tap reaches
-    // MessagesHandlers.handleTapCtaButton with the callback Conduit gave it. The file is saved by Discord's own downloader
+    // MessagesHandlers.handleTapCtaButton with the callback Velocity Patches Discord gave it. The file is saved by Discord's own downloader
     // (NativeMediaManagerModule.downloadMediaAssetWithContentType 1447 -> Android's DownloadManager), the same one the
     // full-screen viewer's Save uses, so it lands in Downloads with the system's download notification. It stays the
     // original Ogg Opus file: every Android music app plays it, and nothing is re-encoded or lost.
@@ -20657,7 +20705,7 @@
             .then(() => done(true), () => done(false));
     }
     // Clone emojis and stickers (#125, after ExpressionCloner): tapping a custom emoji or a server sticker in chat opens
-    // Discord's own sheet for it (MessageEmojiActionSheet 9839, StickerDetailActionSheet 10078); Conduit adds one button at
+    // Discord's own sheet for it (MessageEmojiActionSheet 9839, StickerDetailActionSheet 10078); Velocity Patches Discord adds one button at
     // its bottom, "Add to a server". It opens a sheet listing only the servers where you can add expressions
     // (CREATE_GUILD_EXPRESSIONS or MANAGE_GUILD_EXPRESSIONS), each with how many free slots it has, and a name you can
     // change first. The upload goes through Discord's own action creators (EmojiActionCreators.uploadEmoji 9845,
@@ -20770,7 +20818,7 @@
         try { ui.showSheet({key:CLONE_SHEET, content:el(CloneSheet, {item}), stackingBehavior:"stack"}); } catch (_) {}
     }
     // The button at the bottom of Discord's sheet, in its own secondary style.
-    // A component of its own, so it follows Conduit's language inside Discord's sheet.
+    // A component of its own, so it follows Velocity Patches Discord's language inside Discord's sheet.
     function CloneButton({item}) {
         useLanguage();
         const Button = inspectedExport(5479, "Button");
@@ -20856,7 +20904,7 @@
     }
     // Leave group DMs silently (based on SilentLeave by coder.gg): Discord's own closePrivateChannel (ChannelActionCreators
     // 7290) takes (channelId, navigate, silent) and sends DELETE /channels/<id>?silent=true when silent is set, the way its
-    // "leave without telling anyone" path for a blocked member does. Conduit sets it for group DMs (type 3) only; a plain DM
+    // "leave without telling anyone" path for a blocked member does. Velocity Patches Discord sets it for group DMs (type 3) only; a plain DM
     // close has no message to hide. Every way of leaving goes through it: the channel menu, the chat header and /leave.
     function silentLeaveClose(orig, self, args) {
         if (!enabled("silentLeave") || !args.length) return orig.apply(self, args);
@@ -20871,7 +20919,7 @@
     // Preview servers without joining (based on GuildLurk by fshin): Discord's own lurker mode, the one its server discovery
     // uses. joinGuild(id, {lurker:true}) (GuildActionCreators 6377) opens the server as a lurker: you can read it, you're not
     // a member, you aren't in its member list and LurkingStore (4846) drops it when you leave. Discord only allows it for
-    // servers with previews on (Discoverable communities); anything else is refused and Conduit says so. The page keeps the
+    // servers with previews on (Discoverable communities); anything else is refused and Velocity Patches Discord says so. The page keeps the
     // last servers you previewed (guildLurkIds, IDs only) so you can open them again in one tap.
     const GUILD_LURK_MAX = 30;
     function guildLurkText(raw) {
@@ -20962,7 +21010,7 @@
         return Promise.resolve().then(() => actions.joinGuild(id, {lurker:true})).then(() => { guildLurkRemember(id); return true; },
             () => { reviewToast(ui, "This server doesn't allow previews", info); return false; });
     }
-    // The join screen of an invite (InviteDetails 13422) draws Accept and Decline in Discord's ButtonGroup (6214). Conduit adds
+    // The join screen of an invite (InviteDetails 13422) draws Accept and Decline in Discord's ButtonGroup (6214). Velocity Patches Discord adds
     // a Preview button there, made with Discord's own Button (5479) at the same size as Accept, for servers that allow
     // previews (PREVIEW_ENABLED or DISCOVERABLE in the invite's guild features). It opens the server as a lurker, closes the
     // invite screen and takes you there. Not shown when you're already a member or the invite was accepted.
@@ -21258,7 +21306,7 @@
                 {title:tr("Latest message only"), IconComponent:venusIcon(7838, "WarningIcon")}),
             el(Group, {key:"opts", title:tr("When it can't be silent")},
                 switchRow(Switch, "silentEditNotice", "Tell me", "A short message says the edit was sent the normal way.", rowIcon(5145, "CircleInformationIcon"))),
-            footnote("note", "Conduit sends your new text as a message and deletes the old one, so it has a new time and loses its reactions. Messages with files, stickers or polls are always edited the normal way.")];
+            footnote("note", "Velocity Patches Discord sends your new text as a message and deletes the old one, so it has a new time and loses its reactions. Messages with files, stickers or polls are always edited the normal way.")];
         return settingsBody(ui, groups);
     }
     function LocalEditSettings() {
@@ -21618,7 +21666,7 @@
     const viewRawChannelMenu = viewRawChannelHook(id => "ChannelLongPress-" + id);
     const viewRawThreadMenu = viewRawChannelHook(() => "ThreadLongPressActionSheet");
     const viewRawPostMenu = viewRawChannelHook(() => "ForumPostLongPressActionSheet");
-    // The server icon's menu: after Discord's own rows and Conduit's.
+    // The server icon's menu: after Discord's own rows and Velocity Patches Discord's.
     function viewRawServerMenu(orig, self, args) {
         const items = orig.apply(self, args), guildId = args[0] == null ? null : String(args[0]);
         if (!enabled("viewRaw") || !settings.viewRawServers || !Array.isArray(items) || !rawId(guildId)) return items;
@@ -21821,7 +21869,7 @@
         });
         return exports;
     }
-    // A new device only shows once Discord signs in again, so a change asks to reopen (when Conduit can reopen Discord).
+    // A new device only shows once Discord signs in again, so a change asks to reopen (when Velocity Patches Discord can reopen Discord).
     function platformSpoofAsk() {
         const wanted = enabled("platformSpoof") ? settings.platformSpoofDevice : "";
         if (!features.platformSpoof || platformSpoof.applied === undefined || platformSpoof.applied === wanted || !RN) return;
@@ -21991,7 +22039,7 @@
     }
     // Tap mentions to open profiles (based on ClickableMentions by mwittrien). The message bar is a native view
     // (ChatInputNativeComponent, 12337) that only reports taps on attachments, but every tap moves the cursor and arrives
-    // as onSelectionOrTextChange. When the text hasn't changed and the cursor lands inside an @mention, Conduit opens that
+    // as onSelectionOrTextChange. When the text hasn't changed and the cursor lands inside an @mention, Velocity Patches Discord opens that
     // person's profile sheet (showUserProfileActionSheet, 8577). Typing, and mentions picked from the list, never open one.
     const mentionTaps = new WeakMap();
     const MENTION_TOKEN = /<@!?(\d{17,20})>|@([^\s@#:<>`]{2,32})/g;
@@ -22051,11 +22099,11 @@
     // Expand the message bar. Discord caps the message bar at about 200 dp: its height is driven on the UI thread by two
     // Reanimated worklets in useChatInputMaxHeight (12338), getChatInputMaxHeightWorklet and
     // getChatInputHeightAnimationTimingWorklet, which useChatInputHeightWorklet (12887) copies into its own worklets when
-    // a message bar mounts. Conduit swaps in twin worklets (same closure plus one shared value) before that happens, so the
+    // a message bar mounts. Velocity Patches Discord swaps in twin worklets (same closure plus one shared value) before that happens, so the
     // cap becomes "the room above the keyboard" while the bar is expanded and is Discord's own number otherwise. A button
     // at the top-right of the text area flips the shared value, then re-runs the animation once from JS so the bar moves
     // right away instead of at the next keystroke. Nothing else about the bar is touched: sending, drafts and the native
-    // text field work as before, and if a worklet isn't where Conduit expects, the bar is simply left alone.
+    // text field work as before, and if a worklet isn't where Velocity Patches Discord expects, the bar is simply left alone.
     const expandBar = {expanded:false, multiline:false, pill:false, content:0, shared:null, worklets:null, live:null, subscribed:false};
     // Room kept free above the open bar (the status bar and the channel header), plus a little air under the header.
     const EXPAND_BAR_RESERVE = 128;
@@ -23076,7 +23124,7 @@
         // Every hook runs before the early return, so starting or ending a selection never changes the hook order.
         const s = useBulkBarStyles();
         // The composer's measured height (the same store JumpToPresentButton reads): the bar fills exactly that slot.
-        // (inspectedExport needs a key; this reads the whole module, in case it loaded before Conduit could keep it.)
+        // (inspectedExport needs a key; this reads the whole module, in case it loaded before Velocity Patches Discord could keep it.)
         if (!chatHeight && typeof global.__r === "function") try { chatHeight = global.__r(9683) || null; } catch (_) {}
         const heightMod = chatHeight;
         let inputHeight = 0;
@@ -23370,7 +23418,7 @@
             case 2132:
                 if (exports && exports.default && !localeStore) {
                     localeStore = exports.default;
-                    // Following Discord's language: switching it there switches Conduit too.
+                    // Following Discord's language: switching it there switches Velocity Patches Discord too.
                     try { if (typeof localeStore.addChangeListener === "function") localeStore.addChangeListener(() => {
                         if (settings.language === "auto" && uiLanguage() !== i18n.shownIn) { loadLanguage(uiLanguage()); languageChanged(); }
                         if (enabled("translate") && settings.translateTarget === "discord") translateChanged();
@@ -23774,7 +23822,7 @@
         // leaving the module stock) instead of crashing the app at call time.
         function replacementFor(operation, orig) {
             if (typeof operation !== "function" || typeof orig !== "function")
-                throw new Error("Conduit: unusable export binding for hook");
+                throw new Error("Velocity Patches Discord: unusable export binding for hook");
             return function () { return operation(orig, this === proxy ? exports : this, arguments); };
         }
         // Only read explicitly identified export keys, never enumerate or invoke unrelated getters.
@@ -23828,7 +23876,7 @@
             dlog("E", "hooks", "module " + id + ": " + dlogText(error));
             try { debugLog.hookFailed.set(id, String(error && error.message || error)); } catch (_) {}
             if (global.console && typeof global.console.warn === "function")
-                global.console.warn("[Conduit] Hook unavailable", String(error));
+                global.console.warn("[Velocity Patches Discord] Hook unavailable", String(error));
         }
     }
     function decorateDefine(define) {
