@@ -35,4 +35,5 @@ for (const key of [
 assert.match(readme, /^# Velocity Patches Discord/m);
 assert.match(readme, /Discord Settings → Velocity Patches Discord → Features/);
 assert.doesNotMatch(readme, /Conduit/);
+assert.doesNotMatch(JSON.stringify(patches), /Conduit/);
 console.log("Velocity Patches Discord settings and patch metadata checks passed.");
