@@ -1,18 +1,18 @@
-# Conduit Patches
+# Velocity Patches Discord
 
 Extra features and privacy options for Discord on Android, patched in with **[Morphe](https://morphe.software)**. No tracking, and everything works offline except ReviewDB, Translate messages, Fix link previews and Bring back Tenor GIFs.
 
-[**Add to Morphe**](https://morphe.software/add-source?github=lildanlid1/Cordly&name=Conduit) · [Downloads](https://github.com/lildanlid1/Cordly/releases) · [What's new](CHANGELOG.md) · [Report a problem](https://github.com/lildanlid1/Cordly/issues)
+[**Add to Morphe**](https://morphe.software/add-source?github=lildanlid1/Cordly&name=Velocity%20Patches%20Discord) · [Downloads](https://github.com/lildanlid1/Cordly/releases) · [What's new](CHANGELOG.md) · [Report a problem](https://github.com/lildanlid1/Cordly/issues)
 
 **Works with:** Discord **351.11 - Stable** (the original APKM).
 
 ## Install
 
 1. Install [Morphe Manager](https://github.com/MorpheApp/morphe-manager/releases).
-2. Tap **[Add to Morphe](https://morphe.software/add-source?github=lildanlid1/Cordly&name=Conduit)**, or add `https://github.com/lildanlid1/Cordly` as a source.
+2. Tap **[Add to Morphe](https://morphe.software/add-source?github=lildanlid1/Cordly&name=Velocity%20Patches%20Discord)**, or add `https://github.com/lildanlid1/Cordly` as a source.
 3. Pick the **original** Discord 351.11 APKM, not an already patched one.
 4. Keep the default selection (everything except **Custom branding**), then patch and install.
-5. Open **Discord Settings → Conduit → Features** and turn on what you want. Everything starts off.
+5. Open **Discord Settings → Velocity Patches Discord → Features** and turn on what you want. Everything starts off.
 
 You can also import `patches-<version>.mpp` from [Releases](https://github.com/lildanlid1/Cordly/releases) under **Sources → + → Local**.
 
@@ -81,7 +81,7 @@ You can also import `patches-<version>.mpp` from [Releases](https://github.com/l
 | **Appearance** | Use your phone's font | Your phone's font everywhere |
 | | Use your phone's emojis | Your phone's emojis, or an imported emoji font |
 | | Remove anything | Hide almost any button or menu row in Discord |
-| | Conduit button on profile bar | A shortcut to Conduit settings |
+| | Velocity Patches Discord button on profile bar | A shortcut to Velocity Patches Discord settings |
 | | Unlock app icons | Any app icon without Nitro |
 | | Unlock Nitro themes | Gradient themes without Nitro, only on your phone |
 | | Full-screen chat in landscape | Chat fills the screen sideways |
@@ -95,11 +95,11 @@ You can also import `patches-<version>.mpp` from [Releases](https://github.com/l
 | | Voice channel options | Join volume, audio output, join chimes and a goodbye sound |
 | | Fake deafen | Look deafened while still hearing the call (by maayan080) |
 
-Conduit settings also have **Language** (30 languages), **Backup and restore**, and **About** with debug logs and a crash screen.
+Velocity Patches Discord settings also have **Language** (30 languages), **Backup and restore**, and **About** with debug logs and a crash screen.
 
 ### Custom branding
 
-Select **Custom branding** in Morphe to install Conduit next to Discord. Options: **App name**, **Package name** (`com.discord.venus` by default), **Icon color** and **Icon picture**. The copy is a separate app with its own sign-in and settings; keep the same package name so updates install over the top.
+Select **Custom branding** in Morphe to install Velocity Patches Discord next to Discord. Options: **App name**, **Package name** (`com.discord.venus` by default), **Icon color** and **Icon picture**. The copy is a separate app with its own sign-in and settings; keep the same package name so updates install over the top.
 
 ### Privacy options
 
@@ -123,15 +123,15 @@ python3 scripts/build.py    # builds and tests patches/build/libs/*.mpp
 
 [GPL-3.0](LICENSE). Notices are in [NOTICE](NOTICE).
 
-## Conduit additions
+## Additional features
 
-[![Add Conduit to Morphe](.github/assets/add-to-morphe.svg)](https://morphe.software/add-source?github=lildanlid1/Cordly)
+[![Add Velocity Patches Discord to Morphe](.github/assets/add-to-morphe.svg)](https://morphe.software/add-source?github=lildanlid1/Cordly)
 
-Conduit 1.25.0 incorporates Venus Patches 1.21.1 for Discord **351.11 Stable**. Original authorship and GPL-3.0 credits remain in NOTICE. The Android app keeps the Discord name and package.
+Velocity Patches Discord 1.26.0 incorporates Venus Patches 1.21.1 for Discord **351.11 Stable**. Original authorship and GPL-3.0 credits remain in NOTICE. The Android app keeps the Discord name and package.
 
 Server info shows server emojis directly. Tap artwork or an emoji to preview it; hold the image to open Save. Show all opens the searchable gallery with selection and ZIP export. Server layout exports and the bot importer remain available. The upstream **View raw data** tool replaces Inspect message JSON and covers more object types; its previous enabled setting migrates.
 
-**Rich Presence** publishes through Discord's local activity pipeline. Enter your Discord application ID, activity name, details, state, type and image URLs. Enable elapsed time to count from Start/update. Start explicitly after reopening; Stop removes only Conduit's custom activity. Visibility follows Discord's activity-sharing and privacy settings; other users do not need Conduit. Publishing still needs an on-device, second-account check.
+**Rich Presence** publishes through Discord's local activity pipeline. Enter your Discord application ID, activity name, details, state, type and image URLs. Independently toggle details, state, elapsed time, each image and each image label. Start explicitly after reopening; Stop removes only Velocity Patches Discord's custom activity. Visibility follows Discord's activity-sharing and privacy settings; other users do not need Velocity Patches Discord. Publishing still needs an on-device, second-account check.
 
 For device images, choose an upload channel ID and press Upload large/small image. This posts an attachment in that channel and uses its CDN URL. Anyone able to read the channel can see that message. URLs must be publicly accessible HTTPS images. Uploads are limited to 8 MiB.
 
