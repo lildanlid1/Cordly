@@ -77,7 +77,7 @@ jobs:
             echo "Release $TAG exists; leaving immutable published asset untouched."
             gh release view "$TAG" --json assets --jq '.assets[].name' | grep -Fx "$ASSET"               || { echo "The existing release has no $ASSET. Investigate manually."; exit 1; }
           else
-            gh release create "$TAG" "patches/build/libs/$ASSET"               --target "$GITHUB_SHA"               --title "Velocity Patches Discord $TAG"               --notes-file /tmp/conduit-release-notes.md
+            gh release create "$TAG" "patches/build/libs/$ASSET"               --target "$GITHUB_SHA"               --title "Velocity Patches Discord $TAG"               --notes-file /tmp/velocity-patches-discord-release-notes.md
           fi
 
       - name: Generate and validate remote-source metadata
