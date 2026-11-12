@@ -1,7 +1,9 @@
-name: Build and publish Conduit
+name: Build and publish Velocity Patches Discord
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -10,17 +12,16 @@ permissions:
 
 # Prevent two publishes of the same release from racing each other.
 concurrency:
-  group: conduit-release
+  group: velocity-patches-discord-release
   cancel-in-progress: false
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Conduit
+      - name: Check out Velocity Patches Discord
         uses: actions/checkout@v4
         with:
-          ref: main
           persist-credentials: true
 
       - name: Set up Node.js
@@ -37,6 +38,7 @@ jobs:
       - name: Test source and metadata scripts
         run: |
           node tests/server_media.cjs
+          node tests/velocity_settings.cjs
           sed "s@/\*__FEATURES__\*/@({})@g" patches/src/main/resources/venus/bootstrap.js | node --check
           node --check tools/conduit-server-import.mjs
           python3 scripts/release_notes.py --check
@@ -51,13 +53,14 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: conduit-patches-mpp
+          name: velocity-patches-discord-mpp
           if-no-files-found: error
           path: |
             patches/build/libs/*.mpp
             patches/build/libs/SHA256SUMS
 
       - name: Publish versioned GitHub release
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
@@ -69,12 +72,12 @@ jobs:
           test "$TAG" = "v$VERSION"
           test "$ASSET" = "patches-$VERSION.mpp"
           test -s "patches/build/libs/$ASSET"
-          python3 scripts/release_notes.py "$VERSION" > /tmp/conduit-release-notes.md
+          python3 scripts/release_notes.py "$VERSION" > /tmp/velocity-patches-discord-release-notes.md
           if gh release view "$TAG" > /dev/null 2>&1; then
             echo "Release $TAG exists; leaving immutable published asset untouched."
             gh release view "$TAG" --json assets --jq '.assets[].name' | grep -Fx "$ASSET"               || { echo "The existing release has no $ASSET. Investigate manually."; exit 1; }
           else
-            gh release create "$TAG" "patches/build/libs/$ASSET"               --target "$GITHUB_SHA"               --title "Conduit $TAG"               --notes-file /tmp/conduit-release-notes.md
+            gh release create "$TAG" "patches/build/libs/$ASSET"               --target "$GITHUB_SHA"               --title "Velocity Patches Discord $TAG"               --notes-file /tmp/conduit-release-notes.md
           fi
 
       - name: Generate and validate remote-source metadata
@@ -84,6 +87,7 @@ jobs:
           python3 scripts/verify_source_setup.py --published
 
       - name: Commit remote-source metadata to main
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
           set -euo pipefail
@@ -91,7 +95,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add patches-bundle.json patches-list.json
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: publish Conduit source metadata [skip ci]'
+            git commit -m 'chore: publish Velocity Patches Discord source metadata [skip ci]'
             git push origin HEAD:main
           else
             echo 'Metadata already up to date.'
