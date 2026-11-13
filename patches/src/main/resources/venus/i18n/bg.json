@@ -1971,6 +1971,23 @@
     "Upload small image": "Качване на малко изображение",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Изображението ще се публикува в този канал. Всеки, който може да чете канала, ще го вижда.",
     "Use a public HTTPS image URL.": "Използвай публично достъпен HTTPS адрес на изображение.",
-    "Watching": "Гледа"
+    "Watching": "Гледа",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord в GitHub. Безплатен проект с отворен код (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Безопасен режим",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Временно изключва всички включени функции и възстановява предишните им превключватели, когато го изключите.",
+    "Visibility": "Видимост",
+    "Show details": "Показване на подробности",
+    "Include the activity details line.": "Включва реда с подробностите за дейността.",
+    "Show state": "Показване на състоянието",
+    "Include the activity state line.": "Включва реда със състоянието на дейността.",
+    "Show large image": "Показване на голямото изображение",
+    "Include the large activity image.": "Включва голямото изображение на дейността.",
+    "Show small image": "Показване на малкото изображение",
+    "Include the small activity image.": "Включва малкото изображение на дейността.",
+    "Show large image label": "Показване на етикета на голямото изображение",
+    "Show the large image's hover text.": "Показва текста при задържане върху голямото изображение.",
+    "Show small image label": "Показване на етикета на малкото изображение",
+    "Show the small image's hover text.": "Показва текста при задържане върху малкото изображение."
   }
 }
