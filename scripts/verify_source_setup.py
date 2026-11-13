@@ -29,4 +29,4 @@ if '--published' in sys.argv:
     assert manifest['download_url'] == f'https://github.com/{REPO}/releases/download/{VERSION["releaseTag"]}/{VERSION["releaseAsset"]}'
     assert patches['version'] == VERSION['version']
     assert isinstance(patches['patches'],list) and patches['patches']
-print('Conduit source configuration valid' + (' (published metadata)' if '--published' in sys.argv else ''))
+print('Velocity Patches Discord source configuration valid' + (' (published metadata)' if '--published' in sys.argv else ''))
