@@ -1971,6 +1971,23 @@
     "Upload small image": "Kleines Bild hochladen",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Beim Hochladen wird das Bild in diesem Kanal gepostet. Alle, die den Kanal lesen können, können das Bild sehen.",
     "Use a public HTTPS image URL.": "Verwende eine öffentlich erreichbare HTTPS-Bild-URL.",
-    "Watching": "Schaut zu"
+    "Watching": "Schaut zu",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord auf GitHub. Kostenlos und quelloffen (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Abgesicherter Modus",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Schaltet vorübergehend alle aktivierten Funktionen aus und stellt beim Deaktivieren deren vorherige Schalterstellungen wieder her.",
+    "Visibility": "Sichtbarkeit",
+    "Show details": "Details anzeigen",
+    "Include the activity details line.": "Die Detailzeile der Aktivität einblenden.",
+    "Show state": "Status anzeigen",
+    "Include the activity state line.": "Die Statuszeile der Aktivität einblenden.",
+    "Show large image": "Großes Bild anzeigen",
+    "Include the large activity image.": "Das große Aktivitätsbild einblenden.",
+    "Show small image": "Kleines Bild anzeigen",
+    "Include the small activity image.": "Das kleine Aktivitätsbild einblenden.",
+    "Show large image label": "Beschriftung des großen Bildes anzeigen",
+    "Show the large image's hover text.": "Den Hinweistext des großen Bildes anzeigen.",
+    "Show small image label": "Beschriftung des kleinen Bildes anzeigen",
+    "Show the small image's hover text.": "Den Hinweistext des kleinen Bildes anzeigen."
   }
 }
