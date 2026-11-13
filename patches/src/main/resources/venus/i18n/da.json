@@ -1971,6 +1971,23 @@
     "Upload small image": "Upload lille billede",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Billedet bliver lagt i denne kanal. Alle, der kan læse kanalen, kan se billedet.",
     "Use a public HTTPS image URL.": "Brug en offentligt tilgængelig HTTPS-billedadresse.",
-    "Watching": "Ser"
+    "Watching": "Ser",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord på GitHub. Gratis og open source (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Sikker tilstand",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Slår midlertidigt alle aktiverede funktioner fra og gendanner deres tidligere kontakter, når du slår den fra.",
+    "Visibility": "Synlighed",
+    "Show details": "Vis detaljer",
+    "Include the activity details line.": "Medtag aktivitetslinjen med detaljer.",
+    "Show state": "Vis status",
+    "Include the activity state line.": "Medtag aktivitetslinjen med status.",
+    "Show large image": "Vis stort billede",
+    "Include the large activity image.": "Medtag aktivitetens store billede.",
+    "Show small image": "Vis lille billede",
+    "Include the small activity image.": "Medtag aktivitetens lille billede.",
+    "Show large image label": "Vis stor billedetiket",
+    "Show the large image's hover text.": "Vis teksten, når man holder markøren over det store billede.",
+    "Show small image label": "Vis lille billedetiket",
+    "Show the small image's hover text.": "Vis teksten, når man holder markøren over det lille billede."
   }
 }
