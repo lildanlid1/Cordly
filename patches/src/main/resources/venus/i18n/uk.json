@@ -2053,6 +2053,23 @@
     "Upload small image": "Завантажити мале зображення",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Зображення буде опубліковано в цьому каналі. Його побачать усі, хто може читати канал.",
     "Use a public HTTPS image URL.": "Використовуй загальнодоступну HTTPS-адресу зображення.",
-    "Watching": "Дивиться"
+    "Watching": "Дивиться",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord на GitHub. Безкоштовний проєкт із відкритим кодом (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Безпечний режим",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Тимчасово вимикає всі ввімкнені функції та відновлює їхні попередні перемикачі після вимкнення цього режиму.",
+    "Visibility": "Видимість",
+    "Show details": "Показувати подробиці",
+    "Include the activity details line.": "Додавати рядок із подробицями активності.",
+    "Show state": "Показувати стан",
+    "Include the activity state line.": "Додавати рядок зі станом активності.",
+    "Show large image": "Показувати велике зображення",
+    "Include the large activity image.": "Додавати велике зображення активності.",
+    "Show small image": "Показувати мале зображення",
+    "Include the small activity image.": "Додавати мале зображення активності.",
+    "Show large image label": "Показувати підпис великого зображення",
+    "Show the large image's hover text.": "Показувати текст під час наведення на велике зображення.",
+    "Show small image label": "Показувати підпис малого зображення",
+    "Show the small image's hover text.": "Показувати текст під час наведення на мале зображення."
   }
 }
