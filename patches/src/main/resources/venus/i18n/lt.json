@@ -2049,6 +2049,23 @@
     "Upload small image": "Įkelti mažą vaizdą",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Vaizdas bus paskelbtas šiame kanale. Jį matys visi, galintys skaityti kanalą.",
     "Use a public HTTPS image URL.": "Naudokite viešai prieinamą HTTPS vaizdo URL.",
-    "Watching": "Žiūri"
+    "Watching": "Žiūri",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord „GitHub“. Nemokama ir atvirojo kodo (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Saugusis režimas",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Laikinai išjungia visas įjungtas funkcijas ir išjungus režimą atkuria ankstesnes jų jungiklių būsenas.",
+    "Visibility": "Matomumas",
+    "Show details": "Rodyti išsamią informaciją",
+    "Include the activity details line.": "Įtraukti veiklos išsamios informacijos eilutę.",
+    "Show state": "Rodyti būseną",
+    "Include the activity state line.": "Įtraukti veiklos būsenos eilutę.",
+    "Show large image": "Rodyti didelį vaizdą",
+    "Include the large activity image.": "Įtraukti didelį veiklos vaizdą.",
+    "Show small image": "Rodyti mažą vaizdą",
+    "Include the small activity image.": "Įtraukti mažą veiklos vaizdą.",
+    "Show large image label": "Rodyti didelio vaizdo etiketę",
+    "Show the large image's hover text.": "Rodyti tekstą užvedus žymeklį ant didelio vaizdo.",
+    "Show small image label": "Rodyti mažo vaizdo etiketę",
+    "Show the small image's hover text.": "Rodyti tekstą užvedus žymeklį ant mažo vaizdo."
   }
 }
