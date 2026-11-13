@@ -2049,6 +2049,23 @@
     "Upload small image": "Încarcă imaginea mică",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Imaginea va fi publicată în acest canal. Oricine poate citi canalul o poate vedea.",
     "Use a public HTTPS image URL.": "Folosește un URL HTTPS de imagine accesibil public.",
-    "Watching": "Se uită"
+    "Watching": "Se uită",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord pe GitHub. Gratuit și open source (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Mod de siguranță",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Dezactivează temporar toate funcțiile activate și le restabilește comutatoarele anterioare când dezactivezi acest mod.",
+    "Visibility": "Vizibilitate",
+    "Show details": "Afișează detaliile",
+    "Include the activity details line.": "Include rândul cu detaliile activității.",
+    "Show state": "Afișează starea",
+    "Include the activity state line.": "Include rândul cu starea activității.",
+    "Show large image": "Afișează imaginea mare",
+    "Include the large activity image.": "Include imaginea mare a activității.",
+    "Show small image": "Afișează imaginea mică",
+    "Include the small activity image.": "Include imaginea mică a activității.",
+    "Show large image label": "Afișează eticheta imaginii mari",
+    "Show the large image's hover text.": "Afișează textul asociat imaginii mari.",
+    "Show small image label": "Afișează eticheta imaginii mici",
+    "Show the small image's hover text.": "Afișează textul asociat imaginii mici."
   }
 }
