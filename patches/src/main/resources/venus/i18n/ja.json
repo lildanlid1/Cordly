@@ -1811,6 +1811,23 @@
     "Upload small image": "小さい画像をアップロード",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "画像はこのチャンネルに投稿されます。チャンネルを閲覧できる人は画像を見ることができます。",
     "Use a public HTTPS image URL.": "公開されているHTTPSの画像URLを使用してください。",
-    "Watching": "視聴中"
+    "Watching": "視聴中",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord は GitHub で公開されています。無料のオープンソースです (GPL-3.0)。",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "セーフモード",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "有効になっているすべての機能を一時的にオフにし、無効にすると以前のスイッチ状態に戻します。",
+    "Visibility": "表示",
+    "Show details": "詳細を表示",
+    "Include the activity details line.": "アクティビティの詳細行を含めます。",
+    "Show state": "状態を表示",
+    "Include the activity state line.": "アクティビティの状態行を含めます。",
+    "Show large image": "大きい画像を表示",
+    "Include the large activity image.": "アクティビティの大きい画像を含めます。",
+    "Show small image": "小さい画像を表示",
+    "Include the small activity image.": "アクティビティの小さい画像を含めます。",
+    "Show large image label": "大きい画像のラベルを表示",
+    "Show the large image's hover text.": "大きい画像にカーソルを合わせたときのテキストを表示します。",
+    "Show small image label": "小さい画像のラベルを表示",
+    "Show the small image's hover text.": "小さい画像にカーソルを合わせたときのテキストを表示します。"
   }
 }
