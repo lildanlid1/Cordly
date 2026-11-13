@@ -2053,6 +2053,23 @@
     "Upload small image": "Prześlij mały obraz",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Obraz zostanie opublikowany na tym kanale. Zobaczy go każdy, kto może czytać kanał.",
     "Use a public HTTPS image URL.": "Użyj publicznie dostępnego adresu HTTPS obrazu.",
-    "Watching": "Ogląda"
+    "Watching": "Ogląda",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord w GitHub. Bezpłatny projekt o otwartym kodzie (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Tryb awaryjny",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Tymczasowo wyłącza wszystkie włączone funkcje i przy wyłączeniu przywraca ich poprzednie ustawienia przełączników.",
+    "Visibility": "Widoczność",
+    "Show details": "Pokaż szczegóły",
+    "Include the activity details line.": "Uwzględnij wiersz ze szczegółami aktywności.",
+    "Show state": "Pokaż stan",
+    "Include the activity state line.": "Uwzględnij wiersz ze stanem aktywności.",
+    "Show large image": "Pokaż duży obraz",
+    "Include the large activity image.": "Uwzględnij duży obraz aktywności.",
+    "Show small image": "Pokaż mały obraz",
+    "Include the small activity image.": "Uwzględnij mały obraz aktywności.",
+    "Show large image label": "Pokaż etykietę dużego obrazu",
+    "Show the large image's hover text.": "Pokaż tekst po wskazaniu dużego obrazu.",
+    "Show small image label": "Pokaż etykietę małego obrazu",
+    "Show the small image's hover text.": "Pokaż tekst po wskazaniu małego obrazu."
   }
 }
