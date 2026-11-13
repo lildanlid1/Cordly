@@ -1811,6 +1811,23 @@
     "Upload small image": "上傳小圖",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "上傳會將圖片發布到此頻道。有權閱讀此頻道的人都能看到圖片。",
     "Use a public HTTPS image URL.": "請使用可公開存取的 HTTPS 圖片 URL。",
-    "Watching": "正在看"
+    "Watching": "正在看",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord 位於 GitHub。免費且開放原始碼（GPL-3.0）。",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "安全模式",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "暫時關閉所有已啟用的功能，並在關閉安全模式時還原先前的開關狀態。",
+    "Visibility": "可見度",
+    "Show details": "顯示詳細資料",
+    "Include the activity details line.": "包含活動詳細資料列。",
+    "Show state": "顯示狀態",
+    "Include the activity state line.": "包含活動狀態列。",
+    "Show large image": "顯示大型圖片",
+    "Include the large activity image.": "包含活動的大型圖片。",
+    "Show small image": "顯示小型圖片",
+    "Include the small activity image.": "包含活動的小型圖片。",
+    "Show large image label": "顯示大型圖片標籤",
+    "Show the large image's hover text.": "顯示大型圖片的滑鼠懸停文字。",
+    "Show small image label": "顯示小型圖片標籤",
+    "Show the small image's hover text.": "顯示小型圖片的滑鼠懸停文字。"
   }
 }
