@@ -1811,6 +1811,23 @@
     "Upload small image": "Unggah gambar kecil",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Gambar akan diposting di kanal ini. Siapa pun yang dapat membaca kanal bisa melihat gambar tersebut.",
     "Use a public HTTPS image URL.": "Gunakan URL gambar HTTPS yang dapat diakses publik.",
-    "Watching": "Menonton"
+    "Watching": "Menonton",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord di GitHub. Gratis dan sumber terbuka (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Mode Aman",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Menonaktifkan sementara semua fitur yang aktif dan memulihkan sakelar sebelumnya saat mode ini dimatikan.",
+    "Visibility": "Visibilitas",
+    "Show details": "Tampilkan detail",
+    "Include the activity details line.": "Sertakan baris detail aktivitas.",
+    "Show state": "Tampilkan status",
+    "Include the activity state line.": "Sertakan baris status aktivitas.",
+    "Show large image": "Tampilkan gambar besar",
+    "Include the large activity image.": "Sertakan gambar besar aktivitas.",
+    "Show small image": "Tampilkan gambar kecil",
+    "Include the small activity image.": "Sertakan gambar kecil aktivitas.",
+    "Show large image label": "Tampilkan label gambar besar",
+    "Show the large image's hover text.": "Tampilkan teks saat gambar besar disentuh atau diarahkan.",
+    "Show small image label": "Tampilkan label gambar kecil",
+    "Show the small image's hover text.": "Tampilkan teks saat gambar kecil disentuh atau diarahkan."
   }
 }
