@@ -1811,6 +1811,23 @@
     "Upload small image": "작은 이미지 업로드",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "이미지가 이 채널에 게시됩니다. 채널을 읽을 수 있는 사람은 누구나 이미지를 볼 수 있어요.",
     "Use a public HTTPS image URL.": "공개적으로 접근할 수 있는 HTTPS 이미지 URL을 사용하세요.",
-    "Watching": "시청 중"
+    "Watching": "시청 중",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "GitHub의 Velocity Patches Discord입니다. 무료 오픈 소스입니다 (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "안전 모드",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "활성화된 모든 기능을 일시적으로 끄고 안전 모드를 끄면 이전 스위치 상태를 복원합니다.",
+    "Visibility": "표시",
+    "Show details": "세부 정보 표시",
+    "Include the activity details line.": "활동 세부 정보 줄을 포함합니다.",
+    "Show state": "상태 표시",
+    "Include the activity state line.": "활동 상태 줄을 포함합니다.",
+    "Show large image": "큰 이미지 표시",
+    "Include the large activity image.": "활동의 큰 이미지를 포함합니다.",
+    "Show small image": "작은 이미지 표시",
+    "Include the small activity image.": "활동의 작은 이미지를 포함합니다.",
+    "Show large image label": "큰 이미지 레이블 표시",
+    "Show the large image's hover text.": "큰 이미지에 마우스를 올렸을 때 표시되는 텍스트를 표시합니다.",
+    "Show small image label": "작은 이미지 레이블 표시",
+    "Show the small image's hover text.": "작은 이미지에 마우스를 올렸을 때 표시되는 텍스트를 표시합니다."
   }
 }
