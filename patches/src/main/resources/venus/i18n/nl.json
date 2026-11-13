@@ -1971,6 +1971,23 @@
     "Upload small image": "Kleine afbeelding uploaden",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "De afbeelding wordt in dit kanaal geplaatst. Iedereen die het kanaal kan lezen, kan de afbeelding zien.",
     "Use a public HTTPS image URL.": "Gebruik een openbaar toegankelijke HTTPS-afbeeldings-URL.",
-    "Watching": "Kijkt"
+    "Watching": "Kijkt",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord op GitHub. Gratis en open source (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Veilige modus",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Schakelt tijdelijk alle ingeschakelde functies uit en herstelt de vorige schakelaarstanden wanneer je deze modus uitschakelt.",
+    "Visibility": "Zichtbaarheid",
+    "Show details": "Details tonen",
+    "Include the activity details line.": "De regel met activiteitsdetails opnemen.",
+    "Show state": "Status tonen",
+    "Include the activity state line.": "De statusregel van de activiteit opnemen.",
+    "Show large image": "Grote afbeelding tonen",
+    "Include the large activity image.": "De grote activiteitsafbeelding opnemen.",
+    "Show small image": "Kleine afbeelding tonen",
+    "Include the small activity image.": "De kleine activiteitsafbeelding opnemen.",
+    "Show large image label": "Label van grote afbeelding tonen",
+    "Show the large image's hover text.": "De tekst tonen die bij de grote afbeelding hoort.",
+    "Show small image label": "Label van kleine afbeelding tonen",
+    "Show the small image's hover text.": "De tekst tonen die bij de kleine afbeelding hoort."
   }
 }
