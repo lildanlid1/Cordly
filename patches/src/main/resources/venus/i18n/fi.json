@@ -1989,6 +1989,23 @@
     "Upload small image": "Lähetä pieni kuva",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Kuva julkaistaan tällä kanavalla. Kaikki, jotka voivat lukea kanavaa, näkevät kuvan.",
     "Use a public HTTPS image URL.": "Käytä julkisesti saatavilla olevaa kuvan HTTPS-osoitetta.",
-    "Watching": "Katsoo"
+    "Watching": "Katsoo",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord GitHubissa. Ilmainen ja avoimen lähdekoodin (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Vikasietotila",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Poistaa kaikki käytössä olevat ominaisuudet tilapäisesti käytöstä ja palauttaa niiden aiemmat kytkimet, kun poistat tilan käytöstä.",
+    "Visibility": "Näkyvyys",
+    "Show details": "Näytä tiedot",
+    "Include the activity details line.": "Sisällytä toiminnan tietorivi.",
+    "Show state": "Näytä tila",
+    "Include the activity state line.": "Sisällytä toiminnan tilarivi.",
+    "Show large image": "Näytä suuri kuva",
+    "Include the large activity image.": "Sisällytä toiminnan suuri kuva.",
+    "Show small image": "Näytä pieni kuva",
+    "Include the small activity image.": "Sisällytä toiminnan pieni kuva.",
+    "Show large image label": "Näytä suuren kuvan tunniste",
+    "Show the large image's hover text.": "Näytä suuren kuvan osoiteteksti.",
+    "Show small image label": "Näytä pienen kuvan tunniste",
+    "Show the small image's hover text.": "Näytä pienen kuvan osoiteteksti."
   }
 }
