@@ -2049,6 +2049,23 @@
     "Upload small image": "Prenesi malu sliku",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Slika će biti objavljena u ovom kanalu. Svatko tko može čitati kanal moći će je vidjeti.",
     "Use a public HTTPS image URL.": "Upotrijebi javno dostupan HTTPS URL slike.",
-    "Watching": "Gleda"
+    "Watching": "Gleda",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord na GitHubu. Besplatno i otvorenog koda (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Sigurni način rada",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Privremeno isključuje sve uključene značajke i vraća njihove prethodne prekidače kada ga isključite.",
+    "Visibility": "Vidljivost",
+    "Show details": "Prikaži detalje",
+    "Include the activity details line.": "Uključi redak s pojedinostima aktivnosti.",
+    "Show state": "Prikaži status",
+    "Include the activity state line.": "Uključi redak sa statusom aktivnosti.",
+    "Show large image": "Prikaži veliku sliku",
+    "Include the large activity image.": "Uključi veliku sliku aktivnosti.",
+    "Show small image": "Prikaži malu sliku",
+    "Include the small activity image.": "Uključi malu sliku aktivnosti.",
+    "Show large image label": "Prikaži oznaku velike slike",
+    "Show the large image's hover text.": "Prikaži tekst pri prelasku preko velike slike.",
+    "Show small image label": "Prikaži oznaku male slike",
+    "Show the small image's hover text.": "Prikaži tekst pri prelasku preko male slike."
   }
 }
