@@ -950,7 +950,7 @@ def check_languages():
             for text in (value.values() if isinstance(value, dict) else [value]):
                 if not isinstance(text, str) or set(re.findall(r"\{\w+\}", text)) != needed:
                     raise SystemExit(f"i18n/{code}.json: {english!r} must keep {sorted(needed)}")
-    # Every text Conduit passes through tr()/pl() ships translated, so a new row can't appear in English only.
+    # Every text Velocity Patches Discord passes through tr()/pl() ships translated, so a new row can't appear in English only.
     found = json.loads(subprocess.check_output(["node", ROOT / "scripts/i18n_strings.cjs"], cwd=ROOT, text=True))
     for code in codes:
         strings = json.loads((folder / f"{code}.json").read_text(encoding="utf-8"))["strings"]
