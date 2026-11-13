@@ -1971,6 +1971,23 @@
     "Upload small image": "Carica immagine piccola",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "L’immagine verrà pubblicata in questo canale. Chiunque possa leggere il canale potrà vederla.",
     "Use a public HTTPS image URL.": "Usa un URL HTTPS di un’immagine accessibile pubblicamente.",
-    "Watching": "Guarda"
+    "Watching": "Guarda",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord su GitHub. Gratuito e open source (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Modalità provvisoria",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Disattiva temporaneamente tutte le funzioni attive e ripristina gli interruttori precedenti quando la disattivi.",
+    "Visibility": "Visibilità",
+    "Show details": "Mostra dettagli",
+    "Include the activity details line.": "Includi la riga dei dettagli dell’attività.",
+    "Show state": "Mostra stato",
+    "Include the activity state line.": "Includi la riga dello stato dell’attività.",
+    "Show large image": "Mostra immagine grande",
+    "Include the large activity image.": "Includi l’immagine grande dell’attività.",
+    "Show small image": "Mostra immagine piccola",
+    "Include the small activity image.": "Includi l’immagine piccola dell’attività.",
+    "Show large image label": "Mostra etichetta immagine grande",
+    "Show the large image's hover text.": "Mostra il testo al passaggio del cursore sull’immagine grande.",
+    "Show small image label": "Mostra etichetta immagine piccola",
+    "Show the small image's hover text.": "Mostra il testo al passaggio del cursore sull’immagine piccola."
   }
 }
