@@ -2049,6 +2049,23 @@
     "Upload small image": "Nahrát malý obrázek",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Obrázek se zveřejní v tomto kanálu. Uvidí ho každý, kdo může kanál číst.",
     "Use a public HTTPS image URL.": "Použij veřejně dostupnou HTTPS adresu obrázku.",
-    "Watching": "Sleduje"
+    "Watching": "Sleduje",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord na GitHubu. Zdarma a s otevřeným zdrojovým kódem (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Bezpečný režim",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Dočasně vypne všechny zapnuté funkce a při vypnutí obnoví jejich předchozí přepínače.",
+    "Visibility": "Viditelnost",
+    "Show details": "Zobrazit podrobnosti",
+    "Include the activity details line.": "Zahrne řádek s podrobnostmi o aktivitě.",
+    "Show state": "Zobrazit stav",
+    "Include the activity state line.": "Zahrne řádek se stavem aktivity.",
+    "Show large image": "Zobrazit velký obrázek",
+    "Include the large activity image.": "Zahrne velký obrázek aktivity.",
+    "Show small image": "Zobrazit malý obrázek",
+    "Include the small activity image.": "Zahrne malý obrázek aktivity.",
+    "Show large image label": "Zobrazit popisek velkého obrázku",
+    "Show the large image's hover text.": "Zobrazí text při podržení velkého obrázku.",
+    "Show small image label": "Zobrazit popisek malého obrázku",
+    "Show the small image's hover text.": "Zobrazí text při podržení malého obrázku."
   }
 }
