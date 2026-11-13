@@ -1989,6 +1989,23 @@
     "Upload small image": "Kis kép feltöltése",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "A kép ebben a csatornában lesz közzétéve. Mindenki láthatja, aki olvashatja a csatornát.",
     "Use a public HTTPS image URL.": "Használj nyilvánosan elérhető HTTPS-kép-URL-t.",
-    "Watching": "Néz"
+    "Watching": "Néz",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord a GitHubon. Ingyenes és nyílt forráskódú (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Biztonságos mód",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Ideiglenesen kikapcsol minden bekapcsolt funkciót, majd kikapcsolásakor visszaállítja a korábbi kapcsolóállapotokat.",
+    "Visibility": "Láthatóság",
+    "Show details": "Részletek megjelenítése",
+    "Include the activity details line.": "Tartalmazza a tevékenység részleteit megjelenítő sort.",
+    "Show state": "Állapot megjelenítése",
+    "Include the activity state line.": "Tartalmazza a tevékenység állapotát megjelenítő sort.",
+    "Show large image": "Nagy kép megjelenítése",
+    "Include the large activity image.": "Tartalmazza a tevékenység nagy képét.",
+    "Show small image": "Kis kép megjelenítése",
+    "Include the small activity image.": "Tartalmazza a tevékenység kis képét.",
+    "Show large image label": "Nagy kép címkéjének megjelenítése",
+    "Show the large image's hover text.": "Megjeleníti a nagy kép fölé vitt kurzornál látható szöveget.",
+    "Show small image label": "Kis kép címkéjének megjelenítése",
+    "Show the small image's hover text.": "Megjeleníti a kis kép fölé vitt kurzornál látható szöveget."
   }
 }
