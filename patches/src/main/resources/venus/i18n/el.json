@@ -1971,6 +1971,23 @@
     "Upload small image": "Μεταφόρτωση μικρής εικόνας",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Η εικόνα θα δημοσιευτεί σε αυτό το κανάλι. Όποιος μπορεί να διαβάσει το κανάλι μπορεί να τη δει.",
     "Use a public HTTPS image URL.": "Χρησιμοποίησε δημόσια προσβάσιμο URL εικόνας HTTPS.",
-    "Watching": "Παρακολουθεί"
+    "Watching": "Παρακολουθεί",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Το Velocity Patches Discord στο GitHub. Δωρεάν και ανοικτού κώδικα (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Ασφαλής λειτουργία",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Απενεργοποιεί προσωρινά όλες τις ενεργές λειτουργίες και επαναφέρει τους προηγούμενους διακόπτες τους όταν την απενεργοποιήσετε.",
+    "Visibility": "Ορατότητα",
+    "Show details": "Εμφάνιση λεπτομερειών",
+    "Include the activity details line.": "Περιλαμβάνει τη γραμμή λεπτομερειών της δραστηριότητας.",
+    "Show state": "Εμφάνιση κατάστασης",
+    "Include the activity state line.": "Περιλαμβάνει τη γραμμή κατάστασης της δραστηριότητας.",
+    "Show large image": "Εμφάνιση μεγάλης εικόνας",
+    "Include the large activity image.": "Περιλαμβάνει τη μεγάλη εικόνα της δραστηριότητας.",
+    "Show small image": "Εμφάνιση μικρής εικόνας",
+    "Include the small activity image.": "Περιλαμβάνει τη μικρή εικόνα της δραστηριότητας.",
+    "Show large image label": "Εμφάνιση ετικέτας μεγάλης εικόνας",
+    "Show the large image's hover text.": "Εμφανίζει το κείμενο κατά την επισήμανση της μεγάλης εικόνας.",
+    "Show small image label": "Εμφάνιση ετικέτας μικρής εικόνας",
+    "Show the small image's hover text.": "Εμφανίζει το κείμενο κατά την επισήμανση της μικρής εικόνας."
   }
 }
