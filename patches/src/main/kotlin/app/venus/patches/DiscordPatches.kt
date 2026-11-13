@@ -36,7 +36,7 @@ internal fun PatchBuilder<*>.section(name: String) {
 /** The runtime version recorded next to the injected prelude, read from bootstrap.js itself. */
 private fun runtimeRevision(source: String): String =
     Regex("""const revision\s*=\s*"([^"]+)"""").find(source)?.groupValues?.get(1)
-        ?: throw PatchException("Conduit runtime revision missing")
+        ?: throw PatchException("Velocity Patches Discord runtime revision missing")
 
 // Reset per run: Manager can reuse a loaded bundle for multiple selections.
 private var pickerSelected = false
@@ -68,7 +68,7 @@ private val runtimeAssets = rawResourcePatch {
     finalize {
         val bootstrap = object {}.javaClass.getResourceAsStream("/venus/bootstrap.js")
             ?.bufferedReader()?.use { it.readText() }
-            ?: throw PatchException("Conduit runtime asset missing from bundle")
+            ?: throw PatchException("Velocity Patches Discord runtime asset missing from bundle")
         val asset = get("assets/venus/bootstrap.js", false)
         asset.parentFile.mkdirs()
         val selected = bootstrap.replace(
@@ -76,7 +76,7 @@ private val runtimeAssets = rawResourcePatch {
             "{picker:$pickerSelected,voice:$voiceSelected,copyBios:$copyBiosSelected," +
                 "favouriteAnything:$favouriteAnythingSelected,freeNitro:$freeNitroSelected," +
                 listOf("noTyping", "quickDelete", "noDelete", "jumpToTop", "hiddenChannels", "pastelize", "platformIndicators", "reviewDB", "readAll", "quests", "badges", "systemFont",
-                    "systemEmoji", "gestures", "validUser", "youBarSettings", "splitMessages", "translate", "userNotif", "accountSwitcher", "appIcons", "nitroThemes", "customThemes", "materialYou", "iconPacks", "messageHighlight", "serverInfo", "customRPC", "serverEdit", "fixEmbeds", "tenorGifs", "hideBlocked", "bulkDelete", "experiments", "cleanChannels", "noHandsfree", "voiceOptions", "anonFiles", "staffTag", "removedAlerts", "fullImages", "hideAnything", "alwaysTrust", "noConfirmPin", "clickableMentions", "expandBar", "quietReplies", "silentLeave", "guildLurk", "compressUploads", "timeoutDuration", "dndBanners", "landscapeFull", "voiceDownload", "cloneExpressions", "listenAlong", "silentEdit", "silentDelete", "localEdit", "hypeSquad", "customIdle", "mutualGroupDMs", "fastDeleteChannels", "pauseInvites", "platformSpoof", "backgroundMedia", "viewRaw", "fakeDeafen")
+                    "systemEmoji", "gestures", "validUser", "youBarSettings", "splitMessages", "translate", "userNotif", "accountSwitcher", "appIcons", "nitroThemes", "customThemes", "materialYou", "iconPacks", "messageHighlight", "serverInfo", "customRPC", "serverEdit", "fixEmbeds", "tenorGifs", "hideBlocked", "bulkDelete", "experiments", "cleanChannels", "noHandsfree", "voiceOptions", "anonFiles", "staffTag", "removedAlerts", "fullImages", "hideAnything", "alwaysTrust", "noConfirmPin", "clickableMentions", "expandBar", "quietReplies", "silentLeave", "guildLurk", "compressUploads", "timeoutDuration", "dndBanners", "landscapeFull", "voiceDownload", "cloneExpressions", "listenAlong", "silentEdit", "silentDelete", "localEdit", "hypeSquad", "customIdle", "mutualGroupDMs", "fastDeleteChannels", "pauseInvites", "platformSpoof", "backgroundMedia", "viewRaw", "fakeDeafen", "safeMode")
                     .joinToString(",") { "$it:${it in additionalSelections}" } + "}"
         )
         asset.writeText(selected)
@@ -128,7 +128,7 @@ internal const val OTA_GUARD_SIZE = 4
 
 /**
  * Discord checks for an over-the-air JS bundle every time an activity opens, and after a crash it blocks
- * the first screen until that check (and any download) finishes. Conduit always runs the packaged bundle
+ * the first screen until that check (and any download) finishes. Velocity Patches Discord always runs the packaged bundle
  * (see [pinPackagedDiscordBundle]), so those bundles were downloaded, unpacked and stored for nothing,
  * using network, disk and CPU while Discord starts. Launch checks pass no callback: they now return no
  * Future, which every caller already handles (Discord does the same while a check is running). A check
@@ -169,13 +169,13 @@ internal fun pinPackagedDiscordBundle(method: app.morphe.patcher.util.proxy.muta
 private val i18nAssets = rawResourcePatch {
     execute {
         val index = object {}.javaClass.getResourceAsStream("/venus/i18n/index.txt")?.bufferedReader()?.use { it.readText() }
-            ?: throw PatchException("Conduit language list missing from bundle")
+            ?: throw PatchException("Velocity Patches Discord language list missing from bundle")
         val folder = get("assets/venus/i18n", false)
         folder.mkdirs()
         for (code in index.lines().map { it.trim() }.filter { it.isNotEmpty() }) {
             if (!Regex("^[A-Za-z-]{2,10}$").matches(code)) throw PatchException("Bad language code $code")
             val bytes = object {}.javaClass.getResourceAsStream("/venus/i18n/$code.json")?.use { it.readBytes() }
-                ?: throw PatchException("Conduit language $code missing from bundle")
+                ?: throw PatchException("Velocity Patches Discord language $code missing from bundle")
             java.io.File(folder, "$code.json").writeBytes(bytes)
         }
     }
@@ -186,9 +186,9 @@ internal const val LANGUAGES = "Lapp/venus/i18n/Languages;"
 internal const val LANGUAGE_BRIDGE_SIZE = 11
 
 /**
- * Conduit settings languages: assets/venus/i18n/<code>.json, read through FileModule.readAsset with a private prefix
+ * Velocity Patches Discord settings languages: assets/venus/i18n/<code>.json, read through FileModule.readAsset with a private prefix
  * (readAsset(uri, encoding, promise): p1 is the URI, p3 the Promise). Discord's own readAsset calls fall through.
- * Its own method, like the voice and font bridges: each FileModule method gets at most one Conduit guard.
+ * Its own method, like the voice and font bridges: each FileModule method gets at most one Velocity Patches Discord guard.
  */
 internal fun languageBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
     if (method.parameterTypes.map { it.toString() } != listOf("Ljava/lang/String;", "Ljava/lang/String;", PROMISE) || method.returnType != "V" ||
@@ -211,7 +211,7 @@ internal fun languageBridge(method: app.morphe.patcher.util.proxy.mutableTypes.M
     """)
 }
 
-/** Hidden helper of Conduit settings: the language files and the bridge that reads them. */
+/** Hidden helper of Velocity Patches Discord settings: the language files and the bridge that reads them. */
 internal val settingsLanguages = bytecodePatch {
     dependsOn(discordBundleGuard, i18nAssets)
     extendWith("extensions/i18n.mpe")
@@ -230,9 +230,9 @@ internal const val DIAGNOSTICS = "Lapp/venus/diag/Diagnostics;"
 internal const val DIAGNOSTICS_BRIDGE_SIZE = 9
 
 /**
- * Lets Conduit settings read crash reports, the phone's details and Discord's logcat, and preview the crash screen.
+ * Lets Velocity Patches Discord settings read crash reports, the phone's details and Discord's logcat, and preview the crash screen.
  * clearFolder(storageDir, path, promise): p1 is the folder, p2 the path, p3 the Promise. Discord only ever passes "cache"
- * or "documents" as the folder, so a request with the private prefix can't be one of its own. No other Conduit guard uses it.
+ * or "documents" as the folder, so a request with the private prefix can't be one of its own. No other Velocity Patches Discord guard uses it.
  */
 internal fun diagnosticsBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
     if (method.parameterTypes.map { it.toString() } != listOf("Ljava/lang/String;", "Ljava/lang/String;", PROMISE) || method.returnType != "V" ||
@@ -262,7 +262,7 @@ internal fun readDiagnostics(method: app.morphe.patcher.util.proxy.mutableTypes.
     method.addInstructions(1, "invoke-static {p0}, $DIAGNOSTICS->init(Landroid/content/Context;)V")
 }
 
-/** Hidden helper of Conduit settings: the crash screen and the bridge to troubleshooting logs. */
+/** Hidden helper of Velocity Patches Discord settings: the crash screen and the bridge to troubleshooting logs. */
 internal val diagnostics = bytecodePatch {
     dependsOn(discordBundleGuard)
     extendWith("extensions/diag.mpe")
@@ -284,8 +284,8 @@ internal val diagnostics = bytecodePatch {
 
 @Suppress("unused")
 val venusSettings = bytecodePatch(
-    name = "Conduit settings",
-    description = "Adds Conduit to Discord's settings, where you turn each feature on or off, in your language. Needed by every feature."
+    name = "Velocity Patches Discord settings",
+    description = "Adds the Velocity Patches Discord settings and feature controls to Discord. Required by the individual feature patches."
 ) {
     compatibleWith(discord)
     section(PLUGINS)
@@ -343,7 +343,7 @@ val silentLeave = bundledPlugin("silentLeave", "Leave group DMs silently",
 
 @Suppress("unused")
 val silentEdit = bundledPlugin("silentEdit", "Edit without \"(edited)\"",
-    "Edit a message without the \"(edited)\" tag. Only works while your message is the latest one in the chat: Conduit sends the new text as a new message and deletes the old one. Older messages are edited the normal way.")
+    "Edit a message without the \"(edited)\" tag. Only works while your message is the latest one in the chat: Velocity Patches Discord sends the new text as a new message and deletes the old one. Older messages are edited the normal way.")
 
 @Suppress("unused")
 val silentDelete = bundledPlugin("silentDelete", "Delete without a trace",
@@ -355,7 +355,7 @@ val localEdit = bundledPlugin("localEdit", "Edit messages on this phone",
 
 @Suppress("unused")
 val hypeSquad = bundledPlugin("hypeSquad", "HypeSquad house",
-    "Join or leave a HypeSquad house (Bravery, Brilliance or Balance) from Conduit settings. Discord limits how often you can change house.")
+    "Join or leave a HypeSquad house (Bravery, Brilliance or Balance) from Velocity Patches Discord settings. Discord limits how often you can change house.")
 
 @Suppress("unused")
 val customIdle = bundledPlugin("customIdle", "Custom idle time",
@@ -475,7 +475,7 @@ internal const val VOICE_BRIDGE_SIZE = 11
  * Existing TurboModule schemas cannot expose arbitrary new ReactMethod functions, so voice messages
  * dispatch a private URI prefix through getSize's Promise; normal size requests fall through.
  *
- * Each Discord method gets at most one Conduit prefix. Morphe re-encodes an earlier prefix's branches
+ * Each Discord method gets at most one Velocity Patches Discord prefix. Morphe re-encodes an earlier prefix's branches
  * when a second one is inserted in front of it, and in 1.5.0 that left getSize's branches pointing
  * into the middle of an instruction: Android rejected FileModule and Discord froze on its icon.
  */
@@ -505,7 +505,7 @@ internal const val COMPRESS_BRIDGE_SIZE = 11
 
 /**
  * Compress big files shrinks photos and audio natively. removeFile(storageDir, path, promise) is the one FileModule
- * Promise method no other Conduit feature guards: p1 carries the private prefix and the request, p3 is the Promise.
+ * Promise method no other Velocity Patches Discord feature guards: p1 carries the private prefix and the request, p3 is the Promise.
  * Discord never passes a "venus-compress-v1:" folder, so its own calls fall straight through.
  */
 internal fun compressBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
@@ -529,7 +529,7 @@ internal fun compressBridge(method: app.morphe.patcher.util.proxy.mutableTypes.M
     """)
 }
 
-/** Fails the patch, instead of freezing Discord, if another Conduit prefix already sits in this method. */
+/** Fails the patch, instead of freezing Discord, if another Velocity Patches Discord prefix already sits in this method. */
 internal fun requireUnpatched(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod, marker: String) {
     val strings = method.implementation?.instructions?.mapNotNull {
         ((it as? com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction)?.reference
@@ -540,10 +540,10 @@ internal fun requireUnpatched(method: app.morphe.patcher.util.proxy.mutableTypes
             as? com.android.tools.smali.dexlib2.iface.reference.MethodReference)?.definingClass
     } ?: emptyList()
     if (strings.any { it.startsWith(marker) } || calls.any { it.startsWith("Lapp/venus/") })
-        throw PatchException("${method.definingClass}->${method.name} already has a Conduit guard; each method may only get one")
+        throw PatchException("${method.definingClass}->${method.name} already has a Velocity Patches Discord guard; each method may only get one")
 }
 
-// Each feature is its own selectable patch, bundled offline in the Conduit runtime.
+// Each feature is its own selectable patch, bundled offline in the Velocity Patches Discord runtime.
 private fun bundledPlugin(key: String, title: String, summary: String) = rawResourcePatch(
     name = title,
     description = summary
@@ -602,7 +602,7 @@ internal const val PASTEL_REPLY_GUARD_SIZE = 17
  * Discord's reply preview paints the quoted text in one theme color, set once when the view is made, and
  * never reads the message's textColor, so Pastelize's "Color message text" never reached replies (#45).
  * Before the reply text is drawn, this sets it to the replied message's textColor, or Discord's own
- * color when there is none: Conduit only sends textColor on a reply when it colors it. Recycled previews
+ * color when there is none: Velocity Patches Discord only sends textColor on a reply when it colors it. Recycled previews
  * get their color set each time. 43 registers, 4 of them parameters: v0-v2 are free until Discord's first move.
  */
 internal fun pastelReplyText(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
@@ -712,9 +712,9 @@ internal fun readSystemFontSetting(method: app.morphe.patcher.util.proxy.mutable
 internal const val SYSTEM_FONT_BRIDGE_SIZE = 9
 
 /**
- * Lets Conduit settings reopen Discord after the font changes. Uses fileExists, not getSize: voice messages
+ * Lets Velocity Patches Discord settings reopen Discord after the font changes. Uses fileExists, not getSize: voice messages
  * already guard getSize, and a second prefix in one method breaks the first one's branches (see [voiceBridge]).
- * Conduit only ever asks fileExists about absolute paths, so the private prefix can't match a real request.
+ * Velocity Patches Discord only ever asks fileExists about absolute paths, so the private prefix can't match a real request.
  */
 internal fun systemFontBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
     if (method.parameterTypes.map { it.toString() } != listOf("Ljava/lang/String;", PROMISE) || method.returnType != "V" ||
@@ -800,9 +800,9 @@ internal fun useSystemEmoji(method: app.morphe.patcher.util.proxy.mutableTypes.M
 internal const val SYSTEM_EMOJI_BRIDGE_SIZE = 7
 
 /**
- * Lets Conduit settings reopen Discord after the emoji setting changes. getVideoDimensions only ever rejects on
+ * Lets Velocity Patches Discord settings reopen Discord after the emoji setting changes. getVideoDimensions only ever rejects on
  * Android ("only supported on iOS") and Discord's JS never calls it, so a request with the private prefix
- * goes to Conduit and anything else still gets Discord's own answer. No other Conduit guard uses this method.
+ * goes to Velocity Patches Discord and anything else still gets Discord's own answer. No other Velocity Patches Discord guard uses this method.
  */
 internal fun systemEmojiBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
     if (method.parameterTypes.map { it.toString() } != listOf("Ljava/lang/String;", PROMISE) || method.returnType != "V" ||
@@ -868,15 +868,15 @@ val messageGestures = bundledPlugin("gestures", "Double-tap to reply",
 
 @Suppress("unused")
 val removeAnything = bundledPlugin("hideAnything", "Remove anything",
-    "Tap a button you never use to remove it, right where it is: turn on removal mode, then tap the red X on the voice message, attach, gift, call, video, search, Quests, Shop or Nitro buttons, the Quests banner, attach menu items, message menu rows and quick reactions, profile menu items, Settings rows and more. Bring them back any time in Conduit.")
+    "Tap a button you never use to remove it, right where it is: turn on removal mode, then tap the red X on the voice message, attach, gift, call, video, search, Quests, Shop or Nitro buttons, the Quests banner, attach menu items, message menu rows and quick reactions, profile menu items, Settings rows and more. Bring them back any time in Velocity Patches Discord.")
 
 @Suppress("unused")
 val validUser = bundledPlugin("validUser", "Fix unknown mentions",
     "@unknown-user mentions are looked up and show the person's name. Based on ValidUser by fshin, o.oer and kmmiio99o.")
 
 @Suppress("unused")
-val youBarSettings = bundledPlugin("youBarSettings", "Conduit button on profile bar",
-    "A shortcut to Conduit settings, next to the notifications bell.")
+val youBarSettings = bundledPlugin("youBarSettings", "Velocity Patches Discord button on profile bar",
+    "A shortcut to Velocity Patches Discord settings, next to the notifications bell.")
 
 @Suppress("unused")
 val bringBackTenorGifs = bundledPlugin("tenorGifs", "Bring back Tenor GIFs",
@@ -979,7 +979,7 @@ internal fun scaleMessageGutterWidth(method: app.morphe.patcher.util.proxy.mutab
         method.returnType != "V" || implementation.registerCount - 5 < 3)
         throw PatchException("HighlightedMessageDrawer.drawHighlight ABI changed")
     if (implementation.instructions.firstOrNull()?.opcode == com.android.tools.smali.dexlib2.Opcode.IGET_OBJECT)
-        throw PatchException("${method.definingClass}->${method.name} already has a Conduit guard; each method may only get one")
+        throw PatchException("${method.definingClass}->${method.name} already has a Velocity Patches Discord guard; each method may only get one")
     requireUnpatched(method, "venus-")
     method.addInstructions(0, """
         iget-object v0, p0, $HIGHLIGHT_DRAWER->gutterPaintColor:Ljava/lang/Integer;
@@ -1133,8 +1133,8 @@ internal const val SYSTEM_COLORS = "Lapp/venus/monet/SystemColors;"
 internal const val MATERIAL_YOU_BRIDGE_SIZE = 11
 
 /**
- * Lets Conduit read the phone's wallpaper palettes. Discord's JS never calls getFileHash, so a request with the private
- * prefix goes to Conduit and anything else still runs Discord's code. No other Conduit guard uses this method.
+ * Lets Velocity Patches Discord read the phone's wallpaper palettes. Discord's JS never calls getFileHash, so a request with the private
+ * prefix goes to Velocity Patches Discord and anything else still runs Discord's code. No other Velocity Patches Discord guard uses this method.
  * getFileHash(uri, algorithm, double, promise): p1 = uri, p5 = Promise; 15 registers, 6 of them parameters.
  */
 internal fun materialYouBridge(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
@@ -1275,7 +1275,7 @@ val bulkDelete = bytecodePatch(
 internal const val HANDSFREE = "Lapp/venus/audio/Handsfree;"
 internal const val AUDIO_MANAGER = "Landroid/media/AudioManager;"
 
-/** The AudioManager calls Discord makes to put Bluetooth headphones in hands-free mode, and Conduit's replacement for each. */
+/** The AudioManager calls Discord makes to put Bluetooth headphones in hands-free mode, and Velocity Patches Discord's replacement for each. */
 internal val HANDSFREE_CALLS = mapOf(
     "setMode(I)V" to "setMode($AUDIO_MANAGER" + "I)V",
     "startBluetoothSco()V" to "startBluetoothSco($AUDIO_MANAGER)V",
@@ -1320,7 +1320,7 @@ internal fun keepBluetoothA2dp(method: app.morphe.patcher.util.proxy.mutableType
     return count
 }
 
-/** Lets the hands-free guard find Conduit's settings file, right after Application.onCreate's super call. */
+/** Lets the hands-free guard find Velocity Patches Discord's settings file, right after Application.onCreate's super call. */
 internal fun readHandsfreeContext(method: app.morphe.patcher.util.proxy.mutableTypes.MutableMethod) {
     val first = method.implementation?.instructions?.firstOrNull()
     val target = (first as? com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction)?.reference?.toString()
@@ -1363,3 +1363,5 @@ val keepBluetoothAudioClear = bytecodePatch(
 }
 
 val customRichPresence = bundledPlugin("customRPC", "Rich Presence", "Publish a custom activity with images, details and elapsed time.")
+
+val safeMode = bundledPlugin("safeMode", "Safe Mode", "Pause all enabled features at once and restore the previous switches when Safe Mode is turned off.")

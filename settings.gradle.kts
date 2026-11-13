@@ -1,1 +1,1 @@
-rootProject.name = "conduit-patches"
+rootProject.name = "velocity-patches-discord"

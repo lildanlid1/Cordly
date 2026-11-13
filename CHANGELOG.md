@@ -1,3 +1,14 @@
+## [1.26.0](https://github.com/lildanlid1/Cordly/compare/v1.25.0...v1.26.0) (2026-11-13)
+
+### ✨ New Features
+
+* **Discord - Safe Mode:** Pause enabled features together and restore each previous feature switch without resetting its options
+* **Discord - Rich Presence:** Add separate controls for activity details, state, each image and each image label
+
+### 🔧 Improvements
+
+* **Discord - Velocity Patches Discord settings:** Replace the old product branding in the settings UI, patch labels, backups and documentation
+
 ## [1.25.0](https://github.com/lildanlid1/Cordly/compare/v1.24.0...v1.25.0) (2026-11-04)
 
 ### 🚀 Updated App Support

@@ -1,4 +1,4 @@
-// Lists every English text Conduit shows through tr(), so language files can be checked against it.
+// Lists every English text Velocity Patches Discord shows through tr(), so language files can be checked against it.
 // Zero external dependencies (no Acorn): node scripts/i18n_strings.cjs  ->  JSON array on stdout
 const fs = require('node:fs');
 const source = fs.readFileSync('patches/src/main/resources/venus/bootstrap.js', 'utf8').replace('/*__FEATURES__*/', '{}');
