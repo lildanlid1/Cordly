@@ -1971,6 +1971,23 @@
     "Upload small image": "Küçük görseli yükle",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Görsel bu kanalda paylaşılır. Kanalı okuyabilen herkes görseli görebilir.",
     "Use a public HTTPS image URL.": "Herkese açık bir HTTPS görsel URL'si kullan.",
-    "Watching": "İzliyor"
+    "Watching": "İzliyor",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord GitHub'da. Ücretsiz ve açık kaynaklıdır (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Güvenli mod",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Etkin tüm özellikleri geçici olarak kapatır ve bu modu kapattığınızda önceki anahtar durumlarını geri yükler.",
+    "Visibility": "Görünürlük",
+    "Show details": "Ayrıntıları göster",
+    "Include the activity details line.": "Etkinlik ayrıntıları satırını ekle.",
+    "Show state": "Durumu göster",
+    "Include the activity state line.": "Etkinlik durumu satırını ekle.",
+    "Show large image": "Büyük resmi göster",
+    "Include the large activity image.": "Etkinliğin büyük resmini ekle.",
+    "Show small image": "Küçük resmi göster",
+    "Include the small activity image.": "Etkinliğin küçük resmini ekle.",
+    "Show large image label": "Büyük resim etiketini göster",
+    "Show the large image's hover text.": "Büyük resmin üzerine gelindiğinde görünen metni göster.",
+    "Show small image label": "Küçük resim etiketini göster",
+    "Show the small image's hover text.": "Küçük resmin üzerine gelindiğinde görünen metni göster."
   }
 }
