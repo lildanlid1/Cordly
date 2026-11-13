@@ -1811,6 +1811,23 @@
     "Upload small image": "Tải ảnh nhỏ lên",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "Ảnh sẽ được đăng vào kênh này. Bất kỳ ai có quyền đọc kênh đều xem được ảnh.",
     "Use a public HTTPS image URL.": "Dùng URL ảnh HTTPS có thể truy cập công khai.",
-    "Watching": "Đang xem"
+    "Watching": "Đang xem",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord trên GitHub. Miễn phí và mã nguồn mở (GPL-3.0).",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "Chế độ an toàn",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "Tạm thời tắt tất cả tính năng đang bật và khôi phục các công tắc trước đó khi bạn tắt chế độ này.",
+    "Visibility": "Hiển thị",
+    "Show details": "Hiện chi tiết",
+    "Include the activity details line.": "Bao gồm dòng chi tiết hoạt động.",
+    "Show state": "Hiện trạng thái",
+    "Include the activity state line.": "Bao gồm dòng trạng thái hoạt động.",
+    "Show large image": "Hiện ảnh lớn",
+    "Include the large activity image.": "Bao gồm ảnh lớn của hoạt động.",
+    "Show small image": "Hiện ảnh nhỏ",
+    "Include the small activity image.": "Bao gồm ảnh nhỏ của hoạt động.",
+    "Show large image label": "Hiện nhãn ảnh lớn",
+    "Show the large image's hover text.": "Hiện văn bản khi di chuột lên ảnh lớn.",
+    "Show small image label": "Hiện nhãn ảnh nhỏ",
+    "Show the small image's hover text.": "Hiện văn bản khi di chuột lên ảnh nhỏ."
   }
 }
