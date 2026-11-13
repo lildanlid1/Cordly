@@ -1989,6 +1989,23 @@
     "Upload small image": "छोटा चित्र अपलोड करें",
     "Uploading posts the image in this channel. Anyone who can read it can see the image.": "अपलोड करने पर चित्र इस चैनल में पोस्ट होगा। चैनल पढ़ सकने वाला हर व्यक्ति चित्र देख सकेगा।",
     "Use a public HTTPS image URL.": "सार्वजनिक रूप से उपलब्ध HTTPS चित्र URL इस्तेमाल करें।",
-    "Watching": "देख रहे हैं"
+    "Watching": "देख रहे हैं",
+    "Velocity Patches Discord on GitHub. Free and open source (GPL-3.0).": "Velocity Patches Discord GitHub पर। मुफ़्त और ओपन सोर्स (GPL-3.0)।",
+    "Velocity Patches Discord": "Velocity Patches Discord",
+    "Safe Mode": "सेफ़ मोड",
+    "Temporarily turns off every enabled feature and restores the previous switches when you turn it off.": "अस्थायी रूप से सभी चालू सुविधाएँ बंद करता है और इसे बंद करने पर उनके पिछले टॉगल वापस बहाल करता है।",
+    "Visibility": "दृश्यता",
+    "Show details": "विवरण दिखाएँ",
+    "Include the activity details line.": "गतिविधि की विवरण पंक्ति शामिल करें।",
+    "Show state": "स्थिति दिखाएँ",
+    "Include the activity state line.": "गतिविधि की स्थिति पंक्ति शामिल करें।",
+    "Show large image": "बड़ी छवि दिखाएँ",
+    "Include the large activity image.": "गतिविधि की बड़ी छवि शामिल करें।",
+    "Show small image": "छोटी छवि दिखाएँ",
+    "Include the small activity image.": "गतिविधि की छोटी छवि शामिल करें।",
+    "Show large image label": "बड़ी छवि का लेबल दिखाएँ",
+    "Show the large image's hover text.": "बड़ी छवि पर होवर करने पर उसका टेक्स्ट दिखाएँ।",
+    "Show small image label": "छोटी छवि का लेबल दिखाएँ",
+    "Show the small image's hover text.": "छोटी छवि पर होवर करने पर उसका टेक्स्ट दिखाएँ।"
   }
 }
